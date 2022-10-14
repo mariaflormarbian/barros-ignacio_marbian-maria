@@ -23,7 +23,7 @@
 
         <div class="container">
 
-            <img src="{{ url('imgs/proyecto/logo.png') }}" width="60" height="60" alt="">
+            <img src="{{ url('imgs/proyecto/logo.png') }}" width="50" height="50" alt="Logo ieta color negro">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -76,7 +76,7 @@
 
             <div class="footer-one col-lg-4 col-md-6 col-12">
 
-                <img src="{{ url('imgs/proyecto/logo.png') }}" width="50" height="50" alt="">
+                <img src="{{ url('imgs/proyecto/logo_footer.png') }}"  alt="Logo ieta color blanco">
 
                 <p class="pt-3">Podés visitarnos en nuestro Showroom</p>
 
