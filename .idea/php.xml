@@ -110,6 +110,17 @@
       <path value="$PROJECT_DIR$/proyecto/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/proyecto/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/proyecto/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/doctrine/deprecations" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/proyecto/vendor/barryvdh/laravel-debugbar" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

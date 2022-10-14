@@ -116,6 +116,17 @@
       <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/barryvdh/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/barryvdh/laravel-ide-helper" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/maximebf/debugbar" />
+      <excludeFolder url="file://$MODULE_DIR$/proyecto/vendor/barryvdh/laravel-debugbar" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

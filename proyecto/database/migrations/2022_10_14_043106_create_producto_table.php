@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('descripcion');
             $table->string('imagen', 255)->nullable();
             $table->string('imagen_descripcion', 255)->nullable();
+            $table->boolean('destacado');
             $table->timestamps();
         });
     }
