@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=es"">
 
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,10 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
-    <!-- Iconos -->
-    <link rel="stylesheet" href="{{ url('css/line-awesome.min.css') }}">
     <!-- Css -->
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="{{ url('css/line-awesome.min.css') }}">
 
 </head>
 
@@ -23,7 +23,7 @@
 
         <div class="container">
 
-            <img src="{{ url('imgs/logo1.png') }}" alt="">
+            <img src="{{ url('imgs/proyecto/logo.png') }}" width="60" height="60" alt="">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -36,10 +36,10 @@
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Inicio</a>
+                        <a class="nav-link active" href="{{ route('home') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Catálogo</a>
+                        <a class="nav-link" href="{{ route('productos') }}">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sobre Nosotros</a>
@@ -48,7 +48,12 @@
                         <a class="nav-link" href="#">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <i class="las la-search"></i>
+                        <a class="nav-link" href="#">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cerrar Sesion</a>
+                    </li>
+                    <li class="nav-item">
                         <i class="las la-shopping-bag"></i>
                     </li>
 
@@ -70,64 +75,48 @@
 
         <div class="row container mx-auto pt-5">
 
-            <div class="footer-one col-lg-3 col-md-6 col-12">
+            <div class="footer-one col-lg-4 col-md-6 col-12">
 
-                <img src="{{ url() }}imgs/logo2.png" alt="">
+                <img src="{{ url('imgs/proyecto/logo.png') }}" width="50" height="50" alt="">
 
-                <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus ea alias odio.</p>
+                <p class="pt-3">Podés visitarnos en nuestro Showroom</p>
 
-            </div>
-
-            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
-
-                <h5 class="pb-2">Featured</h5>
-
-                <ul class="text-uppercase list-unstyled">
-
-                    <li><a href="#">men</a></li>
-                    <li><a href="#">women</a></li>
-                    <li><a href="#">boys</a></li>
-                    <li><a href="#">girls</a></li>
-                    <li><a href="#">new arrivals</a></li>
-                    <li><a href="#">shoes</a></li>
-                    <li><a href="#">cloths</a></li>
-
-                </ul>
-
-            </div>
-
-            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
-
-                <h5 class="pb-2">Contact Uss</h5>
-
-                <div>
-                    <h6 class="text-uppercase">Address</h6>
-                    <p>123 STREET NAME, CITY, US</p>
-                </div>
-
-                <div>
-                    <h6 class="text-uppercase">Phone</h6>
-                    <p>(123) 456-789</p>
-                </div>
-
-                <div>
-                    <h6 class="text-uppercase">Address</h6>
-                    <p>123 STREET NAME, CITY, US</p>
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <img src="{{ url('imgs/proyecto/payment.png') }}" alt="">
                 </div>
 
             </div>
 
-            <div class="footer-one col-lg-3 col-md-6 col-12 mb-3">
+
+            <div class="footer-one col-lg-4 col-md-6 col-12 mb-3">
+
+                <h5 class="pb-2">Contactános</h5>
+
+                <div>
+                    <h6 class="text-uppercase">Dirección</h6>
+                    <p>Juana azurduy 2435, CABA</p>
+                </div>
+
+                <div>
+                    <h6 class="text-uppercase">Whatsapp</h6>
+                    <p>(011) 3427-9989</p>
+                </div>
+
+
+
+            </div>
+
+            <div class="footer-one col-lg-4 col-md-6 col-12 mb-3">
 
                 <h5 class="pb-2">Instagram</h5>
 
                 <div class="row">
 
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('img/insta/1.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('img/insta/2.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('img/insta/3.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('img/insta/4.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('img/insta/5.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/pollera_producto6.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_producto5.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_producto2.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/oxford_producto1.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/pollera_producto5.jpg') }}" alt="">
 
                 </div>
 
@@ -139,13 +128,13 @@
 
             <div class="row container mx-auto">
 
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <img src="img/payment.png" alt="">
+                {{-- <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <img src="{{ url('imgs/proyecto/payment.png') }}" alt="">
+                </div> --}}
+                <div class="text-center col-12 text-nowrap mb-2">
+                    <p>ieta eCommerce © 2022. Todos los derechos reservados</p>
                 </div>
-                <div class="col-lg-4 col-md-6 col-12 text-nowrap mb-2">
-                    <p>rymo eCommerce &copy; 2021. All Rights Reserved</p>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12">
+                <div class="text-center col-12">
                     <a href="#"><i class="lab la-facebook-f"></i></a>
                     <a href="#"><i class="lab la-twitter"></i></a>
                     <a href="#"><i class="lab la-linkedin-in"></i></a>
