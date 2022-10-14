@@ -58,9 +58,9 @@
                     </li>
 
                 </ul>
-                    
+
             </div>
-            
+
         </div>
 
     </nav>
@@ -68,7 +68,6 @@
     <main>
 
         @yield('main')
-
     </main>
 
     <footer class="mt-5 py-5">
