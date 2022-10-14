@@ -1,7 +1,14 @@
+<?php
+/** @var \Illuminate\Database\Eloquent\Collection | \App\Models\Producto[] $productos*/
+?>
+
+
 @extends('layouts.main')
 
 @section('title', 'Pagina Principal')
-    
+
+@section('home', 'active')
+
 @section('main')
 
     <section id="home">
@@ -17,7 +24,7 @@
 
     </section>
 
-    <section id="featured" class="my-5 pb-5"> 
+    <section id="featured" class="my-5 pb-5">
 
         <div class="container text-center mt-5 py-5">
 
@@ -29,85 +36,33 @@
 
         <div class="row mx-auto container-fluid">
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            @foreach($productos as $producto)
 
-                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/pollera_producto1.jpg') }}" alt="">
+                @if($producto->destacado === 1)
 
-                <div class="star">
+                    <div class="product text-center col-lg-3 col-md-4 col-12">
 
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
+                        <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/' . $producto->imagen) }}" alt="{{ $producto->imagen_descripcion }}">
 
-                </div>
+                        <div class="star">
 
-                <h5 class="p-name">Pollera Rayna</h5>
-                <h4 class="p-price">$10.499</h4>
-                <button class="buy-btn">Comprá</button>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
 
-            </div>
+                        </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+                        <h3 class="p-name">{{ $producto->nombre }}</h3>
+                        <p class="p-price h4">{{ $producto->precio }}</p>
+                        <a class="buy-btn ">Comprá</a>
 
-                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/chupin_producto1.jpg') }}" alt="">
+                    </div>
 
-                <div class="star">
+                @endif
 
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Chupín Sassy</h5>
-                <h4 class="p-price">$13.000</h4>
-                <button class="buy-btn">Comprá</button>
-
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-
-                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/mom_producto1.jpg') }}" alt="">
-
-                <div class="star">
-
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Mom</h5>
-                <h4 class="p-price">$12.200</h4>
-                <button class="buy-btn">Comprá</button>
-
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-
-                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/pollera_producto2.jpg') }}" alt="">
-
-                <div class="star">
-
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Pollera Flower</h5>
-                <h4 class="p-price">$7.200</h4>
-                <button class="buy-btn">Comprá</button>
-
-            </div>
+            @endforeach
 
         </div>
 
@@ -134,7 +89,7 @@
 
                 <div class="details">
 
-                    <button class="text-uppercase">Ver</button>
+                    <a href="#" class="btn text-uppercase">Ver</a>
 
                 </div>
 
@@ -146,7 +101,7 @@
 
                 <div class="details">
 
-                    <button class="text-uppercase">Ver</button>
+                    <a href="#" class="btn text-uppercase">Ver</a>
 
                 </div>
 
@@ -158,7 +113,7 @@
 
                 <div class="details">
 
-                    <button class="text-uppercase">Ver</button>
+                    <a href="#" class="btn text-uppercase">Ver</a>
 
                 </div>
 
@@ -166,9 +121,9 @@
 
         </div>
 
-    </section> 
+    </section>
 
-    <section id="clothes" class="my-5"> 
+    <section id="clothes" class="my-5">
 
         <div class="container text-center mt-5 py-5">
 
@@ -180,85 +135,37 @@
 
         <div class="row mx-auto container-fluid">
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            @foreach($productos as $producto)
 
-                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/pollera_producto4.jpg') }}" alt="">
+                @if($producto->producto_id > 4 and $producto->producto_id < 9)
 
-                <div class="star">
+                    <div class="product text-center col-lg-3 col-md-4 col-12">
 
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
+                        <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/' . $producto->imagen) }}" alt="{{ $producto->imagen_descripcion  }}">
 
-                </div>
+                        <div class="star">
 
-                <h5 class="p-name">Pollera Owen</h5>
-                <h4 class="p-price">$12.000</h4>
-                <button class="buy-btn">Comprá</button>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
 
-            </div>
+                        </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+                        <h3 class="p-name">{{ $producto->nombre  }}</h3>
+                        <p class="p-price h4">{{ $producto->precio }}</p>
+                        <a class="buy-btn">Comprá</a>
 
-                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/chupin_producto3.jpg') }}" alt="">
+                    </div>
 
-                <div class="star">
+                @endif
 
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
+            @endforeach
 
-                </div>
 
-                <h5 class="p-name">Chupín Alice</h5>
-                <h4 class="p-price">$15.000</h4>
-                <button class="buy-btn">Comprá</button>
 
-            </div>
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-
-                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/pollera_producto5.jpg') }}" alt="">
-
-                <div class="star">
-
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Pollera Jayden</h5>
-                <h4 class="p-price">$8.000</h4>
-                <button class="buy-btn">Comprá</button>
-
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-
-                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/oxford_producto2.jpg') }}" alt="">
-
-                <div class="star">
-
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Oxford Dharma</h5>
-                <h4 class="p-price">$11.000</h4>
-                <button class="buy-btn">Comprá</button>
-
-            </div>
 
         </div>
 
@@ -276,7 +183,7 @@
                 </div>
 
                 <p class = "text-center text-muted">Podes recibir todas las noticias de último momento</p>
-                
+
                 <div class = "input-group mb-5 mt-3">
                     <input type = "text" class = "form-control" placeholder="Tu Email ...">
                     <button class = "btn" type = "submit">Subscribir</button>
@@ -285,8 +192,7 @@
             </div>
 
         </div>
-        
+
     </section>
 
 @endsection
-    

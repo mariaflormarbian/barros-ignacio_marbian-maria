@@ -36,16 +36,16 @@
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ route('home') }}">Inicio</a>
+                        <a class="nav-link @yield('home')" href="{{ route('home') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('productos') }}">Productos</a>
+                        <a class="nav-link @yield('productos')" href="{{ route('productos') }}">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre Nosotros</a>
+                        <a class="nav-link @yield('sobre-nosotros')" href="#">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link @yield('contacto')" href="#">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Iniciar Sesion</a>

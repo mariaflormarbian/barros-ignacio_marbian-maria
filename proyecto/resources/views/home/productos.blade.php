@@ -7,6 +7,8 @@
 
 @section('title', 'Productos')
 
+@section('productos', 'active')
+
 @section('main')
 
 

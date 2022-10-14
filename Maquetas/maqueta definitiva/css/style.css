@@ -51,7 +51,7 @@ h6 {
     color: #d8d8d8;
 }
 
-button {
+button,.product a {
     font-size: 0.8rem;
     font-weight: 700;
     outline: none;
@@ -63,7 +63,7 @@ button {
     text-transform: uppercase;
 }
 
-button:hover {
+button:hover, .product a:hover {
     background-color: #3a3833;
 }
 
