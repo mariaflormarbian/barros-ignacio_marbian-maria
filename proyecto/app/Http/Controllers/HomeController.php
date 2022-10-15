@@ -27,15 +27,26 @@ class HomeController extends Controller
 
     }
 
-    public function carrito(){
+    public function carrito()
+    {
 
         return view('home.carrito');
 
     }
     
-    public function contacto(){
+    public function contacto()
+    {
 
         return view('home.contacto');
+
+    }
+
+    public function productos()
+    {
+        $productos = Producto::all();
+        return view('home.productos',[
+            'productos'=>$productos,
+        ]);
 
     }
 }

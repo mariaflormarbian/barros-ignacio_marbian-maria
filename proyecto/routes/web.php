@@ -17,7 +17,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])
     ->name('home');
 
     // NOTA: Cambiar el controlador a "HomeController" ya que el controllador "ProductosController" ira solamente las funciones relacionadas con el admin de productos
-Route::get('/productos', [\App\Http\Controllers\ProductosController::class, 'index'])
+Route::get('/productos', [\App\Http\Controllers\HomeController::class, 'productos'])
     ->name('productos');
 
 Route::get('producto-detalle/{id}',[\App\Http\Controllers\HomeController::class, 'detalle'])
