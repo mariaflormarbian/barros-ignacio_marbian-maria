@@ -42,10 +42,10 @@
                         <a class="nav-link @yield('productos')" href="{{ route('productos') }}">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('sobre-nosotros')" href="#">Sobre Nosotros</a>
+                        <a class="nav-link @yield('contacto')" href="{{ route('contacto') }}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('contacto')" href="#">Contacto</a>
+                        <a class="nav-link @yield('sobre-nosotros')" href="#">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Iniciar Sesion</a>
@@ -54,7 +54,7 @@
                         <a class="nav-link" href="#">Cerrar Sesion</a>
                     </li>
                     <li class="nav-item">
-                        <i class="las la-shopping-bag"></i>
+                        <a class="nav-link" href="{{ route('carrito') }}"><i class="las la-shopping-bag"></i></a>
                     </li>
 
                 </ul>
@@ -68,6 +68,7 @@
     <main>
 
         @yield('main')
+
     </main>
 
     <footer class="mt-5 py-5">
@@ -111,11 +112,12 @@
 
                 <div class="row">
 
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/pollera_producto6.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_producto5.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_producto2.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/oxford_producto1.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/pollera_producto5.jpg') }}" alt="">
+                    {{-- NOTA: Adaptar un foreach --}}
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_key.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_aion.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_eros.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_farah.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_satya.jpg') }}" alt="">
 
                 </div>
 
@@ -147,6 +149,7 @@
 
     <!-- Bootstrap -->
     <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
+    @yield('script')
 
 </body>
 

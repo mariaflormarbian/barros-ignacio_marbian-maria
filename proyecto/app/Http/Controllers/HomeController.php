@@ -15,4 +15,27 @@ class HomeController extends Controller
             'productos' => $productos
         ]);
     }
+
+    public function detalle(int $id) 
+    {
+
+        $producto = Producto::findOrFail($id);
+
+        return view('home.detalle', [
+            'producto' => $producto
+        ]);
+
+    }
+
+    public function carrito(){
+
+        return view('home.carrito');
+
+    }
+    
+    public function contacto(){
+
+        return view('home.contacto');
+
+    }
 }

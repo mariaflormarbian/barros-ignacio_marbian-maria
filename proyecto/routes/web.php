@@ -16,5 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])
     ->name('home');
 
+    // NOTA: Cambiar el controlador a "HomeController" ya que el controllador "ProductosController" ira solamente las funciones relacionadas con el admin de productos
 Route::get('/productos', [\App\Http\Controllers\ProductosController::class, 'index'])
     ->name('productos');
+
+Route::get('producto-detalle/{id}',[\App\Http\Controllers\HomeController::class, 'detalle'])
+    ->name('producto.detalle')
+    ->whereNumber('id');
+
+Route::get('carrito',[\App\Http\Controllers\HomeController::class, 'carrito'])
+    ->name('carrito');
+
+Route::get('contacto',[\App\Http\Controllers\HomeController::class, 'contacto'])
+    ->name('contacto');

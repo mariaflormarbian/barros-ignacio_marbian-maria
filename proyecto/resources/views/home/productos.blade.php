@@ -1,4 +1,3 @@
-
 <?php
 /** @var \Illuminate\Database\Eloquent\Collection | \App\Models\Producto[] $productos*/
     ?>
@@ -28,7 +27,7 @@
 
         <div  class="product text-center col-lg-3 col-md-4 col-12">
             <picture>
-                <img class="img-fluid mb-3" src="{{ ("imgs/proyecto/".$producto->imagen) }}" alt="{{ $producto->imagen_descripcion }}">
+                <img class="img-fluid mb-3" src="{{ url('imgs/proyecto/' . $producto->imagen) }}" alt="{{ $producto->imagen_descripcion }}">
             </picture>
 
             <div class="star">
@@ -43,7 +42,7 @@
 
             <h3 class="p-name">{{ $producto->nombre }}</h3>
             <p class="p-price h4">${{ $producto->precio }}</p>
-            <a href="" class="buy-btn">Ver producto</a>
+            <a href="{{ route('producto.detalle', ['id' => $producto->producto_id]) }}" class="buy-btn">Ver producto</a>
 
         </div>
       @endforeach
