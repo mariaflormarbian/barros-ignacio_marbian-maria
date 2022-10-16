@@ -19,7 +19,7 @@
 
                 <h2 class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
 
-                Confirmar eliminación de producto
+                Confirmar eliminación de {{ $producto->nombre }}
 
                 </h2>
 
@@ -34,7 +34,7 @@
                     <dd><img src="{{ url('imgs/proyecto/' . $producto->imagen) }}" alt="{{ $producto->imagen_descripcion }}" class="img-table"></dd>
                 </dl>
 
-                <form action="{{ route('admin.productos.eliminar.accion', ['id' => $producto->producto_id]) }}" method="post" class=" d-flex">
+                <form action="{{ route('admin.productos.eliminar.ejecutar', ['id' => $producto->producto_id]) }}" method="post" class=" d-flex">
 
                     @csrf
 

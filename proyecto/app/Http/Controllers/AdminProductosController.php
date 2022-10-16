@@ -26,7 +26,7 @@ class AdminProductosController extends Controller
 
     }
 
-    public function nuevoGrabar(Request $request)
+    public function nuevoEjecutar(Request $request)
     {
 
         $data = $request->except(['_token']);
@@ -57,7 +57,7 @@ class AdminProductosController extends Controller
 
     }
 
-    public function eliminarAccion(int $id) 
+    public function eliminarEjecutar(int $id) 
     {
 
         $producto = Producto::findOrFail($id);
@@ -68,6 +68,25 @@ class AdminProductosController extends Controller
         ->route('admin.productos.index')
         ->with('statusType', 'success')
         ->with('statusMessage', 'El producto <b>' . e($producto->nombre) . '</b> fue eliminado correctamente');
+
+    }
+
+    public function editarForm(int $id)
+    {
+
+        $producto = Producto::find($id);
+
+        return view('admin.productos.form-editar', [
+            'producto' => $producto
+        ]);
+
+
+    }
+
+    public function editarEjecutar() 
+    {
+
+        // Clase 13/09, minuto 12:05 el profe empieza a configurar este metodo
 
     }
 

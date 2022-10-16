@@ -404,7 +404,7 @@
 
                         </form> --}}
 
-                        <form action="{{ route('admin.productos.nuevo.grabar') }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                        <form action="{{ route('admin.productos.nuevo.ejecutar') }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
 
                             @csrf
 

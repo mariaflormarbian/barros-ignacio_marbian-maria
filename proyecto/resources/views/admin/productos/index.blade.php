@@ -121,7 +121,7 @@
 
                                                 <td class="d-flex justify-content-center align-items-center">
 
-                                                    <form action="#" class="pb-3 pt-3" method="post">
+                                                    <form action="{{ route('admin.productos.editar.form', ['id' => $producto->producto_id]) }}" class="pb-3 pt-3" method="get">
 
                                                         <button type="submit" class="btn me-3 btn-success">Editar</button>
 

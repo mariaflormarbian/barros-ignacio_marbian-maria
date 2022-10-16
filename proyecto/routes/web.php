@@ -41,22 +41,26 @@ Route::get('admin/productos',[\App\Http\Controllers\AdminProductosController::cl
 Route::get('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosController::class, 'nuevoForm'])
 ->name('admin.productos.nuevo.form');
 
-Route::post('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosController::class, 'nuevoGrabar'])
-->name('admin.productos.nuevo.grabar');
+Route::post('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosController::class, 'nuevoEjecutar'])
+->name('admin.productos.nuevo.ejecutar');
 
 // EDITAR
-// Route::get('admin/productos/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarForm'])
-// ->name('admin.productos.editar.form');
+Route::get('admin/productos/{id}/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarForm'])
+->name('admin.productos.editar.form')
+->whereNumber('id');
 
-// Route::post('admin/productos/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarGrabar'])
-// ->name('admin.productos.editar.grabar');
+Route::post('admin/productos/{id}/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarEjecutar'])
+->name('admin.productos.editar.accion')
+->whereNumber('id');
 
 // ELIMINAR
 Route::get('admin/productos/{id}/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarConfirmar'])
-->name('admin.productos.eliminar.confirmar');
+->name('admin.productos.eliminar.confirmar')
+->whereNumber('id');
 
-Route::post('admin/productos/{id}/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarAccion'])
-->name('admin.productos.eliminar.accion');
+Route::post('admin/productos/{id}/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarEjecutar'])
+->name('admin.productos.eliminar.ejecutar')
+->whereNumber('id');
 
 
 
