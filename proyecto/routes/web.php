@@ -44,9 +44,19 @@ Route::get('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosControll
 Route::post('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosController::class, 'nuevoGrabar'])
 ->name('admin.productos.nuevo.grabar');
 
+// EDITAR
+// Route::get('admin/productos/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarForm'])
+// ->name('admin.productos.editar.form');
+
+// Route::post('admin/productos/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarGrabar'])
+// ->name('admin.productos.editar.grabar');
+
 // ELIMINAR
-Route::get('admin/productos/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarForm'])
-->name('admin.productos.eliminar.form');
+Route::get('admin/productos/{id}/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarConfirmar'])
+->name('admin.productos.eliminar.confirmar');
+
+Route::post('admin/productos/{id}/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarAccion'])
+->name('admin.productos.eliminar.accion');
 
 
 
