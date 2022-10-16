@@ -33,8 +33,41 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Producto extends Model
 {
-//use HasFactory
-protected $table = 'productos';
-protected $primaryKey = 'producto_id';
+    //use HasFactory
+    protected $table = 'productos';
+    protected $primaryKey = 'producto_id';
+    protected $fillable = [
+        'nombre',
+        'precio',
+        'descripcion',
+        'imagen',
+        'imagen_descripcion',
+        'destacado'
+    ];
+
+    public const VALIDATE_RULES = [
+        // 'titulo' => ['required', 'min:2'],
+        'nombre' => 'required|min:2|max:50',
+        'precio' => 'numeric|required|min:0|max:100000',
+        'descripcion' => 'required|min:50|max:800',
+        'imagen' => '',
+        'imagen_descripcion' => 'required|min:10|max:255',
+    ];
+
+    public const VALIDATE_MESSAGES = [
+        'nombre.required' => 'El nombre debe llevar un valor.',
+        'nombre.min' => 'El nombre debe tener al menos :min caracteres.',
+        'nombre.max' => 'El nombre puede tener hasta :max caracteres.',
+        'precio.numeric' => 'El precio debe ser un numero.',
+        'precio.required' => 'El precio debe llevar un valor.',
+        'precio.min' => 'El precio debe ser un valor positivo.',
+        'precio.max' => 'El precio no puede superar los $ :max.',
+        'descripcion.required' => 'La descripcion debe llevar un valor.',
+        'descripcion.min' => 'La descripcion debe tener al menos :min caracteres.',
+        'descripcion.max' => 'La descripcion puede tener hasta :max caracteres.',
+        'imagen_descripcion.required' => 'La descripcion de la imagen debe llevar un valor.',
+        'imagen_descripcion.min' => 'La descripcion de la imagen debe tener al menos :min caracteres.',
+        'imagen_descripcion.max' => 'La descripcion de la imagen puede tener hasta :max caracteres.',
+    ];
 
 }

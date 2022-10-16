@@ -8,7 +8,7 @@
     <title>@yield('title') : : Ieta</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min4.css') }}">
     <!-- Css -->
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
     <!-- Iconos -->
@@ -54,7 +54,7 @@
                         <a class="nav-link" href="#">Cerrar Sesion</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('carrito') }}"><i class="las la-shopping-bag"></i></a>
+                        <a class="nav-link @yield('carrito')" href="{{ route('carrito') }}"><i class="las la-shopping-bag"></i></a>
                     </li>
 
                 </ul>
@@ -149,8 +149,7 @@
 
     <!-- Bootstrap -->
     <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
-    @yield('script')
-
+    
 </body>
 
 </html>

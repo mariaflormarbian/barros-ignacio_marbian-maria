@@ -81,7 +81,7 @@
     <div class="row mx-auto container-fluid">
 
         <div class="product text-center col-lg-3 col-md-4 col-12">
-            
+
             <img class="img-fluid mb-3" src="../img/featured/1.jpg" alt="">
 
             <div class="star">

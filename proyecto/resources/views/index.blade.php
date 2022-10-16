@@ -2,7 +2,6 @@
 /** @var \Illuminate\Database\Eloquent\Collection | \App\Models\Producto[] $productos*/
 ?>
 
-
 @extends('layouts.main')
 
 @section('title', 'Pagina Principal')
@@ -55,7 +54,7 @@
                         </div>
 
                         <h3 class="p-name">{{ $producto->nombre }}</h3>
-                        <p class="p-price h4">{{ $producto->precio }}</p>
+                        <p class="p-price h4">${{ $producto->precio }}</p>
                         <a class="buy-btn ">Comprá</a>
 
                     </div>
@@ -154,7 +153,7 @@
                         </div>
 
                         <h3 class="p-name">{{ $producto->nombre  }}</h3>
-                        <p class="p-price h4">{{ $producto->precio }}</p>
+                        <p class="p-price h4">${{ $producto->precio }}</p>
                         <a class="buy-btn">Comprá</a>
 
                     </div>

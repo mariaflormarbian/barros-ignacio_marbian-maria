@@ -3,6 +3,8 @@
 
 @section('title', 'Carrito Producto')
 
+@section('carrito', 'active')
+
 @section('main')
 
 <section id="featured" class="my-5 py-5"> 

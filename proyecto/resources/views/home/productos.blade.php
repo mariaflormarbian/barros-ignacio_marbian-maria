@@ -10,8 +10,6 @@
 
 @section('main')
 
-
-
 <section id="featured" class="my-5 py-5">
 
     <div class="container mt-5 py-5">
