@@ -31,6 +31,9 @@
                 </dl>
             
                 <form action="acciones/vinilos/vinilos-eliminar.php?id=14" method="post" class=" d-flex">
+
+                    @csrf
+
                     <input type="hidden" name="id" value="">
                     <button type="submit" class="btn col-md-3 m-auto mt-3">Eliminar</button>
                 </form>

@@ -149,8 +149,7 @@
 
     <!-- Bootstrap -->
     <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
-    @yield('script')
-
+    
 </body>
 
 </html>

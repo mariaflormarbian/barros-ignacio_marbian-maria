@@ -37,10 +37,17 @@ Route::get('contacto',[\App\Http\Controllers\HomeController::class, 'contacto'])
 Route::get('admin/productos',[\App\Http\Controllers\AdminProductosController::class, 'index'])
 ->name('admin.productos.index');
 
-Route::get('admin/productos/nuevo-producto',[\App\Http\Controllers\AdminProductosController::class, 'nuevoForm'])
+// GRABAR
+Route::get('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosController::class, 'nuevoForm'])
 ->name('admin.productos.nuevo.form');
 
-Route::get('admin/productos/eliminar-producto',[\App\Http\Controllers\AdminProductosController::class, 'eliminarForm'])
+Route::post('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosController::class, 'nuevoGrabar'])
+->name('admin.productos.nuevo.grabar');
+
+// ELIMINAR
+Route::get('admin/productos/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarForm'])
 ->name('admin.productos.eliminar.form');
+
+
 
 
