@@ -45,7 +45,7 @@
                         <a class="nav-link @yield('contacto')" href="{{ route('contacto') }}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('sobre-nosotros')" href="#">Sobre Nosotros</a>
+                        <a class="nav-link @yield('sobre-nosotros')" href="{{ route('sobre.nosotros') }}">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Iniciar Sesion</a>
@@ -149,7 +149,7 @@
 
     <!-- Bootstrap -->
     <script src="{{ url('js/bootstrap.bundle.min.js') }}"></script>
-    
+
 </body>
 
 </html>

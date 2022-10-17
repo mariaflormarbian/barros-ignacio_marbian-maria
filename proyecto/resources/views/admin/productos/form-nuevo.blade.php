@@ -421,7 +421,7 @@
                                     id="nombre"
                                     name="nombre"
                                     class="form-control"
-                                    value="{{ old('nombre') }}"  
+                                    value="{{ old('nombre') }}"
                                     @error('nombre') aria-describedby="error-nombre" @enderror
                                 >
 
@@ -442,7 +442,7 @@
                                     id="precio"
                                     name="precio"
                                     class="form-control"
-                                    value="{{ old('precio') }}"  
+                                    value="{{ old('precio') }}"
                                     @error('precio') aria-describedby="error-precio" @enderror
                                 >
 
@@ -464,7 +464,7 @@
                                         name="destacado"
                                         class="form-check-input"
                                         @if(old('destacado') == 1) checked @endif
-                                        value="{{ old('destacado', 1) }}"  
+                                        value="{{ old('destacado', 1) }}"
                                     >
 
                                 </div>

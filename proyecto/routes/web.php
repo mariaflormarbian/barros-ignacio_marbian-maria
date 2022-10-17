@@ -32,6 +32,10 @@ Route::get('carrito',[\App\Http\Controllers\HomeController::class, 'carrito'])
 Route::get('contacto',[\App\Http\Controllers\HomeController::class, 'contacto'])
 ->name('contacto');
 
+Route::get('sobre-nosotros',[\App\Http\Controllers\HomeController::class, 'sobre_nosotros'])
+    ->name('sobre.nosotros');
+
+
 // ADMIN
 
 Route::get('admin/productos',[\App\Http\Controllers\AdminProductosController::class, 'index'])
@@ -50,7 +54,7 @@ Route::get('admin/productos/{id}/editar',[\App\Http\Controllers\AdminProductosCo
 ->whereNumber('id');
 
 Route::post('admin/productos/{id}/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarEjecutar'])
-->name('admin.productos.editar.accion')
+->name('admin.productos.editar.ejecutar')
 ->whereNumber('id');
 
 // ELIMINAR

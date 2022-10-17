@@ -16,7 +16,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function detalle(int $id) 
+    public function detalle(int $id)
     {
 
         $producto = Producto::findOrFail($id);
@@ -33,12 +33,18 @@ class HomeController extends Controller
         return view('home.carrito');
 
     }
-    
+
     public function contacto()
     {
 
         return view('home.contacto');
 
+    }
+
+
+    public function sobre_nosotros()
+    {
+        return view('home.sobre-nosotros');
     }
 
     public function productos()

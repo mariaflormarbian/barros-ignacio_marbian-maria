@@ -4,7 +4,7 @@
 
 @extends('layouts.admin-main')
 
-@section('title', 'Eliminar Producto')
+@section('title', 'Confirmar eliminar ' . $producto->nombre)
 
 @section('h1', 'Eliminar Producto')
 
@@ -30,14 +30,21 @@
                     <dd>ACA VA LA CATEGORIA</dd>
                     <dt>Precio</dt>
                     <dd>$ {{ $producto->precio }}</dd>
+                    <dt>Descripción</dt>
+                    <dd>{{ $producto->descripcion }}</dd>
                     <dt>Imagen</dt>
-                    <dd><img src="{{ url('imgs/proyecto/' . $producto->imagen) }}" alt="{{ $producto->imagen_descripcion }}" class="img-table"></dd>
+                    <dd>
+                        @if ($producto->imagen !=null && Storage::disk('public')->has('imgs/' . $producto->imagen))
+                            <img src="{{Storage::disk('public')->url('imgs/' . $producto->imagen)}}" class="d-block mx-auto" alt="{{url($producto->imagen_descripcion)}} ">
+                        @else
+                            No contiene ninguna imagen para eliminar
+                        @endif
                 </dl>
 
                 <form action="{{ route('admin.productos.eliminar.ejecutar', ['id' => $producto->producto_id]) }}" method="post" class=" d-flex">
 
                     @csrf
-
+                    <p>EStás por eliminar el siguiente producto. ¿Estás seguro/a de querer continuar?</p>
                     <input type="hidden" name="id" value="">
                     <button type="submit" class="btn col-md-3 m-auto mt-3">Eliminar</button>
                 </form>

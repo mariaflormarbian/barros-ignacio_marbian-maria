@@ -3,13 +3,11 @@
 /** @var \Illuminate\Support\ViewErrorBag $errors */
 ?>
 
-<?php
-/** @var \Illuminate\Support\ViewErrorBag $errors */
-?>
+
 
 @extends('layouts.admin-main')
 
-@section('title', 'Editar Producto')
+@section('title', 'Editar '. $producto->nombre)
 
 @section('h1', 'Editar Producto')
 
@@ -27,11 +25,11 @@
 
                         <div class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
 
-                            Modifica los datos de {{ $producto->nombre }}.
+                            Modificá los datos de {{ $producto->nombre }}.
 
                         </div>
 
-                        <form action="{{ route('admin.productos.editar.accion', ['id' => $producto->producto_id]) }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                        <form action="{{ route('admin.productos.editar.ejecutar', ['id' => $producto->producto_id]) }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
 
                             @csrf
 
@@ -99,6 +97,18 @@
                             </div>
 
                             <!-- Imagen -->
+                                <div class="mb-3" id="info-imagen">
+                                    <p>Imagen actual</p>
+                                    @if ($producto->imagen !=null && Storage::disk('public')->has('imgs/' . $producto->imagen))
+
+                                    <img src="{{Storage::disk('public')->url('imgs/' . $producto->imagen)}}" class="d-block mx-auto" alt="{{url($producto->imagen_descripcion)}} ">
+                                        <p class="visually-hidden">Hay una imagen cargada</p>
+                                        <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>
+                                    @else
+                                    Actualmente no hay ninguna imagen cargada.
+                                    @endif
+
+                                </div>
                             <div class="col-md-6">
 
                                 <label for="imagen" class="form-label">Imagen</label>
@@ -106,7 +116,9 @@
                                     type="file"
                                     id="imagen"
                                     name="imagen"
+                                    value="{{ old('imagen', $producto->imagen) }}"
                                     class="form-control"
+                                    aria-describedby="info-imagen"
                                 >
 
                                 {{-- <div class="text-danger fs-6" id="error-imagen"><span class="visually-hidden">Error:</span>Suba una imagen</div> --}}

@@ -14,26 +14,19 @@
 
         <div class="col-lg-5 col-md-12 col-12">
 
-            <img class="img-fluid w-100 pb-1" src="{{ url('imgs/proyecto/' . $producto->imagen) }}" id="MainImg" alt="">
+            <img class="img-fluid w-100 pb-1" src="{{Storage::disk('public')->url('imgs/' . $producto->imagen)}}" id="MainImg" alt="{{url($producto->imagen)}}">
 
             <div class="small-img-group">
 
                 {{-- NOTA: conseguir mas imagenes y ponerlas en un tamaño correcto --}}
                 <div class="small-img-col">
-                    <img src="{{ url('imgs/proyecto/' . $producto->imagen) }}" width="100%" class="small-img" alt="">
+                    <img src="{{ url('imgs/proyecto/talles.png') }}" width="100%" class="small-img" alt="Foto de la tabla de talles de un jean o pollera">
                 </div>
 
                 <div class="small-img-col">
-                    <img src="{{ url('imgs/shop/24.jpg') }}" width="100%" class="small-img" alt="">
+                    <img src="{{ url('imgs/proyecto/mediciones.png') }}" width="100%" class="small-img" alt="Foto de las instrucciones para medir un jean o pollera">
                 </div>
 
-                <div class="small-img-col">
-                    <img src="{{ url('imgs/proyecto/' . $producto->imagen) }}" width="100%" class="small-img" alt="">
-                </div>
-
-                <div class="small-img-col">
-                    <img src="{{ url('imgs/proyecto/' . $producto->imagen) }}" width="100%" class="small-img" alt="">
-                </div>
 
             </div>
 

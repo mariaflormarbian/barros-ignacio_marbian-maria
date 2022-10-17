@@ -343,7 +343,7 @@ footer .copyright a:hover {
 /* DETALLE */
 .small-img-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .small-img-col {
@@ -600,7 +600,7 @@ font-size: 1.1rem;
     color: #fb774b;
 }
 .card-single div:first-child span{
-    color: grey; 
+    color: grey;
 }
 .recent-grid{
     margin-top: 3rem;
@@ -705,7 +705,7 @@ table tbody tr td form button{
 }
 
 @media  screen and (max-width: 560px){
- 
+
     .cards{
         grid-template-columns: 100%;
     }
