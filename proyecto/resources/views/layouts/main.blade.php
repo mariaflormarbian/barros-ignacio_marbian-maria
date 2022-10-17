@@ -129,9 +129,6 @@
 
             <div class="row container mx-auto">
 
-                {{-- <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <img src="{{ url('imgs/proyecto/payment.png') }}" alt="">
-                </div> --}}
                 <div class="text-center col-12 text-nowrap mb-2">
                     <p>ieta eCommerce © 2022. Todos los derechos reservados</p>
                 </div>

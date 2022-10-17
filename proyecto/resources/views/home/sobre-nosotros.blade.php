@@ -20,5 +20,5 @@
             <p>
                 Utilizamos los mejores materiales, con molderías probadas durante años que nos aseguran el mejor calce. Realizamos todos nuestros productos en cercanías, dentro de la ciudad de Buenos Aires, en talleres que visitamos diariamente. Nuestra modelista experta en indumentaria realiza cada uno de los productos y se prueban hasta tener el calce perfecto. Detalles  y terminaciones a mano genera que todos los productos en ieta te duren muchos años.
             </p>
-            <img src="../storage/imgs/proyecto/familia.jpg"  class="d-block mx-auto" alt="Foto de la familia creadora de ieta en taller textil">
+            <img src="storage/imgs/familia.jpg"  class="d-block mx-auto" alt="Foto de la familia creadora de ieta en taller textil">
         </div>
