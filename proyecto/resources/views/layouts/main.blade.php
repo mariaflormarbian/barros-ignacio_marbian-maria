@@ -23,7 +23,7 @@
 
         <div class="container">
 
-            <img src="{{ url('imgs/proyecto/logo.png') }}" width="50" height="50" alt="Logo ieta color negro">
+            <img src="{{ url('storage/imgs/logo.png') }}" width="50" height="50" alt="Logo ieta color negro">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -77,12 +77,12 @@
 
             <div class="footer-one col-lg-4 col-md-6 col-12">
 
-                <img src="{{ url('imgs/proyecto/logo_footer.png') }}"  alt="Logo ieta color blanco">
+                <img src="{{ url('storage/imgs/logo_footer.png') }}"  alt="Logo ieta color blanco">
 
                 <p class="pt-3">Podés visitarnos en nuestro Showroom</p>
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <img src="{{ url('imgs/proyecto/payment.png') }}" alt="">
+                    <img src="{{ url('storage/imgs/payment.png') }}" alt="">
                 </div>
 
             </div>
@@ -113,11 +113,11 @@
                 <div class="row">
 
                     {{-- NOTA: Adaptar un foreach --}}
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_key.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_aion.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_eros.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_farah.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('imgs/proyecto/chupin_satya.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_key.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_aion.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_eros.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_farah.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_satya.jpg') }}" alt="">
 
                 </div>
 

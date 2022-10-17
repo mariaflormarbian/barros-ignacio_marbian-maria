@@ -84,7 +84,7 @@
 
             <div class="one col-lg-4 col-md-12 col-12 p-0">
 
-                <img class="img-fluid" src="{{ url('imgs/proyecto/categoria_chupines.jpg') }}" alt="">
+                <img class="img-fluid" src="{{ url('storage/imgs/categoria_chupines.jpg') }}" alt="">
 
                 <div class="details">
 
@@ -96,7 +96,7 @@
 
             <div class="one col-lg-4 col-md-12 col-12 p-0">
 
-                <img class="img-fluid" src="{{ 'imgs/proyecto/categoria_oxford.jpg' }}" alt="">
+                <img class="img-fluid" src="{{ url('storage/imgs/categoria_oxford.jpg') }}" alt="">
 
                 <div class="details">
 
@@ -108,7 +108,7 @@
 
             <div class="one col-lg-4 col-md-12 col-12 p-0">
 
-                <img class="img-fluid" src="{{ url('imgs/proyecto/categoria_mom.jpg') }}" alt="">
+                <img class="img-fluid" src="{{ url('storage/imgs/categoria_mom.jpg') }}" alt="">
 
                 <div class="details">
 
