@@ -116,8 +116,8 @@
                                                 <td>Aca va Categoría</td>
                                                 <td>$ {{ $producto->precio }}</td>
                                                 <td>
-                                                    @if ($producto->imagen !=null && Storage::disk('public')->has('imgs/' . $producto->imagen))
-                                                        <img src="{{url('storage/imgs/' . $producto->imagen)}}" class="d-block mx-auto img-table" alt=" {{ $producto->imagen_descripcion }} ">
+                                                    @if ($producto->imagen !=null && Storage::disk('public')->has('imgss/' . $producto->imagen))
+                                                        <img src="{{url('storage/imgss/' . $producto->imagen)}}" class="d-block mx-auto img-table" alt=" {{ $producto->imagen_descripcion }} ">
                                                     @endif
                                                 </td>
 

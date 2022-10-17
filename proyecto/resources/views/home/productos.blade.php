@@ -25,7 +25,7 @@
 
         <div  class="product text-center col-lg-3 col-md-4 col-12">
             <picture>
-                <img class="img-fluid mb-3" src="{{url('storage/imgs/' . $producto->imagen)}}" alt="{{ $producto->imagen_descripcion }}">
+                <img class="img-fluid mb-3" src="{{url('storage/imgss/' . $producto->imagen)}}" alt="{{ $producto->imagen_descripcion }}">
             </picture>
 
             <div class="star">

@@ -68,10 +68,10 @@ $imagen_descripcion = $producto->imagen_descripcion ?? null;
 
 <!-- Imagen -->
 <div class="mb-3" id="info-imagen">
-    @if ($imagen !=null && Storage::disk('public')->has('imgs/' . $producto->imagen))
+    @if ($imagen !=null && Storage::disk('public')->has('imgss/' . $producto->imagen))
         <p>Imagen actual</p>
 
-        <img src="{{url('storage/imgs/' . $imagen)}}" class="d-block mx-auto img-fluid" alt="{{url($imagen_descripcion)}} ">
+        <img src="{{url('storage/imgss/' . $imagen)}}" class="d-block mx-auto img-fluid" alt="{{url($imagen_descripcion)}} ">
         <p class="visually-hidden">Hay una imagen cargada</p>
         <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>
     @else
