@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nombre', 50);
             $table->unsignedInteger('precio');
             $table->text('descripcion');
-            $table->string('imagen', 255)->nullable();
+            $table->string('imagen', 255);
             $table->string('imagen_descripcion', 255)->nullable();
             $table->boolean('destacado');
             $table->timestamps();

@@ -6,6 +6,7 @@
 $destacado = $producto->destacado ?? null;
 $imagen = $producto->imagen ?? null;
 $imagen_descripcion = $producto->imagen_descripcion ?? null;
+$categoriaId = $producto->categoria_id ?? '';
 
 ?>
 
@@ -94,7 +95,13 @@ $imagen_descripcion = $producto->imagen_descripcion ?? null;
         value="{{ old('imagen', $producto->imagen ?? '') }}"
         class="form-control"
         aria-describedby="info-imagen"
+        @error('imagen') aria-describedby="error-imagen" @enderror
     >
+
+    @error ('imagen')
+
+    <div class="text-danger fs-6" id="error-imagen"><span class="visually-hidden">Error:</span>{{ $message }}</div>
+    @enderror
 
 
 </div>
@@ -125,10 +132,10 @@ $imagen_descripcion = $producto->imagen_descripcion ?? null;
         @error('categoria_id') aria-describedby="error-categoria_id" @enderror
     >
         @foreach($categorias as $categoria)
-        <option value="{{ $categoria->categoria_id ?? '' }}"
-                @selected($categoria->categoria_id == old('categoria_id'))
-
-        >{{ old('nombre', $categoria->nombre ?? '')}}</option>
+        <option
+            value="{{ $categoria->categoria_id ?? '' }}"
+            @selected($categoria->categoria_id == old('categoria_id', $categoriaId))
+        >{{ $categoria->nombre}}</option>
     @endforeach
     </select>
     @error ('categoria_id')

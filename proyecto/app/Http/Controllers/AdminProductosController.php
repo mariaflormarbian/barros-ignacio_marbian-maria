@@ -89,7 +89,9 @@ class AdminProductosController extends Controller
         $producto = Producto::find($id);
 
         return view('admin.productos.form-editar', [
-            'producto' => $producto
+            'producto' => $producto,
+            'categorias'=>Categoria::orderBy('nombre')->get(),
+
         ]);
 
 
