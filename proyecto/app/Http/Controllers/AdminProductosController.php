@@ -40,7 +40,7 @@ class AdminProductosController extends Controller
         if ($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
             $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['nombre']) . "." . $imagen->extension();
-            $imagen->storeAs('imgss', $nombreImagen, 'public');
+            $imagen->storeAs('imgs', $nombreImagen, 'public');
             $data['imagen'] = $nombreImagen;
         }
 
@@ -106,14 +106,14 @@ class AdminProductosController extends Controller
             $imagen = $request->file('imagen');
             $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['nombre']) . "." . $imagen->extension();
 
-            $imagen->storeAs('imgss', $nombreImagen, 'public');
+            $imagen->storeAs('imgs', $nombreImagen, 'public');
             $data['imagen'] = $nombreImagen;
 
             $imagenVieja = $producto->imagen;
         }
         $producto->update($data);
-        if (isset($imagenVieja) && \Storage::disk('public')->has('imgss/' . $imagenVieja)){
-          \Storage::disk('public')->delete('imgss/' . $imagenVieja);
+        if (isset($imagenVieja) && \Storage::disk('public')->has('imgs/' . $imagenVieja)){
+          \Storage::disk('public')->delete('imgs/' . $imagenVieja);
         }
 
         return redirect()
