@@ -14,14 +14,14 @@
 
         <div class="col-lg-5 col-md-12 col-12">
 
-            <img class="img-fluid w-100 pb-1" src="{{url('storage/imgs/' . $producto->imagen)}}" id="MainImg" alt="{{url($producto->imagen)}}">
+            <img class="img-fluid w-100 pb-1" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}" id="MainImg" alt="{{url($producto->imagen)}}">
 
             <div class="small-img-group">
 
                 {{-- NOTA: conseguir mas imagenes y ponerlas en un tamaño correcto --}}
 
                 <div class="small-img-col">
-                    <img src="{{ url('storage/imgs/' . $producto->imagen)}}" width="100" class="small-img" alt="{{url($producto->imagen)}}">
+                    <img src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}" width="100" class="small-img" alt="{{url($producto->imagen)}}">
                 </div>
                 <div class="small-img-col">
                     <img src="{{ url('storage/imgs/talles.png') }}" width="130" class="small-img" alt="Foto de la tabla de talles de un jean o pollera">
@@ -79,7 +79,7 @@
 
         <div class="product text-center col-lg-3 col-md-4 col-12">
 
-            <img class="img-fluid mb-3" src="../img/featured/1.jpg" alt="">
+            <img class="img-fluid mb-3" src="#" alt="">
 
             <div class="star">
 
@@ -99,7 +99,7 @@
 
         <div class="product text-center col-lg-3 col-md-4 col-12">
 
-            <img class="img-fluid mb-3" src="../img/featured/2.jpg" alt="">
+            <img class="img-fluid mb-3" src="#" alt="">
 
             <div class="star">
 
@@ -119,7 +119,7 @@
 
         <div class="product text-center col-lg-3 col-md-4 col-12">
 
-            <img class="img-fluid mb-3" src="../img/featured/3.jpg" alt="">
+            <img class="img-fluid mb-3" src="#" alt="">
 
             <div class="star">
 
@@ -139,7 +139,7 @@
 
         <div class="product text-center col-lg-3 col-md-4 col-12">
 
-            <img class="img-fluid mb-3" src="../img/featured/4.jpg" alt="">
+            <img class="img-fluid mb-3" src="#" alt="">
 
             <div class="star">
 
