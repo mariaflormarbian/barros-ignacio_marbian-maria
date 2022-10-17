@@ -40,6 +40,7 @@ class Producto extends Model
     protected $table = 'productos';
     protected $primaryKey = 'producto_id';
     protected $fillable = [
+        'categoria_id',
         'nombre',
         'precio',
         'descripcion',

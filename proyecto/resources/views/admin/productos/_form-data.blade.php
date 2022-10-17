@@ -1,5 +1,8 @@
 <?php
 /** @var \App\Models\Producto $producto */
+/** @var \Illuminate\Database\Eloquent\Collection| \App\Models\Categoria[] $categorias */
+
+
 $destacado = $producto->destacado ?? null;
 $imagen = $producto->imagen ?? null;
 $imagen_descripcion = $producto->imagen_descripcion ?? null;
@@ -72,7 +75,7 @@ $imagen_descripcion = $producto->imagen_descripcion ?? null;
         <p>Imagen actual</p>
 
         <img src="{{ Storage::disk('public')->url('imgs/' . $imagen) }}" class="d-block mx-auto img-fluid" alt="{{url($imagen_descripcion)}} ">
-        
+
         <p class="visually-hidden">Hay una imagen cargada</p>
         <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>
 
@@ -115,6 +118,25 @@ $imagen_descripcion = $producto->imagen_descripcion ?? null;
     @enderror
 
 </div>
+{{--Categorías--}}
+<div>
+    <label for="categoria_id" class="form-label">Categorías</label>
+    <select name="categoria_id" id="categoria_id" class="form-control"
+        @error('categoria_id') aria-describedby="error-categoria_id" @enderror
+    >
+        @foreach($categorias as $categoria)
+        <option value="{{ $categoria->categoria_id ?? '' }}"
+                @selected($categoria->categoria_id == old('categoria_id'))
+
+        >{{ old('nombre', $categoria->nombre ?? '')}}</option>
+    @endforeach
+    </select>
+    @error ('categoria_id')
+
+    <div class="text-danger fs-6" id="error-categoria_id"><span class="visually-hidden">Error:</span>{{ $message }}</div>
+    @enderror
+</div>
+
 
 {{-- Descripcion --}}
 <div class="col-md-12">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 
@@ -23,8 +24,9 @@ class AdminProductosController extends Controller
     public function nuevoForm()
     {
 
-        return view('admin.productos.form-nuevo');
-
+        return view('admin.productos.form-nuevo', [
+        'categorias'=>Categoria::orderBy('nombre')->get(),
+        ]);
     }
 
     public function nuevoEjecutar(Request $request)
