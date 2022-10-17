@@ -34,8 +34,8 @@
                     <dd>{{ $producto->descripcion }}</dd>
                     <dt>Imagen</dt>
                     <dd>
-                        @if ($producto->imagen !=null && Storage::disk('public')->has('imgs/' . $producto->imagen))
-                            <img src="{{url('storage/imgs/' . $producto->imagen)}}" class="d-block mx-auto img-fluid" alt="{{url($producto->imagen_descripcion)}} ">
+                        @if ($producto->imagen !=null && Storage::disk('public')->has('imgss/' . $producto->imagen))
+                            <img src="{{url('storage/imgss/' . $producto->imagen)}}" class="d-block mx-auto img-fluid" alt="{{url($producto->imagen_descripcion)}} ">
                         @else
                             No contiene ninguna imagen para eliminar
                         @endif
