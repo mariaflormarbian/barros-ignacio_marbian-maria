@@ -113,17 +113,10 @@
                                             <tr class="text-center">
                                                 <td>{{ $producto->producto_id }}</td>
                                                 <td>{{ $producto->nombre }}</td>
-                                                <td>Aca va Categoría</td>
+                                                <td>{{ $producto->categoria->nombre }}</td>
                                                 <td>$ {{ $producto->precio }}</td>
 
-                                                @if ($producto->imagen != null && Storage::disk('public')->has('imgs/' . $producto->imagen))
 
-                                                    <td>
-                                                        <img src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}" class="d-block mx-auto img-table" alt=" {{ $producto->imagen_descripcion }} ">
-
-                                                    </td>
-
-                                                @endif
 
                                                 <td class="d-flex justify-content-center align-items-center">
 

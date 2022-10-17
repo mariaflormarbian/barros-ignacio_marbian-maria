@@ -30,6 +30,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereProductoId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $categoria_id
+ * @property-read \App\Models\Categoria $categoria
+ * @method static \Illuminate\Database\Eloquent\Builder|Producto whereCategoriaId($value)
  */
 class Producto extends Model
 {
@@ -69,5 +72,10 @@ class Producto extends Model
         'imagen_descripcion.min' => 'La descripcion de la imagen debe tener al menos :min caracteres.',
         'imagen_descripcion.max' => 'La descripcion de la imagen puede tener hasta :max caracteres.',
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class,'categoria_id','categoria_id');
+    }
 
 }

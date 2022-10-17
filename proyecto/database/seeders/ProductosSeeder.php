@@ -19,6 +19,7 @@ class ProductosSeeder extends Seeder
 DB::table('productos')->insert([
     [
     'producto_id'=>1,
+    'categoria_id'=>4,
     'nombre'=>'Mini Owen',
     'precio'=>1049900,
     'descripcion'=>'Mini con calce tiro alto, rígida, color azul, con 5 bolsillos, avíos metálicos personalizados y badana simil cuero. Terminación desflecada.',
@@ -30,7 +31,8 @@ DB::table('productos')->insert([
     ],
     [
             'producto_id'=>2,
-            'nombre'=>'Mini Vasby',
+        'categoria_id'=>4,
+        'nombre'=>'Mini Vasby',
             'precio'=>1049900,
             'descripcion'=>'Mini con calce tiro alto, elastizada, color celeste, con 5 bolsillos. Avíos metalicos personalizados y badana simil cuero. Terminación desflecada. El calce es confort debido a su altisima elasticidad.',
             'imagen'=> 'pollera_minivasby.jpg',
@@ -41,6 +43,7 @@ DB::table('productos')->insert([
     ],
         [
             'producto_id'=>3,
+            'categoria_id'=>4,
             'nombre'=>'Mini Alice',
             'precio'=>1049900,
             'descripcion'=>'Mini con calce tiro alto, elastizada, color blanco, con 5 bolsillos. Avíos metalicos personalizados y badana simil cuero. Terminación desflecada. El calce es confort debido a su altisima elasticidad.',
@@ -52,6 +55,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>4,
+            'categoria_id'=>4,
             'nombre'=>'Mini Rayner',
             'precio'=>1025900,
             'descripcion'=>'Mini con calce tiro alto, elastizada, color celeste nevado, con 5 bolsillos. Avíos metalicos personalizados y badana simil cuero. Terminación desflecada. El calce es confort debido a su altisima elasticidad.',
@@ -63,6 +67,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>5,
+            'categoria_id'=>4,
             'nombre'=>'Mini Alina',
             'precio'=>1039900,
             'descripcion'=>'Mini con calce tiro alto, rigída, color negro nevado, con 5 bolsillos. Avíos metalicos personalizados y badana simil cuero. Terminación desflecada.',
@@ -74,6 +79,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>6,
+            'categoria_id'=>4,
             'nombre'=>'Mini Candace',
             'precio'=>1039930,
             'descripcion'=>'Mini con calce tiro alto, elastizada, color negro, con 5 bolsillos. Avíos metalicos personalizados y badana simil cuero. Terminación desflecada. El calce es confort debido a su altisima elasticidad.',
@@ -85,6 +91,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>7,
+            'categoria_id'=>2,
             'nombre'=>'Chupín Satya',
             'precio'=>1099970,
             'descripcion'=>'Jean color azul clásico, elastizado, tiro alto, de 5 bolsillos. Pierna ajustada, botamanga chupin y largo estándar. Ruedo clásico. El calce es confort debido a su altisima elasticidad. Avíos metalicos personalizados y badana simil cuero.',
@@ -96,6 +103,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>8,
+            'categoria_id'=>2,
             'nombre'=>'Chupín Aion',
             'precio'=>1029980,
             'descripcion'=>'Jean color celeste, elastizado, tiro alto, de 5 bolsillos. Pierna ajustada, botamanga chupin y largo estándar. Ruedo clásico. El calce es confort debido a su altisima elasticidad. Avíos metalicos personalizados y badana simil cuero.',
@@ -107,6 +115,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>9,
+            'categoria_id'=>2,
             'nombre'=>'Chupín Farah',
             'precio'=>1049900,
             'descripcion'=>'Jean color blanco, elastizado, tiro alto, de 5 bolsillos. Pierna ajustada, botamanga chupin y largo estándar. Ruedo clásico. El calce es confort debido a su altisima elasticidad. Avíos metalicos personalizados y badana simil cuero.',
@@ -118,6 +127,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>10,
+            'categoria_id'=>2,
             'nombre'=>'Chupín Key',
             'precio'=>1049900,
             'descripcion'=>'Jean color azul con desgaste, elastizado, tiro alto, de 5 bolsillos. Pierna ajustada, botamanga chupin y largo estándar. Ruedo clásico. El calce es confort debido a su altisima elasticidad. Avíos metalicos personalizados y badana simil cuero.',
@@ -129,6 +139,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>11,
+            'categoria_id'=>2,
             'nombre'=>'Chupín Eros',
             'precio'=>1078900,
             'descripcion'=>'Jean color celeste, elastizado, tiro alto, de 5 bolsillos. Pierna ajustada, botamanga chupin y largo estándar. Ruedo clásico. El calce es confort debido a su altisima elasticidad. Avíos metalicos personalizados y badana simil cuero.',
@@ -140,6 +151,7 @@ DB::table('productos')->insert([
         ],
         [
             'producto_id'=>12,
+            'categoria_id'=>1,
             'nombre'=>'Mom Sassy',
             'precio'=>1048800,
             'descripcion'=>'Jean con calce tiro alto, rigído, pierna recta, ruedo clásico. Largo estándar. Color azul, con 5 bolsillos. Avíos metalicos personalizados y badana simil cuero. Calce 100% rigído debido a su composición.',
