@@ -41,7 +41,7 @@
 
                     <div class="product text-center col-lg-3 col-md-4 col-12">
 
-                        <img class="img-fluid mb-3" src="{{url('storage/imgss/' . $producto->imagen)}}" alt="{{ $producto->imagen_descripcion }}">
+                        <img class="img-fluid mb-3" src="{{url('storage/imgs/' . $producto->imagen)}}" alt="{{ $producto->imagen_descripcion }}">
 
                         <div class="star">
 
@@ -84,7 +84,7 @@
 
             <div class="one col-lg-4 col-md-12 col-12 p-0">
 
-                <img class="img-fluid" src="{{ url('imgss/proyecto/categoria_chupines.jpg') }}" alt="">
+                <img class="img-fluid" src="{{ url('imgs/proyecto/categoria_chupines.jpg') }}" alt="">
 
                 <div class="details">
 
@@ -96,7 +96,7 @@
 
             <div class="one col-lg-4 col-md-12 col-12 p-0">
 
-                <img class="img-fluid" src="{{ 'imgss/proyecto/categoria_oxford.jpg' }}" alt="">
+                <img class="img-fluid" src="{{ 'imgs/proyecto/categoria_oxford.jpg' }}" alt="">
 
                 <div class="details">
 
@@ -108,7 +108,7 @@
 
             <div class="one col-lg-4 col-md-12 col-12 p-0">
 
-                <img class="img-fluid" src="{{ url('imgss/proyecto/categoria_mom.jpg') }}" alt="">
+                <img class="img-fluid" src="{{ url('imgs/proyecto/categoria_mom.jpg') }}" alt="">
 
                 <div class="details">
 
@@ -140,7 +140,7 @@
 
                     <div class="product text-center col-lg-3 col-md-4 col-12">
 
-                        <img class="img-fluid mb-3" src="{{url('storage/imgss/' . $producto->imagen)}}" alt="{{ $producto->imagen_descripcion  }}">
+                        <img class="img-fluid mb-3" src="{{url('storage/imgs/' . $producto->imagen)}}" alt="{{ $producto->imagen_descripcion  }}">
 
                         <div class="star">
 
