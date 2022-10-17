@@ -1,12 +1,11 @@
 <?php
 /** @var \App\Models\Producto $producto */
+$destacado = $producto->destacado ?? null;
+$imagen = $producto->imagen ?? null;
+$imagen_descripcion = $producto->imagen_descripcion ?? null;
+
 ?>
 
-@csrf
-
-@if ($errors->any()) {{-- Si la variable $errors guarda algun error, entonces... --}}
-<p class="mb-3 text-danger fs-6">Hay errores de validacion en el formulario. Por favor, revisa los datos e intenta de nuevo.</p>
-@endif
 
 <!-- Nombre -->
 <div class="col-md-4">
@@ -17,7 +16,7 @@
         id="nombre"
         name="nombre"
         class="form-control"
-        value="{{ old('nombre') }}"
+        value="{{ old('nombre', $producto->nombre ?? '') }}"
         @error('nombre') aria-describedby="error-nombre" @enderror
     >
 
@@ -38,7 +37,7 @@
         id="precio"
         name="precio"
         class="form-control"
-        value="{{ old('precio') }}"
+        value="{{ old('precio', $producto->precio ?? '') }}"
         @error('precio') aria-describedby="error-precio" @enderror
     >
 
@@ -59,7 +58,7 @@
             id="destacado"
             name="destacado"
             class="form-check-input"
-            @if(old('destacado') == 1) checked @endif
+            @if(old('destacado') == 1 or $destacado) checked @endif
             value="{{ old('destacado', 1) }}"
         >
 
@@ -68,6 +67,18 @@
 </div>
 
 <!-- Imagen -->
+<div class="mb-3" id="info-imagen">
+    @if ($imagen !=null && Storage::disk('public')->has('imgs/' . $producto->imagen))
+        <p>Imagen actual</p>
+
+        <img src="{{url('storage/imgs/' . $imagen)}}" class="d-block mx-auto img-fluid" alt="{{url($imagen_descripcion)}} ">
+        <p class="visually-hidden">Hay una imagen cargada</p>
+        <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>
+    @else
+        Actualmente no hay ninguna imagen cargada.
+    @endif
+
+</div>
 <div class="col-md-6">
 
     <label for="imagen" class="form-label">Imagen</label>
@@ -75,10 +86,11 @@
         type="file"
         id="imagen"
         name="imagen"
+        value="{{ old('imagen', $producto->imagen ?? '') }}"
         class="form-control"
+        aria-describedby="info-imagen"
     >
 
-    {{-- <div class="text-danger fs-6" id="error-imagen"><span class="visually-hidden">Error:</span>Suba una imagen</div> --}}
 
 </div>
 
@@ -91,14 +103,13 @@
         id="imagen_descripcion"
         name="imagen_descripcion"
         class="form-control"
-        value="{{ old('imagen_descripcion') }}"
+        value="{{ old('imagen_descripcion', $producto->imagen_descripcion ?? '') }}"
         @error('imagen_descripcion') aria-describedby="error-imagen_descripcion" @enderror
     >
 
     @error ('imagen_descripcion')
 
     <div class="text-danger fs-6" id="error-imagen_descripcion"><span class="visually-hidden">Error:</span>{{ $message }}</div>
-
     @enderror
 
 </div>
@@ -112,7 +123,7 @@
         name="descripcion"
         class="form-control"
         @error('descripcion') aria-describedby="error-descripcion" @enderror
-                                >{{ old('descripcion') }}</textarea>
+                                >{{ old('descripcion', $producto->descripcion ?? '') }}</textarea>
 
     @error ('descripcion')
 
