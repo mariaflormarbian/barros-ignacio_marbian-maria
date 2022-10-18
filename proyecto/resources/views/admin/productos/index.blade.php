@@ -55,7 +55,7 @@
                     </div>
 
                 </div>
-                
+
                 <div class="card-single">
 
                     <div>
@@ -70,7 +70,6 @@
 
             </div>
 
-            <!-- vinilos -->
 
             <div class="recent-grid">
 
