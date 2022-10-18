@@ -14,7 +14,7 @@
 
         <div class="main-dashboard">
 
-            @if (Session::has('statusMessage')):
+            @if (Session::has('statusMessage'))
 
                 <p>
                     <span>

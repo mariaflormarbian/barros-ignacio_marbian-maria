@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 use App\Models\Producto;
 use App\Models\Talle;
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminProductosController extends Controller
 {
@@ -49,16 +51,28 @@ class AdminProductosController extends Controller
             $data['imagen'] = $nombreImagen;
         }
 
-        $producto = Producto::create($data);
 
-        // Inserto cada talle que marco el usuario en la tabla pivot
-        $producto->talles()->attach($data['talles'] ?? []);
+        try {
+            
+            DB::transaction(function() use ($data) {
+                $producto = Producto::create($data);
+                $producto->talles()->attach($data['talles'] ?? []);
+            });
+            
+            return redirect()
+            ->route('admin.productos.index')
+            ->with('statusType', 'success')
+            ->with('statusMessage', 'El producto <b>' . e($data['nombre']) . '</b> fue creado exitosamente');
+        
+        } catch (\Throwable $th) {
+            
+            return redirect()
+            ->route('admin.productos.nuevo.form')
+            ->with('statusType', 'danger')
+            ->with('statusMessage', 'Ocurrio un error inesperado. El producto no pudo ser creado.')
+            ->withInput();
 
-        return redirect()
-        ->route('admin.productos.index')
-        ->with('statusType', 'success')
-        ->with('statusMessage', 'El producto <b>' . e($data['nombre']) . '</b> fue creado exitosamente');
-
+        }
 
     }
 
@@ -78,15 +92,27 @@ class AdminProductosController extends Controller
 
         $producto = Producto::findOrFail($id);
 
-        $producto->talles()->detach();
+        try {
+            
+            DB::transaction(function() use($producto){
+                $producto->talles()->detach();
+                $producto->delete();
+            });
+            
+            return redirect()
+            ->route('admin.productos.index')
+            ->with('statusType', 'success')
+            ->with('statusMessage', 'El producto <b>' . e($producto->nombre) . '</b> fue eliminado correctamente.');
 
-        $producto->delete();
+         } catch (\Throwable $th) {
+            
+            return redirect()
+            ->route('admin.productos.eliminar.confirmar', ['id' => $id])
+            ->with('statusType', 'danger')
+            ->with('statusMessage', 'Ocurrio un error inesperado. La producto no pudo ser eliminado.')
+            ->withInput();
 
-        return redirect()
-        ->route('admin.productos.index')
-        ->with('statusType', 'success')
-        ->with('statusMessage', 'El producto <b>' . e($producto->nombre) . '</b> fue eliminado correctamente');
-
+         }
     }
 
     public function editarForm(int $id)
@@ -121,17 +147,32 @@ class AdminProductosController extends Controller
             $imagenVieja = $producto->imagen;
         }
 
-        $producto->update($data);
+        try {
 
-        $producto->talles()->sync($data['talles'] ?? []);
+            DB::transaction(function() use ($producto, $data) {
+                $producto->update($data);
+                $producto->talles()->sync($data['talles'] ?? []);
+            });
 
-        if (isset($imagenVieja) && \Storage::disk('public')->has('imgs/' . $imagenVieja)){
-          \Storage::disk('public')->delete('imgs/' . $imagenVieja);
-        }
+            if (isset($imagenVieja) && Storage::disk('public')->has('imgs/' . $imagenVieja)) {
+                Storage::disk('public')->delete('imgs/' . $imagenVieja);
+            };
+    
+            DB::commit();
 
-        return redirect()
+            return redirect()
             ->route('admin.productos.index')
             ->with('statusType', 'success')
-            ->with('statusMessage', 'El producto <b>' . e($producto->nombre) . '</b> fue actulizado correctamente');    }
+            ->with('statusMessage', 'La producto <b>' . e($producto->nombre) . '</b> fue actualizado correctamente.');
 
+        } catch (\Throwable $th) {
+
+            return redirect()
+            ->route('admin.productos.editar.form', ['id' => $id])
+            ->with('statusType', 'danger')
+            ->with('statusMessage', 'Ocurrio un error inesperado. La producto no pudo ser actualizado.')
+            ->withInput();
+
+        }
+    }
 }
