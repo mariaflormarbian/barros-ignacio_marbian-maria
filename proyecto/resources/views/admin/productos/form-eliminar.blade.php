@@ -31,7 +31,7 @@
                     <dt>Precio</dt>
                     <dd>$ {{ $producto->precio }}</dd>
                     {{-- Nota: Cuando el texto es muy largo se rompe todo --}}
-                    <dt class="w-50">Descripción</dt>
+                    <dt class="w-50 text-center">Descripción</dt>
                     <dd>{{ $producto->descripcion }}</dd>
                     <dt>Imagen</dt>
                     <dd>

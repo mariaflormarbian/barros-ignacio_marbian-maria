@@ -99,7 +99,7 @@
 <!-- Imagen -->
 <div class="mb-3" id="info-imagen">
     @if ($imagen !=null && Storage::disk('public')->has('imgs/' . $producto->imagen))
-        <p>Imagen actual</p>
+        <p class="text-center">Imagen actual</p>
 
         <img src="{{ Storage::disk('public')->url('imgs/' . $imagen) }}" class="d-block mx-auto img-fluid" alt="{{url($imagen_descripcion)}} ">
 
@@ -160,14 +160,14 @@
         @error('categoria_id') aria-describedby="error-categoria_id" @enderror
     >
         @foreach($categorias as $categoria)
-        
+
             <option
                 value="{{ $categoria->categoria_id ?? '' }}"
                 @selected($categoria->categoria_id == old('categoria_id', $categoriaId))
             >{{ $categoria->nombre}}</option>
 
         @endforeach
-    
+
     </select>
 
     @error ('categoria_id')
@@ -186,10 +186,10 @@
         <legend>Talles</legend>
 
         @foreach ($talles as $talle)
-            
+
             <div class="form-check form-check-inline">
-                
-                <input 
+
+                <input
                     type="checkbox"
                     class="form-check-input"
                     id="talle-{{ $talle->talle_id }}"
@@ -198,9 +198,9 @@
                     @checked(in_array($talle->talle_id, old('talles', $tallesArray)))
                 >
                 <label for="talle-{{ $talle->talle_id }}" class="form-check-label">{{ $talle->nombre }}</label>
-                
+
             </div>
-            
+
         @endforeach
 
     </fieldset>
