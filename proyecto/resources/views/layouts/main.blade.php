@@ -60,7 +60,7 @@
                         <li class="nav-item">
                         <form action="{{route('auth.logout')}}" method="post">
                             @csrf
-                            <button class="bg-white text-dark pt-0" id="cerrar" type="submit">Cerrar Sesión</button>
+                            <button class="bg-white text-dark pt-0 " id="cerrar" type="submit">Cerrar Sesión</button>
                         </form>
                     </li>
                     @elseguest
