@@ -1,6 +1,7 @@
 <?php
 /** @var \Illuminate\Database\Eloquent\Collection | \App\Models\Producto[] $productos*/
 
+
 ?>
 
 @extends('layouts.admin-main')
@@ -59,7 +60,7 @@
                 <div class="card-single">
 
                     <div>
-                        <p class="h3">0</p>
+                        <p class="h3">{{ $ocultos }}</p>
                         <span>Ocultos</span>
                     </div>
                     <div>
@@ -157,7 +158,7 @@
                                                 @endif
 
                                                 <td>{{ $producto->destacado ? 'si' : 'no' }}</td>
-                                                <td>{!! $producto->publico ? '<i class="las la-eye"></i>' : '<span class="las la-eye-slash"></span>' !!}</td>
+                                                <td>{{ $producto->publico ? 'si' : 'no' }}</td>
 
                                                 <td class="d-flex justify-content-center align-items-center">
 

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Arr;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -36,6 +37,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereCategoriaId($value)
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Talle[] $talles
  * @property-read int|null $talles_count
+ * @property int $publico
+ * @method static \Illuminate\Database\Eloquent\Builder|Producto wherePublico($value)
  */
 class Producto extends Model
 {
@@ -98,6 +101,11 @@ class Producto extends Model
         return $this->talles->pluck('talle_id')->toArray();
     }
 
+    public function getProdPublic(): array
+    {
+        return $this->pluck('publico')->toArray();
+    }
+
     protected function precio():Attribute
     {
         return Attribute::make(
@@ -105,4 +113,5 @@ class Producto extends Model
             set: fn ($value)=> $value * 100,
         );
     }
+    
 }

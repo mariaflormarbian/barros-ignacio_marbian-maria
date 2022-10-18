@@ -17,9 +17,17 @@ class AdminProductosController extends Controller
 
         $productos = Producto::with(['categoria', 'talles'])->get();
         $categorias = Categoria::all(); 
+        $ocultos = 0;
+
+        foreach ($productos as $producto) {
+            if(!$producto->publico){
+                $ocultos ++;
+            }
+        }
 
         return view('admin.productos.index', [
             'productos' => $productos,
+            'ocultos' => $ocultos,
             'categorias' => $categorias,
         ]);
 
@@ -43,6 +51,7 @@ class AdminProductosController extends Controller
 
         // Si el producto no esta marcado como destacado, entonces le agrego un false. Esto lo hago porq por defecto viene null, y el campo no acepta null.
         $data['destacado'] = $data['destacado'] ?? false;
+        $data['publico'] = $data['publico'] ?? false;
 
         // Upload de imagen
         if ($request->hasFile('imagen')){
@@ -132,10 +141,14 @@ class AdminProductosController extends Controller
 
     public function editarEjecutar(Request $request, int $id)
     {
+
         $request->validate(Producto::VALIDATE_RULES, Producto::VALIDATE_MESSAGES);
 
         $producto = Producto::findOrFail($id);
         $data = $request->except(['_token']);
+
+        $data['destacado'] = $data['destacado'] ?? false;
+        $data['publico'] = $data['publico'] ?? false;
 
         // Upload de imagen
         if ($request->hasFile('imagen')){
