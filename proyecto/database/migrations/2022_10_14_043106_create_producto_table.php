@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('imagen', 255);
             $table->string('imagen_descripcion', 255)->nullable();
             $table->boolean('destacado');
+            $table->boolean('publico');
             $table->timestamps();
         });
     }

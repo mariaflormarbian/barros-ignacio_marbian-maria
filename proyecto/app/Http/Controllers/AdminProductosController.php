@@ -16,9 +16,11 @@ class AdminProductosController extends Controller
     {
 
         $productos = Producto::with(['categoria', 'talles'])->get();
+        $categorias = Categoria::all(); 
 
         return view('admin.productos.index', [
-            'productos' => $productos
+            'productos' => $productos,
+            'categorias' => $categorias,
         ]);
 
     }
@@ -27,7 +29,6 @@ class AdminProductosController extends Controller
     {
 
         return view('admin.productos.form-nuevo', [
-        'producto' => null,
         'categorias' => Categoria::orderBy('nombre')->get(),
         'talles' => Talle::orderBy('talle_id')->get(),
         ]);
