@@ -8,9 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>@yield('title') : : Ieta</title>
 
-        <!-- Fuentes -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
         <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik&display=swap" rel="stylesheet">
 
         <!-- Bootstrap CSS -->
@@ -27,7 +24,7 @@
     <body>
 
 
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        {{-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
 
             <div class="offcanvas-header">
                 <p class="h3 offcanvas-title" id="offcanvasWithBothOptionsLabel">Ieta.</p>
@@ -55,6 +52,36 @@
 
             </div>
 
+        </div> --}}
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            
+            <div class="offcanvas-header">
+                <p class="h3 offcanvas-title" id="offcanvasWithBothOptionsLabel"><span class="lab la-accusoft"></span>  Play Vinilo's</p>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            
+            <div class="sidebar offcanvas-body">
+                
+                <nav class="sidebar-menu">
+                    
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="{{ route('home') }}" ><span class="las la-receipt" >Volver a home</span> </a>
+                        </li>
+                        <li>
+                            <form action="{{route('auth.logout')}}" method="post">
+                                @csrf
+                                <button type="submit"><span class="las la-user-circle " >Cerrar Sesión </span></button>
+                            </form>
+                        </li>
+                    
+                    </ul>
+            
+                </nav>
+            
+            </div>
+    
         </div>
 
         <main class="main-content">

@@ -22,7 +22,7 @@
 
                         <div class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
 
-                            Completa los datos del formulario.
+                            <h2 class="h5">Completa los datos del formulario.</h2>
 
                         </div>
 

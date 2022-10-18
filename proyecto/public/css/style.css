@@ -64,8 +64,6 @@ button,
     text-transform: uppercase;
 }
 
-
-
 hr {
     width: 30px;
     height: 2px;
@@ -496,7 +494,8 @@ textarea {
 /* sidebar */
 
 .sidebar-menu ul li a:hover{
-    background-color: black;
+    background-color: #fb774b;
+    color: white;
 }
 
 .sidebar-menu{

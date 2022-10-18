@@ -4,7 +4,6 @@
     /** @var \Illuminate\Database\Eloquent\Collection| \App\Models\Categoria[] $categorias */
     /** @var \Illuminate\Database\Eloquent\Collection| \App\Models\Talles[] $talles */
 
-    // NOTA: ver si sacando todos los null funciona, porq ahora mande por el controler la variable producto = null cuando piden la vista form-nuevo
     $destacado = $producto->destacado ?? null;
     $publico = $producto->publico ?? null;
     $imagen_descripcion = $producto->imagen_descripcion ?? null;
@@ -17,8 +16,6 @@
     }else{
         $tallesArray = [];
     }
-
-
 
 ?>
 
@@ -122,8 +119,6 @@
         id="imagen"
         name="imagen"
         class="form-control"
-        {{-- NOTA: Arreglar esto porq en caso de @error el atributo se repite 2 veces --}}
-        aria-describedby="info-imagen"
         @error('imagen') aria-describedby="error-imagen" @enderror
     >
 
