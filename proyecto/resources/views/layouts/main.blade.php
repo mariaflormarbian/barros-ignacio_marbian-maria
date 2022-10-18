@@ -49,13 +49,18 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link @yield('carrito')" href="{{ route('carrito') }}"><i class="las la-shopping-bag"></i></a>
+                        <a class="nav-link @yield('carrito')" href="#"><i class="las la-shopping-bag not-active"></i></a>
                     </li>
                     @auth
                         <li class="nav-item">
+                        <li class="nav-item">
+                            <a class="nav-link"  href="{{ route('admin.productos.index') }}">Admin</a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
                         <form action="{{route('auth.logout')}}" method="post">
                             @csrf
-                            <button class="nav-link" type="submit">Cerrar Sesión</button>
+                            <button class=" nav-link" type="submit">Cerrar Sesión</button>
                         </form>
                     </li>
                     @elseguest

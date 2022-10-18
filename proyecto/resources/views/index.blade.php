@@ -72,7 +72,8 @@
         <div class="container">
 
             <h3>Aprovechá<br> Descuentos hasta 20% OFF</h3>
-            <button class="text-uppercase">Comprá</button>
+            <a class="nav-link text-uppercase boton" href="{{ route('productos') }}">Comprá</a>
+
 
         </div>
 

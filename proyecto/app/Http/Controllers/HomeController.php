@@ -27,12 +27,7 @@ class HomeController extends Controller
 
     }
 
-    public function carrito()
-    {
 
-        return view('home.carrito');
-
-    }
 
     public function contacto()
     {

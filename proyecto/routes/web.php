@@ -13,40 +13,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::controller(\App\Http\Controllers\HomeController::class)->group(function ()
+{
+
 // HOME
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])
-->name('home');
+    Route::get('/', 'index')
+        ->name('home');
 
-    // NOTA: Cambiar el controlador a "HomeController" ya que el controllador "ProductosController" ira solamente las funciones relacionadas con el admin de productos
-Route::get('/productos', [\App\Http\Controllers\HomeController::class, 'productos'])
-->name('productos');
+    Route::get('/productos',  'productos')
+        ->name('productos');
 
-Route::get('producto-detalle/{id}',[\App\Http\Controllers\HomeController::class, 'detalle'])
-->name('producto.detalle')
-->whereNumber('id');
+    Route::get('producto-detalle/{id}', 'detalle')
+        ->name('producto.detalle')
+        ->whereNumber('id');
 
-Route::get('carrito',[\App\Http\Controllers\HomeController::class, 'carrito'])
-->name('carrito');
+    Route::get('contacto', 'contacto')
+        ->name('contacto');
 
-Route::get('contacto',[\App\Http\Controllers\HomeController::class, 'contacto'])
-->name('contacto');
+    Route::get('sobre-nosotros', 'sobre_nosotros')
+        ->name('sobre.nosotros');
 
-Route::get('sobre-nosotros',[\App\Http\Controllers\HomeController::class, 'sobre_nosotros'])
-    ->name('sobre.nosotros');
-
+}
+);
 
 
-// AUTENTICACIÓN
 
-Route::get('iniciar-sesion',[\App\Http\Controllers\AuthController::class, 'loginForm'])
-    ->name('auth.login.form');
-Route::post('iniciar-sesion',[\App\Http\Controllers\AuthController::class, 'loginEjecutar'])
-    ->name('auth.login.ejecutar');
-Route::post('cerrar-sesion',[\App\Http\Controllers\AuthController::class, 'logout'])
-    ->name('auth.logout')
-    ->middleware('auth');
+Route::controller(\App\Http\Controllers\AuthController::class)->group(function ()
+{
+    // AUTENTICACIÓN
 
+    Route::get('iniciar-sesion', 'loginForm')
+        ->name('auth.login.form');
+    Route::post('iniciar-sesion', 'loginEjecutar')
+        ->name('auth.login.ejecutar');
+    Route::post('cerrar-sesion', 'logout')
+        ->name('auth.logout')
+        ->middleware('auth');
+}
+);
 
 Route::middleware('auth')
     ->controller(\App\Http\Controllers\AdminProductosController::class)
@@ -86,10 +92,7 @@ Route::middleware('auth')
         ->whereNumber('id');
 
 
-
-
 }
-
 
 );
 

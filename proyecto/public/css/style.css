@@ -64,10 +64,7 @@ button,
     text-transform: uppercase;
 }
 
-button:hover,
-.product a:hover {
-    background-color: #3a3833;
-}
+
 
 hr {
     width: 30px;
@@ -239,6 +236,7 @@ hr {
 .product:hover .buy-btn {
     transform: translateY(0);
     opacity: 1;
+    text-decoration: none;
 }
 
 #banner {
@@ -619,6 +617,7 @@ font-size: 1.1rem;
     border-bottom: 1px solid #f0f0f0;
 }
 .card-header a{
+    text-decoration: none;
     background:#fb774b;
     border-radius: 10px;
     color: #fff !important;
@@ -665,51 +664,37 @@ table tbody tr td form button{
 
 /* INICIO SESION */
 
-.login{
-    margin-top: 3%;
-}
 #form-login{
-    max-width: 60%;
+    border: 1px solid #fb774b;
+    padding: 3%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-#form-login p:first-of-type {
-    text-align: center;
-    letter-spacing: 1px;
-    font-size: 1.3rem;
-}
 
-#form-login form button{
+/*  BOTON*/
+.boton{
+    margin-top: 3%;
+    text-decoration: none;
     background: #fb774b;
-    color: white;
-    letter-spacing: .5px;
+    border-radius: 5px;
+    color: #fff !important;
+    padding: 0.5rem 2rem;
+    border: 1px solid #fb774b;
+    width: fit-content;
+}
+.boton:hover{
+    opacity: 0.7;
+    background-color: black;
+    border: none;
+    transition: opacity .40s ease-in-out;
+
+}
+.not-active {
+    pointer-events: none;
+    cursor: default;
 }
 
-#form-login form button:hover{
-    background:hsl(0, 16%, 55%);
-}
-
-.rcp-pasword{
-    font-size: 12px;
-}
-
-
-@media  screen and (max-width: 960px){
-    .nav-link{
-        border-top: rgba(141, 56, 52, 0.103) 1px solid;
-        border-bottom: rgba(141, 56, 52, 0.103) 1px solid;
-    }
-    .nav-link:hover{
-        background-color: rgb(141, 56, 52);
-        color: #f0f0f0;
-    }
-    .nav-link::after{
-        content: none;
-    }
-}
-
-@media  screen and (max-width: 560px){
-
-    .cards{
-        grid-template-columns: 100%;
-    }
+.form-check-input:checked{
+    background-color: coral;
+    border-color:coral;
 }

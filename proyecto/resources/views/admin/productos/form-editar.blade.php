@@ -38,7 +38,7 @@
                             @include('admin.productos._form-data')
 
 
-                            <button type="submit" class="btn col-5 m-auto mt-3 mb-3">Editar</button>
+                            <button type="submit" class=" col-5 m-auto mt-3 mb-3 boton">Editar</button>
 
                         </form>
 

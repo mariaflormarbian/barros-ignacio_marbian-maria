@@ -47,7 +47,7 @@
                     @csrf
                     <p>EStás por eliminar el siguiente producto. ¿Estás seguro/a de querer continuar?</p>
                     <input type="hidden" name="id" value="">
-                    <button type="submit" class="btn col-md-3 m-auto mt-3">Eliminar</button>
+                    <button type="submit" class="boton col-md-3 m-auto mt-3">Eliminar</button>
                 </form>
 
             </div>
