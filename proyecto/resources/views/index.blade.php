@@ -18,7 +18,8 @@
             <h1><span>Diseños a medida,</span> cómodos y suaves</h1>
             <p>Aprovecha nuestros descuentos en efectivo</p>
             <button>Comprá ahora</button>
-
+            {{-- Nota: ver como arreglar esto --}}
+            {{-- <a href="{{ route('productos') }}" class="btn">Ver producto</a> --}}
         </div>
 
     </section>
@@ -55,7 +56,7 @@
 
                         <h3 class="p-name">{{ $producto->nombre }}</h3>
                         <p class="p-price h4">${{ $producto->precio }}</p>
-                        <a class="buy-btn ">Comprá</a>
+                        <a href="{{ route('producto.detalle', ['id' => $producto->producto_id]) }}" class="buy-btn">Ver producto</a>
 
                     </div>
 
@@ -155,7 +156,7 @@
 
                         <h3 class="p-name">{{ $producto->nombre  }}</h3>
                         <p class="p-price h4">${{ $producto->precio }}</p>
-                        <a class="buy-btn">Comprá</a>
+                        <a href="{{ route('producto.detalle', ['id' => $producto->producto_id]) }}" class="buy-btn">Ver producto</a>
 
                     </div>
 
