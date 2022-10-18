@@ -49,7 +49,7 @@
                 <div class="card-single">
                     <div>
                         <p class="h3">{{ count($categorias) }}</p>
-                        <span>Categorias</span>
+                        <span>Categorías</span>
                     </div>
                     <div>
                         <span class="las la-clipboard-list"></span>

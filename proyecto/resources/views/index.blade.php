@@ -14,9 +14,8 @@
 
         <div class="container">
 
-            <h5>NEW ARRAIVALS</h5>
-            <h1><span>Diseños a medida,</span> cómodos y suaves</h1>
-            <p>Aprovecha nuestros descuentos en efectivo</p>
+            <h2><span>Diseños a medida,</span> cómodos y suaves</h2>
+            <p>Aprovechá nuestros descuentos en efectivo</p>
             <a class="nav-link text-uppercase boton" href="{{ route('productos') }}">Comprá ahora</a>
         </div>
 
@@ -95,7 +94,7 @@
                 @if($producto->producto_id > 4 and $producto->producto_id < 9)
 
                     <div class="product text-center col-lg-3 col-md-4 col-12">
-                        
+
                         <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}" alt="{{ $producto->imagen_descripcion  }}">
 
                         <div class="star">
@@ -137,7 +136,7 @@
                     <hr class="mx-auto">
                 </div>
 
-                <p class = "text-center text-muted">Podes recibir todas las noticias de último momento</p>
+                <p class = "text-center text-muted">Podés recibir todas las noticias de último momento</p>
 
                 <div class = "input-group mb-5 mt-3">
                     <input type = "text" class = "form-control" placeholder="Tu Email ...">

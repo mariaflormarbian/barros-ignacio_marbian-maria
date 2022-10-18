@@ -81,7 +81,7 @@
 <div class="col-md-2 align-items-center d-flex">
 
     <div class="form-check form-switch ">
-        <label for="publico" class="form-check-label">Publico</label>
+        <label for="publico" class="form-check-label">Público</label>
         <input
             type="checkbox"
             id="publico"
@@ -159,14 +159,14 @@
         @error('categoria_id') aria-describedby="error-categoria_id" @enderror
     >
         @foreach($categorias as $categoria)
-        
+
             <option
                 value="{{ $categoria->categoria_id ?? '' }}"
                 @selected($categoria->categoria_id == old('categoria_id', $categoriaId))
             >{{ $categoria->nombre}}</option>
 
         @endforeach
-    
+
     </select>
 
     @error ('categoria_id')
@@ -185,10 +185,10 @@
         <legend>Talles</legend>
 
         @foreach ($talles as $talle)
-            
+
             <div class="form-check form-check-inline">
-                
-                <input 
+
+                <input
                     type="checkbox"
                     class="form-check-input"
                     id="talle-{{ $talle->talle_id }}"
@@ -197,9 +197,9 @@
                     @checked(in_array($talle->talle_id, old('talles', $tallesArray)))
                 >
                 <label for="talle-{{ $talle->talle_id }}" class="form-check-label">{{ $talle->nombre }}</label>
-                
+
             </div>
-            
+
         @endforeach
 
     </fieldset>
@@ -209,7 +209,7 @@
 {{-- Descripcion --}}
 <div class="col-md-12">
 
-    <label for="descripcion" class="form-label">Descripcion</label>
+    <label for="descripcion" class="form-label">Descripción</label>
     <textarea
         id="descripcion"
         name="descripcion"

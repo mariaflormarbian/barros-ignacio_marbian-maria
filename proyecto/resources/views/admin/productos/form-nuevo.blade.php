@@ -22,7 +22,7 @@
 
                         <div class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
 
-                            <h2 class="h5">Completa los datos del formulario.</h2>
+                            <h2 class="h5">Completá los datos del formulario.</h2>
 
                         </div>
 
@@ -30,8 +30,8 @@
 
                             @csrf
 
-                            @if ($errors->any()) 
-                                <p class="mb-3 text-danger fs-6">Hay errores de validacion en el formulario. Por favor, revisa los datos e intenta de nuevo.</p>
+                            @if ($errors->any())
+                                <p class="mb-3 text-danger fs-6">Hay errores de validación en el formulario. Por favor, revisá los datos e intentá de nuevo.</p>
                             @endif
 
                             @include('admin.productos._form-data')
