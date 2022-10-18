@@ -29,9 +29,6 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
         ->name('producto.detalle')
         ->whereNumber('id');
 
-    Route::get('carrito', 'carrito')
-        ->name('carrito');
-
     Route::get('contacto', 'contacto')
         ->name('contacto');
 

@@ -68,7 +68,7 @@
                         <div class="card-header">
 
                             <h2>
-                                Vinilos
+                                Productos
                             </h2>
 
                             <a href="{{ route('admin.productos.nuevo.form') }}">Agregar Producto</a>

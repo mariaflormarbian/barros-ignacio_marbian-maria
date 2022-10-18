@@ -49,7 +49,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link @yield('carrito')" href="{{ route('carrito') }}"><i class="las la-shopping-bag"></i></a>
+                        <a class="nav-link @yield('carrito')" href="#"><i class="las la-shopping-bag not-active"></i></a>
                     </li>
                     @auth
                         <li class="nav-item">
