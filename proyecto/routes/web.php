@@ -36,36 +36,60 @@ Route::get('sobre-nosotros',[\App\Http\Controllers\HomeController::class, 'sobre
     ->name('sobre.nosotros');
 
 
+
+// AUTENTICACIÓN
+
+Route::get('iniciar-sesion',[\App\Http\Controllers\AuthController::class, 'loginForm'])
+    ->name('auth.login.form');
+Route::post('iniciar-sesion',[\App\Http\Controllers\AuthController::class, 'loginEjecutar'])
+    ->name('auth.login.ejecutar');
+Route::post('cerrar-sesion',[\App\Http\Controllers\AuthController::class, 'logout'])
+    ->name('auth.logout')
+    ->middleware('auth');
+
+
+Route::middleware('auth')
+    ->controller(\App\Http\Controllers\AdminProductosController::class)
+    ->group(function (){
+
+
 // ADMIN
 
-Route::get('admin/productos',[\App\Http\Controllers\AdminProductosController::class, 'index'])
-->name('admin.productos.index');
+    Route::get('admin/productos','index')
+        ->name('admin.productos.index');
 
 // GRABAR
-Route::get('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosController::class, 'nuevoForm'])
-->name('admin.productos.nuevo.form');
+    Route::get('admin/productos/nuevo', 'nuevoForm')
+        ->name('admin.productos.nuevo.form');
 
-Route::post('admin/productos/nuevo',[\App\Http\Controllers\AdminProductosController::class, 'nuevoEjecutar'])
-->name('admin.productos.nuevo.ejecutar');
+
+    Route::post('admin/productos/nuevo', 'nuevoEjecutar')
+        ->name('admin.productos.nuevo.ejecutar');
+
 
 // EDITAR
-Route::get('admin/productos/{id}/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarForm'])
-->name('admin.productos.editar.form')
-->whereNumber('id');
+    Route::get('admin/productos/{id}/editar', 'editarForm')
+        ->name('admin.productos.editar.form')
+        ->whereNumber('id');
 
-Route::post('admin/productos/{id}/editar',[\App\Http\Controllers\AdminProductosController::class, 'editarEjecutar'])
-->name('admin.productos.editar.ejecutar')
-->whereNumber('id');
+    Route::post('admin/productos/{id}/editar', 'editarEjecutar')
+        ->name('admin.productos.editar.ejecutar')
+        ->whereNumber('id');
 
 // ELIMINAR
-Route::get('admin/productos/{id}/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarConfirmar'])
-->name('admin.productos.eliminar.confirmar')
-->whereNumber('id');
+    Route::get('admin/productos/{id}/eliminar', 'eliminarConfirmar')
+        ->name('admin.productos.eliminar.confirmar')
+        ->whereNumber('id');
 
-Route::post('admin/productos/{id}/eliminar',[\App\Http\Controllers\AdminProductosController::class, 'eliminarEjecutar'])
-->name('admin.productos.eliminar.ejecutar')
-->whereNumber('id');
+    Route::post('admin/productos/{id}/eliminar','eliminarEjecutar')
+        ->name('admin.productos.eliminar.ejecutar')
+        ->whereNumber('id');
 
 
 
+
+}
+
+
+);
 

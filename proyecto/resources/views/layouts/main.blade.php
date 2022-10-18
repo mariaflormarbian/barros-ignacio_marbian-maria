@@ -47,15 +47,24 @@
                     <li class="nav-item">
                         <a class="nav-link @yield('sobre-nosotros')" href="{{ route('sobre.nosotros') }}">Sobre Nosotros</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Iniciar Sesion</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cerrar Sesion</a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link @yield('carrito')" href="{{ route('carrito') }}"><i class="las la-shopping-bag"></i></a>
                     </li>
+                    @auth
+                        <li class="nav-item">
+                        <form action="{{route('auth.logout')}}" method="post">
+                            @csrf
+                            <button class="nav-link" type="submit">Cerrar Sesión</button>
+                        </form>
+                    </li>
+                    @elseguest
+                        <li class="nav-item">
+                            <a class="nav-link" @yield('iniciar-sesion') href="{{ route('auth.login.form') }}">Iniciar Sesion</a>
+                        </li>
+                    @endauth
+
+
 
                 </ul>
 

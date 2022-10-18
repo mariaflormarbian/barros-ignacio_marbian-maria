@@ -665,6 +665,9 @@ table tbody tr td form button{
 
 /* INICIO SESION */
 
+.login{
+    margin-top: 3%;
+}
 #form-login{
     max-width: 60%;
 }
