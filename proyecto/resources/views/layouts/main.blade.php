@@ -23,7 +23,7 @@
 
         <div class="container">
 
-            <img src="{{ url('storage/imgs/logo.png') }}" width="50" height="50" alt="Logo ieta color negro">
+            <img src="{{ Storage::disk('public')->url('imgs/logo.png') }}" width="50" height="50" alt="Logo ieta color negro">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -90,13 +90,13 @@
         <div class="row container mx-auto pt-5">
 
             <div class="footer-one col-lg-4 col-md-6 col-12">
-
-                <img src="{{ url('storage/imgs/logo_footer.png') }}"  alt="Logo ieta color blanco">
+                
+                <img src="{{ Storage::disk('public')->url('imgs/logo_footer.png') }}"  alt="Logo ieta color blanco">
 
                 <p class="pt-3">Podés visitarnos en nuestro Showroom</p>
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <img src="{{ url('storage/imgs/payment.png') }}" alt="tarjetas de crédito y débito">
+                    <img src="{{ Storage::disk('public')->url('imgs/payment.png') }}" alt="tarjetas de crédito y débito">
                 </div>
 
             </div>
@@ -127,11 +127,11 @@
                 <div class="row">
 
 
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_key.jpg') }}" alt="posteo de instagram chupin key">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_aion.jpg') }}" alt="posteo de instagram chupin aion">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_eros.jpg') }}" alt="posteo de instagram chupin eros">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_farah.jpg') }}" alt="posteo de instagram chupin farah">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_satya.jpg') }}" alt="posteo de instagram chupin satya">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_key.jpg') }}" alt="posteo de instagram chupin key">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_aion.jpg') }}" alt="posteo de instagram chupin aion">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_eros.jpg') }}" alt="posteo de instagram chupin eros">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_farah.jpg') }}" alt="posteo de instagram chupin farah">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_satya.jpg') }}" alt="posteo de instagram chupin satya">
 
                 </div>
 

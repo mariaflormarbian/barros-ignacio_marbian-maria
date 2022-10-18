@@ -24,11 +24,11 @@
                         <img src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}" class="small-img img-fluid" alt="{{url($producto->imagen)}}">
                     </div>
                     <div class="small-img-col">
-                        <img src="{{ url('storage/imgs/talles.jpg') }}" class="img-fluid small-img" alt="Foto de la tabla de talles de un jean o pollera">
+                        <img src="{{ Storage::disk('public')->url('imgs/talles.jpg') }}" class="img-fluid small-img" alt="Foto de la tabla de talles de un jean o pollera">
                     </div>
 
                     <div class="small-img-col">
-                        <img src="{{ url('storage/imgs/mediciones.png') }}" class="img-fluid small-img" alt="Foto de las instrucciones para medir un jean o pollera">
+                        <img src="{{ Storage::disk('public')->url('imgs/mediciones.png') }}" class="img-fluid small-img" alt="Foto de las instrucciones para medir un jean o pollera">
                     </div>
 
 

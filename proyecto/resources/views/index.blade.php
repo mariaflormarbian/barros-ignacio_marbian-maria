@@ -78,50 +78,6 @@
 
     </section>
 
-    <section id="new" class="w-100">
-        <h2 class="text-center">Categorías</h2>
-        <div class="row p-0 m-0">
-
-            <div class="one col-lg-4 col-md-12 col-12 p-0">
-
-                <img class="img-fluid" src="{{ url('storage/imgs/categoria_chupines.jpg') }}" alt="Imagen categoría jean chupines">
-
-                <div class="details">
-
-                    <a href="#" class="btn text-uppercase">Ver</a>
-
-                </div>
-
-            </div>
-
-            <div class="one col-lg-4 col-md-12 col-12 p-0">
-
-                <img class="img-fluid" src="{{ url('storage/imgs/categoria_oxford.jpg') }}" alt="Imagen categoría jean oxford">
-
-                <div class="details">
-
-                    <a href="#" class="btn text-uppercase">Ver</a>
-
-                </div>
-
-            </div>
-
-            <div class="one col-lg-4 col-md-12 col-12 p-0">
-
-                <img class="img-fluid" src="{{ url('storage/imgs/categoria_mom.jpg') }}" alt="Imagen categoría jean mom">
-
-                <div class="details">
-
-                    <a href="#" class="btn text-uppercase">Ver</a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
     <section id="clothes" class="my-5">
 
         <div class="container text-center mt-5 py-5">
@@ -139,8 +95,8 @@
                 @if($producto->producto_id > 4 and $producto->producto_id < 9)
 
                     <div class="product text-center col-lg-3 col-md-4 col-12">
-
-                        <img class="img-fluid mb-3" src="{{url('storage/imgs/' . $producto->imagen)}}" alt="{{ $producto->imagen_descripcion  }}">
+                        
+                        <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}" alt="{{ $producto->imagen_descripcion  }}">
 
                         <div class="star">
 
