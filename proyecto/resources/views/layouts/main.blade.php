@@ -147,9 +147,9 @@
                     <p>ieta eCommerce © 2022. Todos los derechos reservados</p>
                 </div>
                 <div class="text-center col-12">
-                    <a href="#"><i class="lab la-facebook-f"></i></a>
-                    <a href="#"><i class="lab la-twitter"></i></a>
-                    <a href="#"><i class="lab la-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/"><i class="lab la-facebook-f"></i></a>
+                    <a href="https://twitter.com/"><i class="lab la-twitter"></i></a>
+                    <a href="https://linkedin.com/"><i class="lab la-linkedin-in"></i></a>
                 </div>
 
             </div>

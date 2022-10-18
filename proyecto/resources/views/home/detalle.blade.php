@@ -1,5 +1,6 @@
 <?php
     /** @var \App\Models\Producto $producto */
+
 ?>
 
 @extends('layouts.main')
@@ -39,7 +40,7 @@
             <div class="col-lg-5 col-md-12 col-12">
 
                 <h2>{{ $producto->nombre }}</h2>
-                <h3 class="py-4">PONER LA CATEGORIA</h3>
+                <h3 class="py-4">{{ $producto->categoria->nombre }}</h3>
                 <p>${{ $producto->precio }}</p>
 
                 <select class="my-3">
@@ -79,85 +80,34 @@
 
         <div class="row mx-auto container-fluid">
 
-            <div class="product text-center col-lg-3 col-md-4 col-12">
+            @foreach ($productos as $prod)
+                
+                @if ($prod->getCategoriaId() === $producto->getCategoriaId())
 
-                <img class="img-fluid mb-3" src="#" alt="">
+                    <div  class="product text-center col-lg-3 col-md-4 col-12">
+                        <picture>
+                            <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $prod->imagen) }}" alt="{{ $prod->imagen_descripcion }}">
+                        </picture>
+            
+                        <div class="star">
+            
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+                            <i class="las la-star"></i>
+            
+                        </div>
+            
+                        <h3 class="p-name">{{ $prod->nombre }}</h3>
+                        <p class="p-price h4">${{ $prod->precio }}</p>
+                        <a href="{{ route('producto.detalle', ['id' => $prod->producto_id]) }}" class="buy-btn">Ver producto</a>
+            
+                    </div>
 
-                <div class="star">
+                @endif
 
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Sport Boots</h5>
-                <h4 class="p-price">$92.00</h4>
-                <button class="buy-btn">Buy Now</button>
-
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-
-                <img class="img-fluid mb-3" src="#" alt="">
-
-                <div class="star">
-
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Sport Boots</h5>
-                <h4 class="p-price">$92.00</h4>
-                <button class="buy-btn">Buy Now</button>
-
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-
-                <img class="img-fluid mb-3" src="#" alt="">
-
-                <div class="star">
-
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Sport Boots</h5>
-                <h4 class="p-price">$92.00</h4>
-                <button class="buy-btn">Buy Now</button>
-
-            </div>
-
-            <div class="product text-center col-lg-3 col-md-4 col-12">
-
-                <img class="img-fluid mb-3" src="#" alt="">
-
-                <div class="star">
-
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-                    <i class="las la-star"></i>
-
-                </div>
-
-                <h5 class="p-name">Sport Boots</h5>
-                <h4 class="p-price">$92.00</h4>
-                <button class="buy-btn">Buy Now</button>
-
-            </div>
+            @endforeach
 
         </div>
 

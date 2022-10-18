@@ -17,9 +17,7 @@
             <h5>NEW ARRAIVALS</h5>
             <h1><span>Diseños a medida,</span> cómodos y suaves</h1>
             <p>Aprovecha nuestros descuentos en efectivo</p>
-            <button>Comprá ahora</button>
-            {{-- Nota: ver como arreglar esto --}}
-            {{-- <a href="{{ route('productos') }}" class="btn">Ver producto</a> --}}
+            <a class="nav-link text-uppercase boton" href="{{ route('productos') }}">Comprá ahora</a>
         </div>
 
     </section>
