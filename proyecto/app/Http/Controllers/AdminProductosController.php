@@ -59,6 +59,9 @@ class AdminProductosController extends Controller
             $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['nombre']) . "." . $imagen->extension();
             $imagen->storeAs('imgs', $nombreImagen, 'public');
             $data['imagen'] = $nombreImagen;
+        }else{
+            $default = 'img-default.png';
+            $data['imagen'] = $default;
         }
 
 

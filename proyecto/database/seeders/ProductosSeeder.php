@@ -62,7 +62,7 @@ DB::table('productos')->insert([
             'nombre'=>'Mini Rayner',
             'precio'=>1025900,
             'descripcion'=>'Mini con calce tiro alto, elastizada, color celeste nevado, con 5 bolsillos. Avíos metalicos personalizados y badana simil cuero. Terminación desflecada. El calce es confort debido a su altisima elasticidad.',
-            'imagen'=> 'pollera_miniraner.jpg',
+            'imagen'=> 'pollera_minirayna.jpg',
             'imagen_descripcion'=>'Modelo posando pollera mini rayner color azul',
             'destacado'=> false,
             'publico' => true,

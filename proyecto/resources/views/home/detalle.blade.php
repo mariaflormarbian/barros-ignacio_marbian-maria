@@ -24,7 +24,7 @@
                         <img src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}" width="100" class="small-img" alt="{{url($producto->imagen)}}">
                     </div>
                     <div class="small-img-col">
-                        <img src="{{ url('storage/imgs/talles.png') }}" width="130" class="small-img" alt="Foto de la tabla de talles de un jean o pollera">
+                        <img src="{{ url('storage/imgs/talles.jpg') }}" width="130" class="small-img" alt="Foto de la tabla de talles de un jean o pollera">
                     </div>
 
                     <div class="small-img-col">
