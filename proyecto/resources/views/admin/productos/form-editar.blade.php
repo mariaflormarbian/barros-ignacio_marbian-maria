@@ -1,5 +1,4 @@
 <?php
-/** @var \App\Models\Producto $producto */
 /** @var \Illuminate\Support\ViewErrorBag $errors */
 ?>
 

@@ -94,7 +94,10 @@
                                             </th>
                                             <th scope="col">
                                                 Precio
-                                                </th>
+                                            </th>
+                                            <th scope="col">
+                                                Talles
+                                            </th>
                                             <th scope="col">
                                                 Imagen
                                             </th>
@@ -115,6 +118,14 @@
                                                 <td>{{ $producto->nombre }}</td>
                                                 <td>{{ $producto->categoria->nombre }}</td>
                                                 <td>$ {{ $producto->precio }}</td>
+
+                                                <td>
+                                                    @forelse ($producto->talles as $talle)
+                                                        {{ $talle->nombre }}
+                                                    @empty
+                                                        No especificado
+                                                    @endforelse
+                                                </td>
 
                                                 @if ($producto->imagen != null && Storage::disk('public')->has('imgs/' . $producto->imagen))
 

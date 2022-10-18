@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * App\Models\Producto
  *
  * @property int $producto_id
+ * @property int $categoria_id
  * @property string $nombre
  * @property int $precio
  * @property string $descripcion
@@ -17,6 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $destacado
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Categoria $categoria
  * @method static \Illuminate\Database\Eloquent\Builder|Producto newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Producto newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Producto query()
@@ -30,9 +32,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereProductoId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereUpdatedAt($value)
  * @mixin \Eloquent
- * @property int $categoria_id
- * @property-read \App\Models\Categoria $categoria
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereCategoriaId($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Talle[] $talles
+ * @property-read int|null $talles_count
  */
 class Producto extends Model
 {
@@ -77,6 +79,23 @@ class Producto extends Model
     public function categoria()
     {
         return $this->belongsTo(Categoria::class,'categoria_id','categoria_id');
+    }
+
+    public function talles()
+    {
+        return $this->belongsToMany(
+            Talle::class,
+            'productos_tienen_talles',
+            'producto_id',
+            'talle_id',
+            'producto_id',
+            'talle_id',
+        );
+    }
+
+    public function getTallesId(): array
+    {
+        return $this->talles->pluck('talle_id')->toArray();
     }
 
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use App\Models\Producto;
+use App\Models\Talle;
 use Illuminate\Http\Request;
 
 class AdminProductosController extends Controller
@@ -12,8 +13,7 @@ class AdminProductosController extends Controller
     public function index()
     {
 
-        $productos = Producto::with(['categoria'])->get();
-
+        $productos = Producto::with(['categoria', 'talles'])->get();
 
         return view('admin.productos.index', [
             'productos' => $productos
@@ -25,7 +25,9 @@ class AdminProductosController extends Controller
     {
 
         return view('admin.productos.form-nuevo', [
-        'categorias'=>Categoria::orderBy('nombre')->get(),
+        'producto' => null,
+        'categorias' => Categoria::orderBy('nombre')->get(),
+        'talles' => Talle::orderBy('talle_id')->get(),
         ]);
     }
 
@@ -47,8 +49,10 @@ class AdminProductosController extends Controller
             $data['imagen'] = $nombreImagen;
         }
 
+        $producto = Producto::create($data);
 
-        Producto::create($data);
+        // Inserto cada talle que marco el usuario en la tabla pivot
+        $producto->talles()->attach($data['talles'] ?? []);
 
         return redirect()
         ->route('admin.productos.index')
@@ -74,6 +78,8 @@ class AdminProductosController extends Controller
 
         $producto = Producto::findOrFail($id);
 
+        $producto->talles()->detach();
+
         $producto->delete();
 
         return redirect()
@@ -90,8 +96,8 @@ class AdminProductosController extends Controller
 
         return view('admin.productos.form-editar', [
             'producto' => $producto,
-            'categorias'=>Categoria::orderBy('nombre')->get(),
-
+            'categorias' => Categoria::orderBy('nombre')->get(),
+            'talles' => Talle::orderBy('talle_id')->get(),
         ]);
 
 
@@ -104,8 +110,6 @@ class AdminProductosController extends Controller
         $producto = Producto::findOrFail($id);
         $data = $request->except(['_token']);
 
-
-
         // Upload de imagen
         if ($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
@@ -116,7 +120,11 @@ class AdminProductosController extends Controller
 
             $imagenVieja = $producto->imagen;
         }
+
         $producto->update($data);
+
+        $producto->talles()->sync($data['talles'] ?? []);
+
         if (isset($imagenVieja) && \Storage::disk('public')->has('imgs/' . $imagenVieja)){
           \Storage::disk('public')->delete('imgs/' . $imagenVieja);
         }

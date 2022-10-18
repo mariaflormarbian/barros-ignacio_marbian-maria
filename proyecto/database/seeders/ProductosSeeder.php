@@ -17,22 +17,22 @@ class ProductosSeeder extends Seeder
     public function run()
     {
 DB::table('productos')->insert([
-    [
-    'producto_id'=>1,
-    'categoria_id'=>4,
-    'nombre'=>'Mini Owen',
-    'precio'=>1049900,
-    'descripcion'=>'Mini con calce tiro alto, rígida, color azul, con 5 bolsillos, avíos metálicos personalizados y badana simil cuero. Terminación desflecada.',
-    'imagen'=> 'pollera_miniowen.jpg',
-    'imagen_descripcion'=>'Modelo posando pollera mini owen color negro',
-    'destacado'=> false,
-    'created_at' => now(),
-    'updated_at' => now(),
-    ],
-    [
+        [
+            'producto_id'=>1,
+            'categoria_id'=>4,
+            'nombre'=>'Mini Owen',
+            'precio'=>1049900,
+            'descripcion'=>'Mini con calce tiro alto, rígida, color azul, con 5 bolsillos, avíos metálicos personalizados y badana simil cuero. Terminación desflecada.',
+            'imagen'=> 'pollera_miniowen.jpg',
+            'imagen_descripcion'=>'Modelo posando pollera mini owen color negro',
+            'destacado'=> false,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
             'producto_id'=>2,
-        'categoria_id'=>4,
-        'nombre'=>'Mini Vasby',
+            'categoria_id'=>4,
+            'nombre'=>'Mini Vasby',
             'precio'=>1049900,
             'descripcion'=>'Mini con calce tiro alto, elastizada, color celeste, con 5 bolsillos. Avíos metalicos personalizados y badana simil cuero. Terminación desflecada. El calce es confort debido a su altisima elasticidad.',
             'imagen'=> 'pollera_minivasby.jpg',
@@ -40,7 +40,7 @@ DB::table('productos')->insert([
             'destacado'=> true,
             'created_at' => now(),
             'updated_at' => now(),
-    ],
+        ],
         [
             'producto_id'=>3,
             'categoria_id'=>4,

@@ -1,15 +1,23 @@
 <?php
-/** @var \App\Models\Producto $producto */
-/** @var \Illuminate\Database\Eloquent\Collection| \App\Models\Categoria[] $categorias */
 
+    /** @var \App\Models\Producto $producto */
+    /** @var \Illuminate\Database\Eloquent\Collection| \App\Models\Categoria[] $categorias */
+    /** @var \Illuminate\Database\Eloquent\Collection| \App\Models\Talles[] $talles */
 
-$destacado = $producto->destacado ?? null;
-$imagen = $producto->imagen ?? null;
-$imagen_descripcion = $producto->imagen_descripcion ?? null;
-$categoriaId = $producto->categoria_id ?? '';
+    // NOTA: ver si sacando todos los null funciona, porq ahora mande por el controler la variable producto = null cuando piden la vista form-nuevo
+    $destacado = $producto->destacado ?? null;
+    $imagen_descripcion = $producto->imagen_descripcion ?? null;
+    $imagen = $producto->imagen ?? null;
+    $categoriaId = $producto->categoria_id ?? '';
+
+    // Este tiene que quedar porq tirar error si al metodo pluck o toArray le llega undefined
+    if ($producto != null) {
+        $tallesArray = $producto->getTallesId();
+    }else{
+        $tallesArray = [];
+    }
 
 ?>
-
 
 <!-- Nombre -->
 <div class="col-md-4">
@@ -81,7 +89,7 @@ $categoriaId = $producto->categoria_id ?? '';
         <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>
 
     @else
-        Actualmente no hay ninguna imagen cargada.
+        <p>Actualmente no hay ninguna imagen cargada.</p>
     @endif
 
 </div>
@@ -92,15 +100,16 @@ $categoriaId = $producto->categoria_id ?? '';
         type="file"
         id="imagen"
         name="imagen"
-        value="{{ old('imagen', $producto->imagen ?? '') }}"
         class="form-control"
+        {{-- NOTA: Arreglar esto porq en caso de @error el atributo se repite 2 veces --}}
         aria-describedby="info-imagen"
         @error('imagen') aria-describedby="error-imagen" @enderror
     >
 
     @error ('imagen')
 
-    <div class="text-danger fs-6" id="error-imagen"><span class="visually-hidden">Error:</span>{{ $message }}</div>
+        <div class="text-danger fs-6" id="error-imagen"><span class="visually-hidden">Error:</span>{{ $message }}</div>
+
     @enderror
 
 
@@ -125,25 +134,62 @@ $categoriaId = $producto->categoria_id ?? '';
     @enderror
 
 </div>
+
 {{--Categorías--}}
-<div>
+<div class="col-md-6">
+
     <label for="categoria_id" class="form-label">Categorías</label>
+
     <select name="categoria_id" id="categoria_id" class="form-control"
         @error('categoria_id') aria-describedby="error-categoria_id" @enderror
     >
         @foreach($categorias as $categoria)
-        <option
-            value="{{ $categoria->categoria_id ?? '' }}"
-            @selected($categoria->categoria_id == old('categoria_id', $categoriaId))
-        >{{ $categoria->nombre}}</option>
-    @endforeach
+        
+            <option
+                value="{{ $categoria->categoria_id ?? '' }}"
+                @selected($categoria->categoria_id == old('categoria_id', $categoriaId))
+            >{{ $categoria->nombre}}</option>
+
+        @endforeach
+    
     </select>
+
     @error ('categoria_id')
 
-    <div class="text-danger fs-6" id="error-categoria_id"><span class="visually-hidden">Error:</span>{{ $message }}</div>
+        <div class="text-danger fs-6" id="error-categoria_id"><span class="visually-hidden">Error:</span>{{ $message }}</div>
+
     @enderror
+
 </div>
 
+{{--Talles--}}
+<div class="col-md-6">
+
+    <fieldset class="mb-3">
+
+        <legend>Talles</legend>
+
+        @foreach ($talles as $talle)
+            
+            <div class="form-check form-check-inline">
+                
+                <input 
+                    type="checkbox"
+                    class="form-check-input"
+                    id="talle-{{ $talle->talle_id }}"
+                    name="talles[]"
+                    value="{{ $talle->talle_id }}"
+                    @checked(in_array($talle->talle_id, old('talles', $tallesArray)))
+                >
+                <label for="talle-{{ $talle->talle_id }}" class="form-check-label">{{ $talle->nombre }}</label>
+                
+            </div>
+            
+        @endforeach
+
+    </fieldset>
+
+</div>
 
 {{-- Descripcion --}}
 <div class="col-md-12">
