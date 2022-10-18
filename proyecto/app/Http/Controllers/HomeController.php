@@ -20,9 +20,11 @@ class HomeController extends Controller
     {
 
         $producto = Producto::findOrFail($id);
+        $productos = Producto::all();
 
         return view('home.detalle', [
-            'producto' => $producto
+            'producto' => $producto,
+            'productos' => $productos
         ]);
 
     }
