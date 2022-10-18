@@ -1,9 +1,0 @@
-Carrera: Diseño y Desarrollo Web
-Materia: Portales y Comercio Electrónico
-Cuatrimestre: 4to cuatrimestre
-Año:2022
-Turno: Mañana
-Comisión:DWM4AV
-Apellido y nombre: Ignacio Ezequiel Barros y María Florencia Marbián
-Docente: Santiago Gallino
-Carácter de entrega: 1er parcial
