@@ -4,10 +4,10 @@
 
 @section('main')
 
-    <h1 class="mt-3 login">Iniciar Sesión</h1>
+    <h1 class="login">Iniciar Sesión</h1>
 
 
-    <form action="{{ route('auth.login.ejecutar') }}" method="post"  class="mt-3 mx-auto w-50">
+    <form action="{{ route('auth.login.ejecutar') }}" method="post"  class="mt-3 mx-auto w-50" id="form-login">
         @csrf
      <div>
          <label for="email" class="form-label">Nombre</label>
@@ -19,7 +19,7 @@
          >
 
      </div>
-        <div>
+        <div class="mt-3">
             <label for="password" class="form-label">Password</label>
             <input
                 type="password"
@@ -30,7 +30,7 @@
 
         </div>
 
-        <button type="submit" class="btn col-md-3 m-auto mt-3">Ingresar</button>
+        <button type="submit" class="btn col-md-3 mx-auto mt-3">Ingresar</button>
     </form>
 
 @endsection

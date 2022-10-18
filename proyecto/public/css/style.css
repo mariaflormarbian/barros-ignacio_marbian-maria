@@ -619,6 +619,7 @@ font-size: 1.1rem;
     border-bottom: 1px solid #f0f0f0;
 }
 .card-header a{
+    text-decoration: none;
     background:#fb774b;
     border-radius: 10px;
     color: #fff !important;
@@ -691,7 +692,15 @@ table tbody tr td form button{
 .rcp-pasword{
     font-size: 12px;
 }
-
+.login{
+    margin-top: 10%;
+    text-align: center;
+}
+#form-login{
+    border: 1px solid #fb774b;
+    padding: 3%;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
 
 @media  screen and (max-width: 960px){
     .nav-link{
