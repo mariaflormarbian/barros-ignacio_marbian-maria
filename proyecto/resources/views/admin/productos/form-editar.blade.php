@@ -3,7 +3,6 @@
 ?>
 
 
-
 @extends('layouts.admin-main')
 
 @section('title', 'Editar '. $producto->nombre)
@@ -24,7 +23,7 @@
 
                         <div class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
 
-                            Modificá los datos de {{ $producto->nombre }}.
+                            <h2 class="h5">Modificá los datos de {{ $producto->nombre }}.</h2>
 
                         </div>
 

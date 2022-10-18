@@ -23,15 +23,15 @@
 
                 </h2>
 
-                <dl class= "d-flex  flex-column align-items-center">
+                <dl class= "d-flex  flex-column align-items-center mw-100">
                     <dt>Producto</dt>
                     <dd>{{ $producto->nombre }}</dd>
                     <dt>Categoría</dt>
-                    <dd>ACA VA LA CATEGORIA</dd>
+                    <dd>{{ $producto->categoria->nombre }}</dd>
                     <dt>Precio</dt>
                     <dd>$ {{ $producto->precio }}</dd>
                     {{-- Nota: Cuando el texto es muy largo se rompe todo --}}
-                    <dt>Descripción</dt>
+                    <dt class="w-50">Descripción</dt>
                     <dd>{{ $producto->descripcion }}</dd>
                     <dt>Imagen</dt>
                     <dd>
