@@ -96,7 +96,7 @@
                 <p class="pt-3">Podés visitarnos en nuestro Showroom</p>
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <img src="{{ url('storage/imgs/payment.png') }}" alt="">
+                    <img src="{{ url('storage/imgs/payment.png') }}" alt="tarjetas de crédito y débito">
                 </div>
 
             </div>
@@ -127,11 +127,11 @@
                 <div class="row">
 
 
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_key.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_aion.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_eros.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_farah.jpg') }}" alt="">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_satya.jpg') }}" alt="">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_key.jpg') }}" alt="posteo de instagram chupin key">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_aion.jpg') }}" alt="posteo de instagram chupin aion">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_eros.jpg') }}" alt="posteo de instagram chupin eros">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_farah.jpg') }}" alt="posteo de instagram chupin farah">
+                    <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_satya.jpg') }}" alt="posteo de instagram chupin satya">
 
                 </div>
 

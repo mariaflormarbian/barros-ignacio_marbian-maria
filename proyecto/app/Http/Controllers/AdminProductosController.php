@@ -49,11 +49,9 @@ class AdminProductosController extends Controller
 
         $request->validate(Producto::VALIDATE_RULES, Producto::VALIDATE_MESSAGES);
 
-        // Si el producto no esta marcado como destacado, entonces le agrego un false. Esto lo hago porq por defecto viene null, y el campo no acepta null.
         $data['destacado'] = $data['destacado'] ?? false;
         $data['publico'] = $data['publico'] ?? false;
 
-        // Upload de imagen
         if ($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
             $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['nombre']) . "." . $imagen->extension();
@@ -153,7 +151,6 @@ class AdminProductosController extends Controller
         $data['destacado'] = $data['destacado'] ?? false;
         $data['publico'] = $data['publico'] ?? false;
 
-        // Upload de imagen
         if ($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
             $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['nombre']) . "." . $imagen->extension();

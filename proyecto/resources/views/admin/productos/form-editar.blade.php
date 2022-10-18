@@ -31,7 +31,7 @@
 
                             @csrf
 
-                            @if ($errors->any()) {{-- Si la variable $errors guarda algun error, entonces... --}}
+                            @if ($errors->any()) 
                                 <p class="mb-3 text-danger fs-6">Hay errores de validacion en el formulario. Por favor, revisa los datos e intenta de nuevo.</p>
                             @endif
                             @include('admin.productos._form-data')

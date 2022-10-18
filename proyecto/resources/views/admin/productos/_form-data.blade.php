@@ -10,7 +10,6 @@
     $imagen = $producto->imagen ?? null;
     $categoriaId = $producto->categoria_id ?? '';
 
-    // Este tiene que quedar porq tirar error si al metodo pluck o toArray le llega undefined
     if (isset($producto)) {
         $tallesArray = $producto->getTallesId();
     }else{
