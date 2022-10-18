@@ -6,16 +6,19 @@
 
     // NOTA: ver si sacando todos los null funciona, porq ahora mande por el controler la variable producto = null cuando piden la vista form-nuevo
     $destacado = $producto->destacado ?? null;
+    $publico = $producto->publico ?? null;
     $imagen_descripcion = $producto->imagen_descripcion ?? null;
     $imagen = $producto->imagen ?? null;
     $categoriaId = $producto->categoria_id ?? '';
 
     // Este tiene que quedar porq tirar error si al metodo pluck o toArray le llega undefined
-    if ($producto != null) {
+    if (isset($producto)) {
         $tallesArray = $producto->getTallesId();
     }else{
         $tallesArray = [];
     }
+
+
 
 ?>
 
@@ -61,7 +64,7 @@
 </div>
 
 <!-- Destacado -->
-<div class="col-md-4 align-items-center d-flex">
+<div class="col-md-2 align-items-center d-flex">
 
     <div class="form-check form-switch ">
         <label for="destacado" class="form-check-label">Destacado</label>
@@ -72,6 +75,24 @@
             class="form-check-input"
             @if(old('destacado') == 1 or $destacado) checked @endif
             value="{{ old('destacado', 1) }}"
+        >
+
+    </div>
+
+</div>
+
+<!-- Publico -->
+<div class="col-md-2 align-items-center d-flex">
+
+    <div class="form-check form-switch ">
+        <label for="publico" class="form-check-label">Publico</label>
+        <input
+            type="checkbox"
+            id="publico"
+            name="publico"
+            class="form-check-input"
+            @if(old('publico') == 1 or $publico) checked @endif
+            value="{{ old('publico', 1) }}"
         >
 
     </div>
@@ -200,7 +221,7 @@
         name="descripcion"
         class="form-control"
         @error('descripcion') aria-describedby="error-descripcion" @enderror
-                                >{{ old('descripcion', $producto->descripcion ?? '') }}</textarea>
+    >{{ old('descripcion', $producto->descripcion ?? '') }}</textarea>
 
     @error ('descripcion')
 

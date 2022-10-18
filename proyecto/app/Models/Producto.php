@@ -49,14 +49,14 @@ class Producto extends Model
         'descripcion',
         'imagen',
         'imagen_descripcion',
-        'destacado'
+        'destacado',
+        'publico',
     ];
 
     public const VALIDATE_RULES = [
         'nombre' => 'required|min:2|max:50',
         'precio' => 'numeric|required|min:0|max:100000',
         'descripcion' => 'required|min:50|max:800',
-        'imagen' => 'required',
         'imagen_descripcion' => 'required|min:10|max:255',
     ];
 
@@ -71,7 +71,6 @@ class Producto extends Model
         'descripcion.required' => 'La descripcion debe llevar un valor.',
         'descripcion.min' => 'La descripcion debe tener al menos :min caracteres.',
         'descripcion.max' => 'La descripcion puede tener hasta :max caracteres.',
-        'imagen.required'=>'Debe subir una imagen',
         'imagen_descripcion.required' => 'La descripcion de la imagen debe llevar un valor.',
         'imagen_descripcion.min' => 'La descripcion de la imagen debe tener al menos :min caracteres.',
         'imagen_descripcion.max' => 'La descripcion de la imagen puede tener hasta :max caracteres.',

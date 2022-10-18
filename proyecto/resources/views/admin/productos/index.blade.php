@@ -1,5 +1,6 @@
 <?php
 /** @var \Illuminate\Database\Eloquent\Collection | \App\Models\Producto[] $productos*/
+
 ?>
 
 @extends('layouts.admin-main')
@@ -46,11 +47,23 @@
 
                 <div class="card-single">
                     <div>
-                        <p class="h3">0</p>
+                        <p class="h3">{{ count($categorias) }}</p>
                         <span>Categorias</span>
                     </div>
                     <div>
                         <span class="las la-clipboard-list"></span>
+                    </div>
+
+                </div>
+                
+                <div class="card-single">
+
+                    <div>
+                        <p class="h3">0</p>
+                        <span>Ocultos</span>
+                    </div>
+                    <div>
+                        <span class="las la-eye-slash"></span>
                     </div>
 
                 </div>
@@ -102,6 +115,12 @@
                                                 Imagen
                                             </th>
                                             <th scope="col">
+                                                Destacado
+                                            </th>
+                                            <th scope="col">
+                                                Público
+                                            </th>
+                                            <th scope="col">
                                                 Acciones
                                             </th>
 
@@ -136,6 +155,9 @@
                                                     </td>
 
                                                 @endif
+
+                                                <td>{{ $producto->destacado ? 'si' : 'no' }}</td>
+                                                <td>{!! $producto->publico ? '<i class="las la-eye"></i>' : '<span class="las la-eye-slash"></span>' !!}</td>
 
                                                 <td class="d-flex justify-content-center align-items-center">
 
