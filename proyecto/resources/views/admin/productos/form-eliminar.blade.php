@@ -44,7 +44,7 @@
                 <form action="{{ route('admin.productos.eliminar.ejecutar', ['id' => $producto->producto_id]) }}" method="post" class=" d-flex">
 
                     @csrf
-                    <p>EStás por eliminar el siguiente producto. ¿Estás seguro/a de querer continuar?</p>
+                    <p>Estás por eliminar el siguiente producto. ¿Estás seguro/a de querer continuar?</p>
                     <input type="hidden" name="id" value="">
                     <button type="submit" class="boton col-md-3 m-auto mt-3">Eliminar</button>
                 </form>
