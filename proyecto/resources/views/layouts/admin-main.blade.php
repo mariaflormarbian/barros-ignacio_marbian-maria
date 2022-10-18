@@ -23,41 +23,10 @@
 
     <body>
 
-
-        {{-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-
-            <div class="offcanvas-header">
-                <p class="h3 offcanvas-title" id="offcanvasWithBothOptionsLabel">Ieta.</p>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-
-            <div class="sidebar offcanvas-body">
-
-                <nav class="sidebar-menu">
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="{{ route('home') }}"><span class="las la-receipt" >Volver a home</span> </a>
-                        </li>
-                        <li>
-                            <form action="{{route('auth.logout')}}" method="post">
-                                @csrf
-                                <button type="submit" ><span class="las la-user-circle " >Cerrar Sesión </span></button>
-                            </form>
-                        </li>
-
-                    </ul>
-
-                </nav>
-
-            </div>
-
-        </div> --}}
-
         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             
             <div class="offcanvas-header">
-                <p class="h3 offcanvas-title" id="offcanvasWithBothOptionsLabel"><span class="lab la-accusoft"></span>  Play Vinilo's</p>
+                <p class="h3 offcanvas-title m-auto" id="offcanvasWithBothOptionsLabel">Ieta.</p>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             

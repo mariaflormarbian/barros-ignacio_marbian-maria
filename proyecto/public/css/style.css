@@ -493,28 +493,27 @@ textarea {
 
 /* sidebar */
 
-.sidebar-menu ul li a:hover{
+.offcanvas-start .offcanvas-body .sidebar-menu .list-unstyled li a,
+.offcanvas-start .offcanvas-body .sidebar-menu .list-unstyled li form button{
+    text-transform: none;
+    background: none;
+    color: black;
+    font-size: 1em;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 0;
+    margin-bottom: 20px;
+    display: block;
+    width: 90%;
+    text-align: inherit;
+    border-radius: 20%;
+}
+
+.offcanvas-start .offcanvas-body .sidebar-menu .list-unstyled li a:hover,
+.offcanvas-start .offcanvas-body .sidebar-menu .list-unstyled li form button:hover{
     background-color: #fb774b;
-    color: white;
-}
-
-.sidebar-menu{
-    margin-top: 1rem;
-}
-
-.sidebar-menu a{
-padding-left: 1rem;
-display: block;
-color: #fff;
-font-size: 1.1rem;
-}
-
-.sidebar-menu a.active{
-    background-color: #fff;
-    padding-top: 1rem ;
-    padding-bottom: 1rem;
-    color: #fb774b;
     border-radius: 30px 0px 0px 30px ;
+    color: white;
 }
 
 /* main-content */
@@ -668,10 +667,7 @@ table tbody tr td form button{
     padding: 3%;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.login {
-    margin-top: 10%;
-    text-align: center;
-}
+
 
 /*  BOTON*/
 .boton{
@@ -701,7 +697,3 @@ table tbody tr td form button{
     border-color:coral;
 }
 
-#cerrar:hover{
-    color: white;
-    background-color: black;
-}
