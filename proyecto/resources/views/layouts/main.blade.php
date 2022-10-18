@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=es"">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -60,7 +60,7 @@
                         <li class="nav-item">
                         <form action="{{route('auth.logout')}}" method="post">
                             @csrf
-                            <button class=" nav-link" type="submit">Cerrar Sesión</button>
+                            <button class="bg-white  " type="submit">Cerrar Sesión</button>
                         </form>
                     </li>
                     @elseguest

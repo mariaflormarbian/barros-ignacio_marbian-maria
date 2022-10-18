@@ -40,12 +40,12 @@
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="{{ route('home') }}" ><span class="las la-receipt" >Volver a home</span> </a>
+                            <a href="{{ route('home') }}"><span class="las la-receipt" >Volver a home</span> </a>
                         </li>
                         <li>
                             <form action="{{route('auth.logout')}}" method="post">
                                 @csrf
-                                <button type="submit"><span class="las la-user-circle " >Cerrar Sesión </span></button>
+                                <button type="submit" ><span class="las la-user-circle " >Cerrar Sesión </span></button>
                             </form>
                         </li>
 

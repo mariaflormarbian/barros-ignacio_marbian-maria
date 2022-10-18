@@ -19,7 +19,7 @@
 
             <div class="col-lg-6">
 
-                <p class="subtitulo d-flex flex-column py-3">Si tuviste un problema realizando una compra o te encontrás con problemas en la tienda, escribinos. Contamos con un número de WhatsApp para atención personalizada, indicanos qué medio es por el cuál prefiere ser contactado.</p>
+                <p class="subtitulo d-flex flex-column py-3">Si tuviste un problema realizando una compra o te encontrás con problemas en la tienda, escribínos. Contamos con un número de WhatsApp para atención personalizada, podes detallar que medio es por el cuál prefiere ser contactado.</p>
 
                 <form action="#" method="POST">
 
@@ -41,7 +41,7 @@
 
                         <div class="py-3 w-100">
 
-                            <label class="visually-hidden" for="numero">Numero</label>
+                            <label class="visually-hidden" for="numero">Número</label>
                             <input type="number" class="form-control bg-light" name="numero" id="numero" placeholder="Numero">
 
                         </div>
@@ -53,7 +53,7 @@
                         <div class="py-3 w-100">
 
                             <label class="visually-hidden" for="opinion">Mensaje</label>
-                            <textarea name="opinion" class="form-control bg-light" placeholder="Cuentanos que opinas..." id="opinion" cols="10" rows="5"></textarea>
+                            <textarea name="opinion" class="form-control bg-light" placeholder="Queremos saber que opinas..." id="opinion" cols="10" rows="5"></textarea>
 
                         </div>
 

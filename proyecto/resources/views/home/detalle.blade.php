@@ -19,7 +19,6 @@
 
                 <div class="small-img-group">
 
-                    {{-- NOTA: conseguir mas imagenes y ponerlas en un tamaño correcto --}}
 
                     <div class="small-img-col">
                         <img src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}" width="100" class="small-img" alt="{{url($producto->imagen)}}">
@@ -55,7 +54,7 @@
 
                 <input type="number" value="1">
 
-                <button class="buy-btn">Agregar al carrito</button>
+                <button class="buy-btn not-active">Agregar al carrito</button>
 
                 <h3 class="mt-5 mb-5">Descripción</h3>
 
@@ -76,33 +75,32 @@
 
         </div>
 
-        {{-- NOTA: Aca tiene que llegar un array con los productos correspondientes a su categoria --}}
 
         <div class="row mx-auto container-fluid">
 
             @foreach ($productos as $prod)
-                
+
                 @if ($prod->getCategoriaId() === $producto->getCategoriaId())
 
                     <div  class="product text-center col-lg-3 col-md-4 col-12">
                         <picture>
                             <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $prod->imagen) }}" alt="{{ $prod->imagen_descripcion }}">
                         </picture>
-            
+
                         <div class="star">
-            
+
                             <i class="las la-star"></i>
                             <i class="las la-star"></i>
                             <i class="las la-star"></i>
                             <i class="las la-star"></i>
                             <i class="las la-star"></i>
-            
+
                         </div>
-            
+
                         <h3 class="p-name">{{ $prod->nombre }}</h3>
                         <p class="p-price h4">${{ $prod->precio }}</p>
                         <a href="{{ route('producto.detalle', ['id' => $prod->producto_id]) }}" class="buy-btn">Ver producto</a>
-            
+
                     </div>
 
                 @endif
