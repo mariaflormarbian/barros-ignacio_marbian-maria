@@ -668,7 +668,10 @@ table tbody tr td form button{
     padding: 3%;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-
+.login {
+    margin-top: 10%;
+    text-align: center;
+}
 
 /*  BOTON*/
 .boton{
@@ -696,4 +699,9 @@ table tbody tr td form button{
 .form-check-input:checked{
     background-color: coral;
     border-color:coral;
+}
+
+#cerrar:hover{
+    color: white;
+    background-color: black;
 }

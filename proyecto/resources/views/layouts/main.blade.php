@@ -60,7 +60,7 @@
                         <li class="nav-item">
                         <form action="{{route('auth.logout')}}" method="post">
                             @csrf
-                            <button class="bg-white  " type="submit">Cerrar Sesión</button>
+                            <button class="bg-white text-dark pt-0" id="cerrar" type="submit">Cerrar Sesión</button>
                         </form>
                     </li>
                     @elseguest
@@ -126,7 +126,7 @@
 
                 <div class="row">
 
-                    {{-- NOTA: Adaptar un foreach --}}
+
                     <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_key.jpg') }}" alt="">
                     <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_aion.jpg') }}" alt="">
                     <img class="img-fluid w-25 h-100 m-2" src="{{ url('storage/imgs/chupin_eros.jpg') }}" alt="">

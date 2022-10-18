@@ -3,8 +3,10 @@
 @section('title', 'Iniciar Sesión')
 
 @section('main')
+ <div class="container mt-5 py-5">
 
-    <h1 class="login">Iniciar Sesión</h1>
+
+    <h1 class="text-center mt-3">Iniciar Sesión</h1>
 
 
     <form action="{{ route('auth.login.ejecutar') }}" method="post"  class="mt-3 mx-auto w-50" id="form-login">
@@ -30,7 +32,7 @@
 
         </div>
 
-        <button type="submit" class="btn col-md-3 mx-auto mt-3">Ingresar</button>
+        <button type="submit" class=" col-md-3 mx-auto mt-3 boton">Ingresar</button>
     </form>
-
+ </div>
 @endsection
