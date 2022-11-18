@@ -23,7 +23,8 @@
 
         <div class="container">
 
-            <img src="{{ Storage::disk('public')->url('imgs/logo.png') }}" width="50" height="50" alt="Logo ieta color negro">
+            <img src="{{ Storage::disk('public')->url('imgs/logo.png') }}" width="50" height="50"
+                alt="Logo ieta color negro">
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -45,28 +46,31 @@
                         <a class="nav-link @yield('contacto')" href="{{ route('contacto') }}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('sobre-nosotros')" href="{{ route('sobre.nosotros') }}">Sobre Nosotros</a>
+                        <a class="nav-link @yield('sobre-nosotros')" href="{{ route('sobre.nosotros') }}">Sobre
+                            Nosotros</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link @yield('carrito')" href="#"><i class="las la-shopping-bag not-active"></i></a>
+                        <a class="nav-link @yield('carrito')" href="#"><i
+                                class="las la-shopping-bag not-active"></i></a>
                     </li>
                     @auth
-                        <li class="nav-item">
-                        <li class="nav-item">
-                            <a class="nav-link"  href="{{ route('admin.productos.index') }}">Admin</a>
-                        </li>
-                        </li>
-                        <li class="nav-item">
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('admin.productos.index') }}">Admin</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
                         <form action="{{route('auth.logout')}}" method="post">
                             @csrf
                             <button class="bg-white text-dark pt-0" id="cerrar" type="submit">Cerrar Sesión</button>
                         </form>
                     </li>
                     @elseguest
-                        <li class="nav-item">
-                            <a class="nav-link" @yield('iniciar-sesion') href="{{ route('auth.login.form') }}">Iniciar Sesion</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" @yield('iniciar-sesion') href="{{ route('auth.login.form') }}">Iniciar
+                            Sesion</a>
+                    </li>
                     @endauth
 
 
@@ -90,13 +94,14 @@
         <div class="row container mx-auto pt-5">
 
             <div class="footer-one col-lg-4 col-md-6 col-12">
-                
-                <img src="{{ Storage::disk('public')->url('imgs/logo_footer.png') }}"  alt="Logo ieta color blanco">
+
+                <img src="{{ Storage::disk('public')->url('imgs/logo_footer.png') }}" alt="Logo ieta color blanco">
 
                 <p class="pt-3">Podés visitarnos en nuestro Showroom</p>
 
                 <div class="col-lg-3 col-md-6 col-12 mb-4">
-                    <img src="{{ Storage::disk('public')->url('imgs/payment.png') }}" alt="tarjetas de crédito y débito">
+                    <img src="{{ Storage::disk('public')->url('imgs/payment.png') }}"
+                        alt="Tarjetas de crédito Visa, Discover y tarjeta de débito Maestro">
                 </div>
 
             </div>
@@ -127,11 +132,21 @@
                 <div class="row">
 
 
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_key.jpg') }}" alt="posteo de instagram chupin key">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_aion.jpg') }}" alt="posteo de instagram chupin aion">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_eros.jpg') }}" alt="posteo de instagram chupin eros">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_farah.jpg') }}" alt="posteo de instagram chupin farah">
-                    <img class="img-fluid w-25 h-100 m-2" src="{{ Storage::disk('public')->url('imgs/chupin_satya.jpg') }}" alt="posteo de instagram chupin satya">
+                    <img class="img-fluid w-25 h-100 m-2"
+                        src="{{ Storage::disk('public')->url('imgs/chupin_key.jpg') }}"
+                        alt="posteo de instagram chupin key">
+                    <img class="img-fluid w-25 h-100 m-2"
+                        src="{{ Storage::disk('public')->url('imgs/chupin_aion.jpg') }}"
+                        alt="posteo de instagram chupin aion">
+                    <img class="img-fluid w-25 h-100 m-2"
+                        src="{{ Storage::disk('public')->url('imgs/chupin_eros.jpg') }}"
+                        alt="posteo de instagram chupin eros">
+                    <img class="img-fluid w-25 h-100 m-2"
+                        src="{{ Storage::disk('public')->url('imgs/chupin_farah.jpg') }}"
+                        alt="posteo de instagram chupin farah">
+                    <img class="img-fluid w-25 h-100 m-2"
+                        src="{{ Storage::disk('public')->url('imgs/chupin_satya.jpg') }}"
+                        alt="posteo de instagram chupin satya">
 
                 </div>
 

@@ -23,12 +23,13 @@ class AuthController extends Controller
                 ->route('admin.productos.index')
                 ->with('statusMessage', 'Sesión iniciada con éxito. ¡Bienvenido/a a Ieta!')
                 ->with('statusType', 'succes');
+        }else{
+            return redirect()
+                ->route('auth.login.form')
+                ->with('statusMessage', 'Credenciales incorrectas. Por favor, inténtelo de nuevo.')
+                ->with('statusType', 'danger');
         }
-        return redirect()
-            ->route('auth.login.form')
-            ->with('statusMessage', 'Los datos ingresados no coinciden con nuestros registros')
-            ->with('statusType', 'danger')
-            ->withInput();
+
     }
     public function logout(Request $request)
     {
@@ -45,4 +46,3 @@ class AuthController extends Controller
 
 
 }
-

@@ -654,3 +654,10 @@ table tbody tr td form button{
     border-color:coral;
 }
 
+small{
+    color: #fb774b !important;
+}
+span{
+    color: #fb774b;
+    font-weight: bold;
+}

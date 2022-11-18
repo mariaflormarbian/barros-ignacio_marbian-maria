@@ -19,7 +19,9 @@
 
             <div class="col-lg-6">
 
-                <p class="subtitulo d-flex flex-column py-3">Si tuviste un problema realizando una compra o te encontrás con problemas en la tienda, escribínos. Contamos con un número de WhatsApp para atención personalizada, podes detallar que medio es por el cuál prefiere ser contactado.</p>
+                <p class="subtitulo d-flex flex-column py-3">Si tuviste un problema realizando una compra o necesitás
+                    ayuda con la tienda, escribínos. Contamos con un número de WhatsApp para atención
+                    personalizada, podes detallar que medio es por el cuál prefiere ser contactado.</p>
 
                 <form action="#" method="POST">
 
@@ -28,21 +30,24 @@
                         <div class="py-3 w-100">
 
                             <label class="visually-hidden" for="nombre">Nombre</label>
-                            <input type="text" class="form-control bg-light" name="nombre" id="nombre" placeholder="Nombre">
+                            <input type="text" class="form-control bg-light" name="nombre" id="nombre"
+                                placeholder="Nombre">
 
                         </div>
 
                         <div class="py-3 w-100">
 
                             <label class="visually-hidden" for="email">Email</label>
-                            <input type="email" class="form-control bg-light" name="email" id="email" placeholder="E-mail">
+                            <input type="email" class="form-control bg-light" name="email" id="email"
+                                placeholder="E-mail">
 
                         </div>
 
                         <div class="py-3 w-100">
 
                             <label class="visually-hidden" for="numero">Número</label>
-                            <input type="number" class="form-control bg-light" name="numero" id="numero" placeholder="Numero">
+                            <input type="number" class="form-control bg-light" name="numero" id="numero"
+                                placeholder="Numero">
 
                         </div>
 
@@ -53,7 +58,8 @@
                         <div class="py-3 w-100">
 
                             <label class="visually-hidden" for="opinion">Mensaje</label>
-                            <textarea name="opinion" class="form-control bg-light" placeholder="Queremos saber que opinas..." id="opinion" cols="10" rows="5"></textarea>
+                            <textarea name="opinion" class="form-control bg-light"
+                                placeholder="Queremos saber que opinas..." id="opinion" cols="10" rows="5"></textarea>
 
                         </div>
 
@@ -88,7 +94,9 @@
                 </ul>
 
                 <figure>
-                    <iframe class="mw-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26280.433413040166!2d-58.41783982214583!3d-34.57749569518187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb588f4af5d17%3A0x560fe6ff3f099abf!2sPlaza%20Serrano!5e0!3m2!1ses-419!2sar!4v1655328517125!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
+                    <iframe class="mw-100"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26280.433413040166!2d-58.41783982214583!3d-34.57749569518187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb588f4af5d17%3A0x560fe6ff3f099abf!2sPlaza%20Serrano!5e0!3m2!1ses-419!2sar!4v1655328517125!5m2!1ses-419!2sar"
+                        width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
                 </figure>
 
             </div>
