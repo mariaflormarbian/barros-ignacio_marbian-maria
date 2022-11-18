@@ -9,7 +9,7 @@
 
     <div class="container mt-5 py-5">
 
-        <h2 class="font-weight-bold">¿Quiénes somos?</h2>
+        <h1 class="font-weight-bold">¿Quiénes somos?</h1>
         <hr>
 
         <p>
@@ -18,7 +18,8 @@
             para llegar hacer el mejor producto en calidad y diseño. Nos orientamos en la realización de jeans y
             polleras.
 
-            En ieta, somos mujeres de cuerpos reales que diseñamos productos sabiendo que nuestras formas son diferentes
+            En ieta, somos mujeres de cuerpos reales que diseñamos productos sabiendo que nuestras formas son
+            diferentes
             y cada una necesita una moldería que se adapte al talle. Entendemos a las mujeres, y nuestro desafío es
             llegar ellas para empoderarlas, hacerlas sentir felices con sus cuerpos sabiendo que no existe un sólo
             modelo, todos son perfectos.

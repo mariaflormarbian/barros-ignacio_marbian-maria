@@ -97,9 +97,9 @@
 
                 <img src="{{ Storage::disk('public')->url('imgs/logo_footer.png') }}" alt="Logo ieta color blanco">
 
-                <p class="pt-3">Podés visitarnos en nuestro Showroom</p>
+                <h2 class="pt-3 text-white h5">Podés visitarnos en nuestro Showroom</h2>
 
-                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                <div class=" col-lg-3 col-md-6 col-12 mb-4">
                     <img src="{{ Storage::disk('public')->url('imgs/payment.png') }}"
                         alt="Tarjetas de crédito Visa, Discover y tarjeta de débito Maestro">
                 </div>
@@ -107,17 +107,17 @@
             </div>
 
 
-            <div class="footer-one col-lg-4 col-md-6 col-12 mb-3">
+            <div class="footer-one col-lg-4 col-md-6 col-12 mb-3 ">
 
-                <h5 class="pb-2">Contactános</h5>
+                <h3 class="pb-2 h5 text-white">Contactános</h3>
 
                 <div>
-                    <h6 class="text-uppercase">Dirección</h6>
+                    <h4 class="text-uppercase h6 text-white">Dirección</h4>
                     <p>Juana azurduy 2435, CABA</p>
                 </div>
 
                 <div>
-                    <h6 class="text-uppercase">Whatsapp</h6>
+                    <h4 class="text-uppercase h6 text-white">Whatsapp</h4>
                     <p>(011) 3427-9989</p>
                 </div>
 
@@ -127,7 +127,7 @@
 
             <div class="footer-one col-lg-4 col-md-6 col-12 mb-3">
 
-                <h5 class="pb-2">Instagram</h5>
+                <h3 class="pb-2 h5 text-white">Instagram</h3>
 
                 <div class="row">
 

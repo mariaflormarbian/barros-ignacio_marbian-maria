@@ -14,7 +14,7 @@
 
     <div class="container mt-5 py-5">
 
-        <h2 class="font-weight-bold">Productos</h2>
+        <h1 class="font-weight-bold h2">Productos</h1>
         <hr>
         <p>Navegá y descubrí nuestra gran variedad de jeans y polleras con diseños exclusivos</p>
 
@@ -41,9 +41,10 @@
 
             </div>
 
-            <h3 class="p-name">{{ $producto->nombre }}</h3>
+            <h2 class="p-name h4">{{ $producto->nombre }}</h2>
             <p class="p-price h4">${{ $producto->precio }}</p>
-            <a href="{{ route('producto.detalle', ['id' => $producto->producto_id]) }}" class="buy-btn">Ver producto</a>
+            <a href="{{ route('producto.detalle', ['id' => $producto->producto_id]) }}" class="buy-btn">Ver
+                producto</a>
 
         </article>
 

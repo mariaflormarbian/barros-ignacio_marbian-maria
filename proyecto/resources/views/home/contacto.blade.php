@@ -8,7 +8,7 @@
 
     <div class="container mt-5 py-5">
 
-        <h2 class="font-weight-bold">Contacto</h2>
+        <h1 class="font-weight-bold">Contacto</h1>
         <hr>
 
     </div>

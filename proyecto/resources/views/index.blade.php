@@ -14,7 +14,7 @@
 
     <div class="container">
 
-        <h2><span>Diseños a medida,</span> cómodos y suaves</h2>
+        <h1><span>Diseños a medida,</span> cómodos y suaves</h1>
         <p>Aprovechá nuestros descuentos en efectivo</p>
         <a class="nav-link text-uppercase boton" href="{{ route('productos') }}">Comprá ahora</a>
     </div>
@@ -25,7 +25,7 @@
 
     <div class="container text-center mt-5 py-5">
 
-        <h3>Destacados</h3>
+        <h2>Destacados</h2>
         <hr class="mx-auto">
         <p>Aquí puede ver nuestros productos más vendidos</p>
 
@@ -70,7 +70,7 @@
 
     <div class="container">
 
-        <h3>Aprovechá<br> descuentos hasta 20% OFF</h3>
+        <h2>Aprovechá<br> descuentos hasta 20% OFF</h2>
         <a class="nav-link text-uppercase boton" href="{{ route('productos') }}">Comprá</a>
 
 
@@ -82,7 +82,7 @@
 
     <div class="container text-center mt-5 py-5">
 
-        <h3>Jeans & Polleras</h3>
+        <h2>Jeans & Polleras</h2>
         <hr class="mx-auto">
         <p>Aquí podés ver nuestros nuevos productos a un precio justo en ieta.</p>
 
