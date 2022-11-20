@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
 
         $producto = Producto::findOrFail($id);
-        $productos = Producto::all();
+        $productos = Producto::with('categoria')->get();
 
         return view('home.detalle', [
             'producto' => $producto,
@@ -39,11 +39,17 @@ class HomeController extends Controller
     }
 
 
-    public function sobre_nosotros()
+    public function blog()
     {
-        return view('home.sobre-nosotros');
+        return view('home.blog');
     }
 
+   public function blog_detalle()
+    {
+        return view('home.blog_detalle');
+    }
+
+    
     public function productos()
     {
         $productos = Producto::all();

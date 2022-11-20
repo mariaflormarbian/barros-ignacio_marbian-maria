@@ -83,8 +83,7 @@
     <div class="row mx-auto container-fluid">
 
         @foreach ($productos as $prod)
-
-        @if ($prod->getCategoriaId() === $producto->getCategoriaId())
+        @if ($prod->categoria->categoria_id === $producto->categoria->categoria_id)
 
         <div class="product text-center col-lg-3 col-md-4 col-12">
             <picture>

@@ -561,6 +561,8 @@ textarea {
 .card{
     background: #fff;
     border-radius: 5px;
+    border: 1px solid #fb774b;
+
 }
 .card-header{
     padding: 1rem;
@@ -660,4 +662,9 @@ small{
 span{
     color: #fb774b;
     font-weight: bold;
+}
+
+.card {
+    border: 1px solid #fb774b;
+
 }

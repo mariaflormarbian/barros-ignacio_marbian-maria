@@ -21,10 +21,15 @@
 <!-- Nombre -->
 <div class="col-md-4">
 
-    <label for="nombre" class="form-label">Nombre<span>*</span></label>
-    <input type="text" id="nombre" name="nombre" class="form-control"
-        value="{{ old('nombre', $producto->nombre ?? '') }}" @error('nombre') aria-describedby="error-nombre" @enderror>
-    <p><small>El nombre debe contener un mínimo de 2 caractéres y hasta 50</small> </p>
+    <label for="nombre" class="form-label">Nombre</label>
+    <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        class="form-control"
+        value="{{ old('nombre', $producto->nombre ?? '') }}"
+        @error('nombre') aria-describedby="error-nombre" @enderror
+    >
 
     @error ('nombre')
 
@@ -37,10 +42,15 @@
 <!-- Precio -->
 <div class="col-md-4">
 
-    <label for="precio" class="form-label">Precio<span>*</span></label>
-    <input type="number" id="precio" name="precio" class="form-control"
-        value="{{ old('precio', $producto->precio ?? '') }}" @error('precio') aria-describedby="error-precio" @enderror>
-    <p><small>El precio máximo es de $100.000</small> </p>
+    <label for="precio" class="form-label">Precio</label>
+    <input
+        type="number"
+        id="precio"
+        name="precio"
+        class="form-control"
+        value="{{ old('precio', $producto->precio ?? '') }}"
+        @error('precio') aria-describedby="error-precio" @enderror
+    >
 
     @error ('precio')
 
@@ -54,8 +64,14 @@
 
     <div class="form-check form-switch ">
         <label for="destacado" class="form-check-label">Destacado</label>
-        <input type="checkbox" id="destacado" name="destacado" class="form-check-input" @if(old('destacado')==1 or
-            $destacado) checked @endif value="{{ old('destacado', 1) }}">
+        <input
+            type="checkbox"
+            id="destacado"
+            name="destacado"
+            class="form-check-input"
+            @if(old('destacado') == 1 or $destacado) checked @endif
+            value="{{ old('destacado', 1) }}"
+        >
 
     </div>
 
@@ -66,8 +82,14 @@
 
     <div class="form-check form-switch ">
         <label for="publico" class="form-check-label">Público</label>
-        <input type="checkbox" id="publico" name="publico" class="form-check-input" @if(old('publico')==1 or $publico)
-            checked @endif value="{{ old('publico', 1) }}">
+        <input
+            type="checkbox"
+            id="publico"
+            name="publico"
+            class="form-check-input"
+            @if(old('publico') == 1 or $publico) checked @endif
+            value="{{ old('publico', 1) }}"
+        >
 
     </div>
 
@@ -76,28 +98,32 @@
 <!-- Imagen -->
 <div class="mb-3" id="info-imagen">
     @if ($imagen !=null && Storage::disk('public')->has('imgs/' . $producto->imagen))
-    <p>Imagen actual</p>
+        <p>Imagen actual</p>
 
-    <img src="{{ Storage::disk('public')->url('imgs/' . $imagen) }}" class="d-block mx-auto img-fluid"
-        alt="{{url($imagen_descripcion)}} ">
+        <img src="{{ Storage::disk('public')->url('imgs/' . $imagen) }}" class="d-block mx-auto img-fluid" alt="{{url($imagen_descripcion)}} ">
 
-    <p class="visually-hidden">Hay una imagen cargada</p>
-    <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>
+        <p class="visually-hidden">Hay una imagen cargada</p>
+        <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>
 
     @else
-    <p>Actualmente no hay ninguna imagen cargada.</p>
+        <p>Actualmente no hay ninguna imagen cargada.</p>
     @endif
 
 </div>
 <div class="col-md-6">
 
-    <label for="imagen" class="form-label">Imagen<span>*</span></label>
-    <input type="file" id="imagen" name="imagen" class="form-control" @error('imagen') aria-describedby="error-imagen"
-        @enderror>
+    <label for="imagen" class="form-label">Imagen</label>
+    <input
+        type="file"
+        id="imagen"
+        name="imagen"
+        class="form-control"
+        @error('imagen') aria-describedby="error-imagen" @enderror
+    >
 
     @error ('imagen')
 
-    <div class="text-danger fs-6" id="error-imagen"><span class="visually-hidden">Error:</span>{{ $message }}</div>
+        <div class="text-danger fs-6" id="error-imagen"><span class="visually-hidden">Error:</span>{{ $message }}</div>
 
     @enderror
 
@@ -107,16 +133,19 @@
 <!-- Imagen Descripcion -->
 <div class="col-md-6">
 
-    <label for="imagen_descripcion" class="form-label">Descripción de la imagen<span>*</span></label>
-    <input type="text" id="imagen_descripcion" name="imagen_descripcion" class="form-control"
-        value="{{ old('imagen_descripcion', $producto->imagen_descripcion ?? '') }}" @error('imagen_descripcion')
-        aria-describedby="error-imagen_descripcion" @enderror>
-    <p><small>La descripción de la imagen tiene que tener un mínimo de 10 caractéres y un máximo de 255</small> </p>
+    <label for="imagen_descripcion" class="form-label">Descripción de la Imagen</label>
+    <input
+        type="text"
+        id="imagen_descripcion"
+        name="imagen_descripcion"
+        class="form-control"
+        value="{{ old('imagen_descripcion', $producto->imagen_descripcion ?? '') }}"
+        @error('imagen_descripcion') aria-describedby="error-imagen_descripcion" @enderror
+    >
 
     @error ('imagen_descripcion')
 
-    <div class="text-danger fs-6" id="error-imagen_descripcion"><span
-            class="visually-hidden">Error:</span>{{ $message }}</div>
+    <div class="text-danger fs-6" id="error-imagen_descripcion"><span class="visually-hidden">Error:</span>{{ $message }}</div>
     @enderror
 
 </div>
@@ -126,12 +155,14 @@
 
     <label for="categoria_id" class="form-label">Categorías</label>
 
-    <select name="categoria_id" id="categoria_id" class="form-control" @error('categoria_id')
-        aria-describedby="error-categoria_id" @enderror>
+    <select name="categoria_id" id="categoria_id" class="form-control"
+        @error('categoria_id') aria-describedby="error-categoria_id" @enderror
+    >
         @foreach($categorias as $categoria)
 
-        <option value="{{ $categoria->categoria_id ?? '' }}" @selected($categoria->categoria_id == old('categoria_id',
-            $categoriaId))
+            <option
+                value="{{ $categoria->categoria_id ?? '' }}"
+                @selected($categoria->categoria_id == old('categoria_id', $categoriaId))
             >{{ $categoria->nombre}}</option>
 
         @endforeach
@@ -140,8 +171,7 @@
 
     @error ('categoria_id')
 
-    <div class="text-danger fs-6" id="error-categoria_id"><span class="visually-hidden">Error:</span>{{ $message }}
-    </div>
+        <div class="text-danger fs-6" id="error-categoria_id"><span class="visually-hidden">Error:</span>{{ $message }}</div>
 
     @enderror
 
@@ -156,14 +186,19 @@
 
         @foreach ($talles as $talle)
 
-        <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline">
 
-            <input type="checkbox" class="form-check-input" id="talle-{{ $talle->talle_id }}" name="talles[]"
-                value="{{ $talle->talle_id }}" @checked(in_array($talle->talle_id, old('talles', $tallesArray)))
-            >
-            <label for="talle-{{ $talle->talle_id }}" class="form-check-label">{{ $talle->nombre }}</label>
+                <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="talle-{{ $talle->talle_id }}"
+                    name="talles[]"
+                    value="{{ $talle->talle_id }}"
+                    @checked(in_array($talle->talle_id, old('talles', $tallesArray)))
+                >
+                <label for="talle-{{ $talle->talle_id }}" class="form-check-label">{{ $talle->nombre }}</label>
 
-        </div>
+            </div>
 
         @endforeach
 
@@ -174,10 +209,13 @@
 {{-- Descripcion --}}
 <div class="col-md-12">
 
-    <label for="descripcion" class="form-label">Descripción <span>*</span></label>
-    <textarea id="descripcion" name="descripcion" class="form-control" @error('descripcion')
-        aria-describedby="error-descripcion" @enderror>{{ old('descripcion', $producto->descripcion ?? '') }}</textarea>
-    <p><small>La descripción tiene que tener un mínimo de 50 caractéres y un máximo de 800</small> </p>
+    <label for="descripcion" class="form-label">Descripción</label>
+    <textarea
+        id="descripcion"
+        name="descripcion"
+        class="form-control"
+        @error('descripcion') aria-describedby="error-descripcion" @enderror
+    >{{ old('descripcion', $producto->descripcion ?? '') }}</textarea>
 
     @error ('descripcion')
 

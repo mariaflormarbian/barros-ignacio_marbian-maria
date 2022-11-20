@@ -100,11 +100,6 @@ class Producto extends Model
     {
         return $this->talles->pluck('talle_id')->toArray();
     }
- 
-    public function getCategoriaId(): int
-    {
-        return $this->categoria->categoria_id;
-    }
 
     protected function precio():Attribute
     {

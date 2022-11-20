@@ -36,6 +36,14 @@
                     
                     <ul class="list-unstyled">
                         <li>
+                            <a href="{{ route('admin.productos.index') }}" ><span class="las la-receipt" >Productos</span> </a>
+                        </li>
+
+                          <li>
+                            <a href="{{ route('admin.blogs.index') }}" ><span class="las la-receipt" >Blog</span> </a>
+                        </li>
+
+                        <li>
                             <a href="{{ route('home') }}" ><span class="las la-receipt" >Volver a home</span> </a>
                         </li>
                         <li>
