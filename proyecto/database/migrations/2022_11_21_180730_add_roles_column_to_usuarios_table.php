@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->unsignedSmallInteger('categoria_id')->after('producto_id');
-
-            $table->foreign('categoria_id')->references('categoria_id')->on('categorias');
+        Schema::table('usuarios', function (Blueprint $table) {
+            $table->unsignedTinyInteger('roles');
         });
     }
 
@@ -27,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->dropColumn('categoria_id');
+        Schema::table('usuarios', function (Blueprint $table) {
+            $table->dropColumn('roles');
         });
     }
 };

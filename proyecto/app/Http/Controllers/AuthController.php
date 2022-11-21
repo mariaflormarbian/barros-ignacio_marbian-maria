@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class AuthController extends Controller
 {
@@ -18,11 +19,18 @@ class AuthController extends Controller
 
         if(\Auth::attempt($credenciales)){
             $request->session()->regenerate();
+             
+            if (Auth::user()->roles === 1) {
+                Session::put('admin', true);
+                
+                return redirect()
+                    ->route('admin.productos.index')
+                    ->with('statusMessage', 'Sesión iniciada con éxito. ¡Bienvenido/a a Ieta!')
+                    ->with('statusType', 'succes');
+            }
 
-            return redirect()
-                ->route('admin.productos.index')
-                ->with('statusMessage', 'Sesión iniciada con éxito. ¡Bienvenido/a a Ieta!')
-                ->with('statusType', 'succes');
+            return redirect()->route('home');
+
         }else{
             return redirect()
                 ->route('auth.login.form')
@@ -31,6 +39,7 @@ class AuthController extends Controller
         }
 
     }
+
     public function logout(Request $request)
     {
         Auth::logout();

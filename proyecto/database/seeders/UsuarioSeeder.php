@@ -17,21 +17,24 @@ class UsuarioSeeder extends Seeder
         \DB::table('usuarios')->insert([
             [
                 'usuario_id'=>1,
+                'nombre' => 'Ignacio',
                 'email'=>'ignacio.barros@davinci.edu.ar',
                 'password'=> \Hash::make('alumno1'),
+                'roles' => 1,
                 'created_at'=>now(),
                 'updated_at'=>now(),
             ],
 
             [
                 'usuario_id'=>2,
+                'nombre' => 'Florencia',
                 'email'=>'maria.marbian@davinci.edu.ar',
                 'password'=> \Hash::make('alumno2'),
+                'roles' => 2,
                 'created_at'=>now(),
                 'updated_at'=>now(),
             ],
 
         ]);
-
     }
 }

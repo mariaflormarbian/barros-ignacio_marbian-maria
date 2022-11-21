@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
     // HOME
 
@@ -50,7 +49,7 @@ Route::controller(\App\Http\Controllers\AuthController::class)->group(function (
         ->middleware('auth');
 });
 
-Route::middleware('auth')
+Route::middleware('auth', 'auth.admin')
 ->controller(\App\Http\Controllers\AdminProductosController::class)
 ->group(function () {
 
@@ -82,8 +81,7 @@ Route::middleware('auth')
         ->whereNumber('id');
 });
 
-
-Route::middleware('auth')
+Route::middleware('auth', 'auth.admin')
 ->controller(\App\Http\Controllers\AdminNovedadesController::class)
 ->group(function () {
 

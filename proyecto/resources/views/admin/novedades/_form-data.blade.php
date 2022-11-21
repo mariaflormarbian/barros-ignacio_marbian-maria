@@ -54,9 +54,8 @@
         id="texto"
         name="texto"
         class="form-control"
-        value="{{ old('texto', $novedad->texto ?? '') }}"
         @error('texto') aria-describedby="error-texto" @enderror
-    ></textarea>
+    >{{ old('texto', $novedad->texto ?? '') }}</textarea>
     <p><small>El texto debe contener un mínimo de 50 caractéres</small></p>
 
     @error ('texto')
@@ -76,9 +75,8 @@
         id="sinopsis"
         name="sinopsis"
         class="form-control"
-        value="{{ old('sinopsis', $novedad->sinopsis ?? '') }}"
         @error('sinopsis') aria-describedby="error-sinopsis" @enderror
-    ></textarea>
+    >{{ old('sinopsis', $novedad->sinopsis ?? '') }}</textarea>
     <p><small>La sinópsis debe contener un mínimo de 20 caractéres</small></p>
 
     @error ('sinopsis')

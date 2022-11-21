@@ -53,23 +53,31 @@
                         <a class="nav-link @yield('carrito')" href="#"><i
                                 class="las la-shopping-bag not-active"></i></a>
                     </li>
+
                     @auth
-                    <li class="nav-item">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.productos.index') }}">Admin</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                        <form action="{{route('auth.logout')}}" method="post">
-                            @csrf
-                            <button class="bg-white text-dark pt-0" id="cerrar" type="submit">Cerrar Sesión</button>
-                        </form>
-                    </li>
+
+                        @if ( Illuminate\Support\Facades\Auth::user()->roles === 1 )
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.productos.index') }}">Admin</a>
+                            </li>
+                            
+                        @endif
+
+                        <li class="nav-item">
+                            <form action="{{route('auth.logout')}}" method="post">
+                                @csrf
+                                <button class="bg-white text-dark pt-0" id="cerrar" type="submit">Cerrar Sesión ({{ Illuminate\Support\Facades\Auth::user()->nombre }})</button>
+                            </form>
+                        </li>
+
                     @elseguest
-                    <li class="nav-item">
-                        <a class="nav-link" @yield('iniciar-sesion') href="{{ route('auth.login.form') }}">Iniciar
-                            Sesion</a>
-                    </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" @yield('iniciar-sesion') href="{{ route('auth.login.form') }}">Iniciar
+                                Sesion</a>
+                        </li>
+
                     @endauth
 
 
