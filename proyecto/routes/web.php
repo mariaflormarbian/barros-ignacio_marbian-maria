@@ -102,7 +102,7 @@ Route::middleware('auth')
 
 );
 Route::middleware('auth')
-    ->controller(\App\Http\Controllers\AdminBlogsController::class)
+    ->controller(\App\Http\Controllers\AdminNovedadesController::class)
     ->group(function (){
 
         // Admin BLOGS

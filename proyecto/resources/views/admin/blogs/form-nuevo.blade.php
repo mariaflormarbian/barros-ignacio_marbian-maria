@@ -1,5 +1,6 @@
 <?php
 /** @var \Illuminate\Support\ViewErrorBag $errors */
+
 ?>
 
 @extends('layouts.admin-main')
@@ -23,6 +24,7 @@
                         <div class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
 
                             <h2 class="h5">Completá los datos del formulario.</h2>
+                          
 
                         </div>
 

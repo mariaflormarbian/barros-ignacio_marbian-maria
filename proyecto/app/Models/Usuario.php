@@ -38,4 +38,6 @@ class Usuario extends User
     protected $table = 'usuarios';
     protected $primaryKey = 'usuario_id';
     protected  $hidden = ['password', 'remember_token'];
+
+
 }

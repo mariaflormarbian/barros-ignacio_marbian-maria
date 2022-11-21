@@ -44,5 +44,5 @@ class Novedad extends Model
         'imagen_descripcion.max' => 'La descripcion de la imagen puede tener hasta :max caracteres.',
     ];
 
-   
+
 }

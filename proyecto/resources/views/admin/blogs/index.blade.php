@@ -91,7 +91,7 @@
                                                 Imagen
                                             </th>
                                             <th scope="col">
-                                                Autor
+                                                Usuario
                                             </th>
                                              <th scope="col">
                                                 Fecha
@@ -128,8 +128,11 @@
                                                     </td>
 
                                                 @endif
+                                                                                                <td>{{ $novedad->usuario->email }}</td>
 
-                                                <td>{{ $novedad->usuario_id }}</td>
+                                               <td>poner fecha</td>
+
+
                                                 <td>{{ $novedad->publico ? 'si' : 'no' }}</td>
 
                                                 <td class="d-flex justify-content-center align-items-center">
@@ -147,7 +150,6 @@
                                                     </form>
 
                                                 </td>
-                                               <td>poner fecha</td>
 
                                             </tr>
 

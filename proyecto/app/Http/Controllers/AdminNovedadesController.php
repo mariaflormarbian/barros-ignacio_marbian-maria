@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\Novedad;
+use DB;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminBlogsController extends Controller
 {
@@ -31,6 +33,7 @@ class AdminBlogsController extends Controller
     {
 
         return view('admin.blogs.form-nuevo');
+        
     }
 
     public function nuevoEjecutar(Request $request)
