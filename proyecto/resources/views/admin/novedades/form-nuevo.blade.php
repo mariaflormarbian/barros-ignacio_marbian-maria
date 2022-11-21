@@ -28,7 +28,7 @@
 
                         </div>
 
-                        <form action="{{ route('admin.productos.nuevo.ejecutar') }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                        <form action="{{ route('admin.novedades.nuevo.ejecutar') }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
 
                             @csrf
 

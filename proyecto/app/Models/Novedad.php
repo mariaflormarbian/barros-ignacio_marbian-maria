@@ -12,14 +12,13 @@ class Novedad extends Model
    protected $table = 'novedades';
     protected $primaryKey = 'novedad_id';
     protected $fillable = [
-        'novedad_id',
         'usuario_id',
         'titulo',
         'texto',
-        'sinospsis',	
+        'sinopsis',	
+        'publico',
         'imagen',
         'imagen_descripcion',
-        'publico',
     ];
 
     public const VALIDATE_RULES = [

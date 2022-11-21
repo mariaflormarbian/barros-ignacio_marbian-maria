@@ -1,7 +1,5 @@
 <?php
 /** @var \Illuminate\Database\Eloquent\Collection | \App\Models\Novedad[] $novedades*/
-
-
 ?>
 
 @extends('layouts.admin-main')
@@ -15,6 +13,20 @@
     <section>
 
         <div class="main-dashboard">
+
+            @if (Session::has('statusMessage'))
+
+                <p>
+                    <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/></svg>
+                    </span>
+
+                    {!! Session::get('statusMessage') !!}
+
+                </p>
+
+            @endif
 
 
             <!-- contadores -->
@@ -33,7 +45,7 @@
 
                 </div>
 
-               
+
 
                 <div class="card-single">
 
@@ -78,22 +90,18 @@
                                                 ID
                                             </th>
                                             <th scope="col">
-                                                Título	
-                                            </th>
-                                            <th scope="col">
-                                                Texto
+                                                Título
                                             </th>
                                             <th scope="col">
                                                 Sinópsis
                                             </th>
-                                            
                                             <th scope="col">
                                                 Imagen
                                             </th>
                                             <th scope="col">
                                                 Usuario
                                             </th>
-                                             <th scope="col">
+                                            <th scope="col">
                                                 Fecha
                                             </th>
                                             <th scope="col">
@@ -110,28 +118,24 @@
                                     <tbody>
 
                                         @foreach ($novedades as $novedad)
-
                                             <tr class="text-center">
                                                 <td>{{ $novedad->novedad_id }}</td>
                                                 <td>{{ $novedad->titulo }}</td>
-                                                <td>{{ $novedad->texto }}</td>
                                                 <td> {{ $novedad->sinopsis }}</td>
 
-                                    
-
                                                 @if ($novedad->imagen != null && Storage::disk('public')->has('imgs/' . $novedad->imagen))
-
                                                     <td>
 
-                                                        <img src="{{ Storage::disk('public')->url('imgs/' . $novedad->imagen) }}" class="d-block mx-auto img-table" alt=" {{ $novedad->imagen_descripcion }} ">
+                                                        <img src="{{ Storage::disk('public')->url('imgs/' . $novedad->imagen) }}"
+                                                            class="d-block mx-auto img-fluid"
+                                                            alt=" {{ $novedad->imagen_descripcion }} ">
 
                                                     </td>
-
                                                 @endif
-                                                                                                <td>{{ $novedad->usuario_id }}</td>
 
-                                               <td>poner fecha</td>
+                                                <td>{{ $novedad->usuario_id }}</td>
 
+                                                <td>poner fecha</td>
 
                                                 <td>{{ $novedad->publico ? 'si' : 'no' }}</td>
 
@@ -152,7 +156,6 @@
                                                 </td>
 
                                             </tr>
-
                                         @endforeach
 
                                     </tbody>

@@ -11,8 +11,6 @@ class AdminNovedadesController extends Controller
 {
     public function index()
     {
-       
-
         $novedades = Novedad::all();
         $ocultos = 0;
 
@@ -26,19 +24,15 @@ class AdminNovedadesController extends Controller
             'novedades' => $novedades,
             'ocultos' => $ocultos,
         ]);
-
     }
 
     public function nuevoForm()
     {
-
         return view('admin.novedades.form-nuevo');
-        
     }
 
     public function nuevoEjecutar(Request $request)
     {
-
         $data = $request->except(['_token']);
 
         $request->validate(Novedad::VALIDATE_RULES, Novedad::VALIDATE_MESSAGES);
@@ -47,14 +41,13 @@ class AdminNovedadesController extends Controller
 
         if ($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
-            $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['nombre']) . "." . $imagen->extension();
+            $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['titulo']) . "." . $imagen->extension();
             $imagen->storeAs('imgs', $nombreImagen, 'public');
             $data['imagen'] = $nombreImagen;
         }else{
-            $default = 'img-default.png';
+            $default = 'img-default.jpeg';
             $data['imagen'] = $default;
         }
-
 
         try {
             
@@ -76,7 +69,6 @@ class AdminNovedadesController extends Controller
             ->withInput();
 
         }
-
     }
 
     public function eliminarConfirmar(int $id)
@@ -84,7 +76,7 @@ class AdminNovedadesController extends Controller
 
         $novedad = Novedad::findOrFail($id);
 
-        return view('admin.novedades.form-eliminar', [
+        return view('admin.novedades.form_eliminar', [
             'novedad' => $novedad
         ]);
 
@@ -98,14 +90,13 @@ class AdminNovedadesController extends Controller
         try {
             
             DB::transaction(function() use($novedad){
-       
                 $novedad->delete();
             });
             
             return redirect()
             ->route('admin.novedades.index')
             ->with('statusType', 'success')
-            ->with('statusMessage', 'La novedad <b>' . e($novedad->nombre) . '</b> fue eliminada con éxito.');
+            ->with('statusMessage', 'La novedad <b>' . e($novedad->titulo) . '</b> fue eliminada con éxito.');
 
          } catch (\Throwable $th) {
             
@@ -142,7 +133,7 @@ class AdminNovedadesController extends Controller
 
         if ($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
-            $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['nombre']) . "." . $imagen->extension();
+            $nombreImagen = date('YmdHis') . "_" . \Str::slug($data['titulo']) . "." . $imagen->extension();
 
             $imagen->storeAs('imgs', $nombreImagen, 'public');
             $data['imagen'] = $nombreImagen;

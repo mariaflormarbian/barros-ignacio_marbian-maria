@@ -8,10 +8,25 @@
 
 ?>
 
-<!-- Nombre -->
+
+{{-- Usuario --}}
+<div class="visually-hidden">
+
+    <label for="usuario_id" class="form-label">Usuario</label>
+    <input
+        type="number"
+        id="usuario_id"
+        name="usuario_id"
+        class="form-control"
+        value="{{ \Illuminate\Support\Facades\Auth::user()->usuario_id }}"
+    >
+
+</div>
+
+{{-- Titulo --}}
 <div class="col-md-4">
 
-    <label for="nombre" class="form-label">Título</label>
+    <label for="titulo" class="form-label">Título</label>
     <input
         type="text"
         id="titulo"
@@ -30,7 +45,6 @@
 </div>
 
 {{--Texto--}}
-
 <div class="col-md-4">
 
     <label for="texto" class="form-label">Texto</label>
@@ -39,7 +53,7 @@
         id="texto"
         name="texto"
         class="form-control"
-        value="{{ old('texto', $novedad->titulo ?? '') }}"
+        value="{{ old('texto', $novedad->texto ?? '') }}"
         @error('texto') aria-describedby="error-texto" @enderror
     >
 
@@ -51,9 +65,7 @@
 
 </div>
 
-
 {{--Sinópsis--}}
-
 <div class="col-md-4">
 
     <label for="sinopsis" class="form-label">Sinópsis</label>
@@ -74,7 +86,6 @@
 
 </div>
 
-
 <!-- Público -->
 <div class="col-md-2 align-items-center d-flex">
 
@@ -93,7 +104,7 @@
 
 </div>
 
-<!-- Imagen -->
+{{-- Imagen --}}
 <div class="mb-3" id="info-imagen">
     @if ($imagen !=null && Storage::disk('public')->has('imgs/' . $novedad->imagen))
         <p>Imagen actual</p>
@@ -102,7 +113,6 @@
 
         <p class="visually-hidden">Hay una imagen cargada</p>
         <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>
-
     @else
         <p>Actualmente no hay ninguna imagen cargada.</p>
     @endif
@@ -128,7 +138,7 @@
 
 </div>
 
-<!-- Imagen Descripción -->
+{{-- Imagen Descripcion --}}
 <div class="col-md-6">
 
     <label for="imagen_descripcion" class="form-label">Descripción de la Imagen</label>
