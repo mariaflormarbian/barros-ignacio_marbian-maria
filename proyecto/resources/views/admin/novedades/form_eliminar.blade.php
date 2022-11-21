@@ -23,7 +23,7 @@
 
                 </h2>
 
-                <dl class= "d-flex  flex-column align-items-center mw-100">
+                <dl class= "d-flex  flex-column align-items-center mw-100 ">
                     <dt>Novedad</dt>
                     <dd>{{ $novedad->titulo }}</dd>
                     <dt>Texto</dt>
@@ -40,10 +40,10 @@
                         @endif
                 </dl>
 
-                <form action="{{ route('admin.novedades.eliminar.ejecutar', ['id' => $novedad->novedad_id]) }}" method="post" class=" d-flex">
+                <form action="{{ route('admin.novedades.eliminar.ejecutar', ['id' => $novedad->novedad_id]) }}" method="post" class=" d-flex flex-column">
 
                     @csrf
-                    <p>Estás por eliminar la siguiente novedad. ¿Estás seguro/a de querer continuar?</p>
+                    <p class="text-center">Estás por eliminar la siguiente novedad. ¿Estás seguro/a de querer continuar?</p>
                     <input type="hidden" name="id" value="">
                     <button type="submit" class="boton col-md-3 m-auto mt-3">Eliminar</button>
                 </form>

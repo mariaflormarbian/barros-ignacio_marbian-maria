@@ -33,8 +33,9 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('novedades', 'novedades')
         ->name('novedades');
 
-    // Route::get('novedades/{id}', 'novedadDetalle')
-    //     ->name('novedad.detalle');
+    Route::get('novedad_detalle/{id}', 'novedadDetalle')
+        ->name('novedad.detalle')
+        ->whereNumber('id');
 });
 
 Route::controller(\App\Http\Controllers\AuthController::class)->group(function () {

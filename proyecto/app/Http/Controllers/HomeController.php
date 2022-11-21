@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\Novedad;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -41,13 +43,24 @@ class HomeController extends Controller
 
     public function novedades()
     {
-        return view('home.novedades');
+
+        $novedades = Novedad::all();
+        
+        return view('home.novedades', [
+        'novedades' => $novedades
+        ]);
     }
 
-//    public function novedadDetalle()
-//     {
-//         return view('home.novedad_detalle');
-//     }
+   public function novedadDetalle(int $id)
+    {
+        $novedad = Novedad::findOrFail($id);
+
+        $novedades = Novedad::all();
+        return view('home.novedad_detalle', [
+       
+            'novedad' => $novedad,
+            ]);
+    }
 
     
     public function productos()
