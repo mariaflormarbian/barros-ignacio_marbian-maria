@@ -40,7 +40,7 @@
                         </li>
 
                           <li>
-                            <a href="{{ route('admin.blogs.index') }}" ><span class="las la-receipt" >Blog</span> </a>
+                            <a href="{{ route('admin.novedades.index') }}" ><span class="las la-receipt" >Novedades</span> </a>
                         </li>
 
                         <li>

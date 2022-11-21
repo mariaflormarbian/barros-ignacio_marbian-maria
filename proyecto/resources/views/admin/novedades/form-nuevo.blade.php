@@ -36,7 +36,7 @@
                                 <p class="mb-3 text-danger fs-6">Hay errores de validación en el formulario. Por favor, revisá los datos e intentá de nuevo.</p>
                             @endif
 
-                            @include('admin.blogs._form-data')
+                            @include('admin.novedades._form-data')
 
                             <button type="submit" class="col-5 m-auto mt-3 mb-3 boton">Agregar</button>
 

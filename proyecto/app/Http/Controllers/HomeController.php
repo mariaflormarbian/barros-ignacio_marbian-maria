@@ -39,15 +39,15 @@ class HomeController extends Controller
     }
 
 
-    public function blog()
+    public function novedades()
     {
-        return view('home.blog');
+        return view('home.novedades');
     }
 
-   public function blog_detalle()
-    {
-        return view('home.blog_detalle');
-    }
+//    public function novedadDetalle()
+//     {
+//         return view('home.novedad_detalle');
+//     }
 
     
     public function productos()

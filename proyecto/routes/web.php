@@ -32,11 +32,11 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
     Route::get('contacto', 'contacto')
         ->name('contacto');
 
-    Route::get('blog', 'blog')
-        ->name('blog');
-        
-        Route::get('blog_detalle', 'blog_detalle')
-        ->name('blog_detalle');
+    Route::get('novedades', 'novedades')
+        ->name('novedades');
+
+    // Route::get('novedades/{id}', 'novedadDetalle')
+    //     ->name('novedad.detalle');
 
 }
 );
@@ -105,39 +105,39 @@ Route::middleware('auth')
     ->controller(\App\Http\Controllers\AdminNovedadesController::class)
     ->group(function (){
 
-        // Admin BLOGS
+        // Admin Novedades
 
-        Route::get('admin/blogs','index')
-        ->name('admin.blogs.index');
+        Route::get('admin/novedades','index')
+        ->name('admin.novedades.index');
 
     
 // GRABAR
-Route::get('admin/blogs/nuevo', 'nuevoForm')
-->name('admin.blogs.nuevo.form');
+Route::get('admin/novedades/nuevo', 'nuevoForm')
+->name('admin.novedades.nuevo.form');
 
 
-Route::post('admin/blogs/nuevo', 'nuevoEjecutar')
-->name('admin.blogs.nuevo.ejecutar');
+Route::post('admin/novedades/nuevo', 'nuevoEjecutar')
+->name('admin.novedades.nuevo.ejecutar');
 
 
         
 // EDITAR
-    Route::get('admin/blogs/{id}/editar', 'editarForm')
-    ->name('admin.blogs.editar.form')
+    Route::get('admin/novedades/{id}/editar', 'editarForm')
+    ->name('admin.novedades.editar.form')
     ->whereNumber('id');
 
-Route::post('admin/blogs/{id}/editar', 'editarEjecutar')
-    ->name('admin.blogs.editar.ejecutar')
+Route::post('admin/novedades/{id}/editar', 'editarEjecutar')
+    ->name('admin.novedades.editar.ejecutar')
     ->whereNumber('id');
 
     
 // ELIMINAR
-Route::get('admin/blogs/{id}/eliminar', 'eliminarConfirmar')
-->name('admin.blogs.eliminar.confirmar')
+Route::get('admin/novedades/{id}/eliminar', 'eliminarConfirmar')
+->name('admin.novedades.eliminar.confirmar')
 ->whereNumber('id');
 
-Route::post('admin/blogs/{id}/eliminar','eliminarEjecutar')
-->name('admin.blogs.eliminar.ejecutar')
+Route::post('admin/novedades/{id}/eliminar','eliminarEjecutar')
+->name('admin.novedades.eliminar.ejecutar')
 ->whereNumber('id');
 
 

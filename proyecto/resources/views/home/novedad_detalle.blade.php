@@ -1,13 +1,13 @@
 @extends('layouts.main')
 
-@section('title', 'Blog Detalle')
+@section('title', 'Novedad Detalle')
 
 @section('main')
 
 
 
 <section class="container">
-      <h1 class="font-weight-bold">Blog detalle</h1>
+      <h1 class="font-weight-bold">Novedad detalle</h1>
         <hr>
     <article>
         <div class=" card-body">

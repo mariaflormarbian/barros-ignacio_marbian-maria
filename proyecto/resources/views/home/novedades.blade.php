@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
-@section('title', 'Blog')
+@section('title', 'Novedades')
+@section('novedades', 'active')
 
 @section('main')
 
@@ -9,7 +10,7 @@
 
     <div class="container mt-5 py-5">
 
-        <h1 class="font-weight-bold">Blog</h1>
+        <h1 class="font-weight-bold">Novedades</h1>
         <hr>
 
 
@@ -27,9 +28,9 @@
                             <p class="card-text">Texto sobre la novedad escrita por el usuario</p>
                         </div>
 
-                        <div class="card-body">
-                            <a class="card-link @yield('blog_detalle')" href="{{ route('blog_detalle') }}"><h3 class="h6"><span>Link novedad</span></h3></a>
-                        </div>
+                        {{-- <div class="card-body">
+                            <a class="card-link @yield('novedad_detalle')" href="{{ route('novedad_detalle') }}"><h3 class="h6"><span>Link novedad</span></h3></a>
+                        </div> --}}
                         </article>
 
             </div>

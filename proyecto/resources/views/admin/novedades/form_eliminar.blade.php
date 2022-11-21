@@ -40,7 +40,7 @@
                         @endif
                 </dl>
 
-                <form action="{{ route('admin.blogs.eliminar.ejecutar', ['id' => $novedad->novedad_id]) }}" method="post" class=" d-flex">
+                <form action="{{ route('admin.novedades.eliminar.ejecutar', ['id' => $novedad->novedad_id]) }}" method="post" class=" d-flex">
 
                     @csrf
                     <p>Estás por eliminar la siguiente novedad. ¿Estás seguro/a de querer continuar?</p>

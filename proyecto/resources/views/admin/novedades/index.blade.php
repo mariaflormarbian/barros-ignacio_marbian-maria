@@ -6,9 +6,9 @@
 
 @extends('layouts.admin-main')
 
-@section('title', 'Administrar Blogs')
+@section('title', 'Administrar Novedades')
 
-@section('h1', 'Administrar Blog')
+@section('h1', 'Administrar Novedad')
 
 @section('main')
 
@@ -62,7 +62,7 @@
                                 Novedades
                             </h2>
 
-                            <a href="{{ route('admin.blogs.nuevo.form') }}">Agregar Novedad</a>
+                            <a href="{{ route('admin.novedades.nuevo.form') }}">Agregar Novedad</a>
 
                         </div>
 
@@ -128,7 +128,7 @@
                                                     </td>
 
                                                 @endif
-                                                                                                <td>{{ $novedad->usuario->email }}</td>
+                                                                                                <td>{{ $novedad->usuario_id }}</td>
 
                                                <td>poner fecha</td>
 
@@ -137,13 +137,13 @@
 
                                                 <td class="d-flex justify-content-center align-items-center">
 
-                                                    <form action="{{ route('admin.blogs.editar.form', ['id' => $novedad->novedad_id]) }}" class="pb-3 pt-3" method="get">
+                                                    <form action="{{ route('admin.novedades.editar.form', ['id' => $novedad->novedad_id]) }}" class="pb-3 pt-3" method="get">
 
                                                         <button type="submit" class="btn me-3 btn-success">Editar</button>
 
                                                     </form>
 
-                                                    <form action="{{ route('admin.blogs.eliminar.confirmar', ['id' => $novedad->novedad_id]) }}" class="pb-3 pt-3" method="get">
+                                                    <form action="{{ route('admin.novedades.eliminar.confirmar', ['id' => $novedad->novedad_id]) }}" class="pb-3 pt-3" method="get">
 
                                                         <button type="submit" class="btn btn-danger">Eliminar</button>
 

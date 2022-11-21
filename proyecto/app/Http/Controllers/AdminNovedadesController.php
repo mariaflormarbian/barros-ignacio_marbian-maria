@@ -7,7 +7,7 @@ use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class AdminBlogsController extends Controller
+class AdminNovedadesController extends Controller
 {
     public function index()
     {
@@ -22,7 +22,7 @@ class AdminBlogsController extends Controller
             }
         }
 
-        return view('admin.blogs.index', [
+        return view('admin.novedades.index', [
             'novedades' => $novedades,
             'ocultos' => $ocultos,
         ]);
@@ -32,7 +32,7 @@ class AdminBlogsController extends Controller
     public function nuevoForm()
     {
 
-        return view('admin.blogs.form-nuevo');
+        return view('admin.novedades.form-nuevo');
         
     }
 
@@ -63,14 +63,14 @@ class AdminBlogsController extends Controller
             });
             
             return redirect()
-            ->route('admin.blogs.index')
+            ->route('admin.novedades.index')
             ->with('statusType', 'success')
             ->with('statusMessage', 'La novedad <b>' . e($data['titulo']) . '</b> fue creada con éxito');
         
         } catch (\Throwable $th) {
             
             return redirect()
-            ->route('admin.blogs.nuevo.form')
+            ->route('admin.novedades.nuevo.form')
             ->with('statusType', 'danger')
             ->with('statusMessage', 'Ocurrio un error inesperado. La novedad no pudo ser creada.')
             ->withInput();
@@ -84,7 +84,7 @@ class AdminBlogsController extends Controller
 
         $novedad = Novedad::findOrFail($id);
 
-        return view('admin.blogs.form-eliminar', [
+        return view('admin.novedades.form-eliminar', [
             'novedad' => $novedad
         ]);
 
@@ -103,14 +103,14 @@ class AdminBlogsController extends Controller
             });
             
             return redirect()
-            ->route('admin.blogs.index')
+            ->route('admin.novedades.index')
             ->with('statusType', 'success')
             ->with('statusMessage', 'La novedad <b>' . e($novedad->nombre) . '</b> fue eliminada con éxito.');
 
          } catch (\Throwable $th) {
             
             return redirect()
-            ->route('admin.blogs.eliminar.confirmar', ['id' => $id])
+            ->route('admin.novedades.eliminar.confirmar', ['id' => $id])
             ->with('statusType', 'danger')
             ->with('statusMessage', 'Ocurrio un error inesperado al intentar eliminar la novedad.')
             ->withInput();
@@ -123,7 +123,7 @@ class AdminBlogsController extends Controller
 
         $novedad = Novedad::find($id);
 
-        return view('admin.blogs.form-editar', [
+        return view('admin.novedades.form-editar', [
             'novedad' => $novedad
         ]);
 
@@ -163,14 +163,14 @@ class AdminBlogsController extends Controller
             DB::commit();
 
             return redirect()
-            ->route('admin.blogs.index')
+            ->route('admin.novedades.index')
             ->with('statusType', 'success')
             ->with('statusMessage', 'La novedad <b>' . e($novedad->titulo) . '</b> fue actualizada correctamente.');
 
         } catch (\Throwable $th) {
 
             return redirect()
-            ->route('admin.blogs.editar.form', ['id' => $id])
+            ->route('admin.novedades.editar.form', ['id' => $id])
             ->with('statusType', 'danger')
             ->with('statusMessage', 'Ocurrio un error inesperado. La novedad no pudo ser actualizada.')
             ->withInput();

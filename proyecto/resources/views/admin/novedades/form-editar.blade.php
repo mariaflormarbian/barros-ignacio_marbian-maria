@@ -27,14 +27,14 @@
 
                         </div>
 
-                        <form action="{{ route('admin.blogs.editar.ejecutar', ['id' => $novedad->novedad_id]) }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
+                        <form action="{{ route('admin.novedades.editar.ejecutar', ['id' => $novedad->novedad_id]) }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
 
                             @csrf
 
                             @if ($errors->any())
                                 <p class="mb-3 text-danger fs-6">Hay errores de validación en el formulario. Por favor, revisá los datos e intentá de nuevo.</p>
                             @endif
-                            @include('admin.blogs._form-data')
+                            @include('admin.novedades._form-data')
 
 
                             <button type="submit" class=" col-5 m-auto mt-3 mb-3 boton">Editar</button>

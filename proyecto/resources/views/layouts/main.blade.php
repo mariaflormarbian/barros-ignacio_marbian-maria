@@ -46,7 +46,7 @@
                         <a class="nav-link @yield('contacto')" href="{{ route('contacto') }}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @yield('blog')" href="{{ route('blog') }}">Blog</a>
+                        <a class="nav-link @yield('novedades')" href="{{ route('novedades') }}">Novedades</a>
                     </li>
 
                     <li class="nav-item">
