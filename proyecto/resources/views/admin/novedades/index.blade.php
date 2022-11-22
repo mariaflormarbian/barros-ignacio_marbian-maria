@@ -100,10 +100,7 @@
                                             </th>
                                             <th scope="col">
                                                 Usuario
-                                            </th>
-                                            <th scope="col">
-                                                Fecha
-                                            </th>
+                                            </th>                                    
                                             <th scope="col">
                                                 Público
                                             </th>
@@ -135,7 +132,6 @@
 
                                                 <td>{{ $novedad->usuario_id }}</td>
 
-                                                <td>poner fecha</td>
 
                                                 <td>{{ $novedad->publico ? 'si' : 'no' }}</td>
 

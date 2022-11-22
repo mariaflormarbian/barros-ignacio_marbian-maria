@@ -46,16 +46,7 @@
 
                 </div>
 
-                <div class="card-single">
-                    <div>
-                        <p class="h3"></p>
-                        <span>Ventas</span>
-                    </div>
-                    <div>
-                        <span class="las la-clipboard-list"></span>
-                    </div>
-
-                </div>
+                
 
                
 

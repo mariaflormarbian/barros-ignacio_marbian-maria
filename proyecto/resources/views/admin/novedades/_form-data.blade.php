@@ -54,8 +54,9 @@
         id="texto"
         name="texto"
         class="form-control"
+        value="{{ old('texto', $novedad->texto ?? '') }}"
         @error('texto') aria-describedby="error-texto" @enderror
-    >{{ old('texto', $novedad->texto ?? '') }}</textarea>
+    ></textarea>
     <p><small>El texto debe contener un mínimo de 50 caractéres</small></p>
 
     @error ('texto')
@@ -75,8 +76,9 @@
         id="sinopsis"
         name="sinopsis"
         class="form-control"
+        value="{{ old('sinopsis', $novedad->sinopsis ?? '') }}"
         @error('sinopsis') aria-describedby="error-sinopsis" @enderror
-    >{{ old('sinopsis', $novedad->sinopsis ?? '') }}</textarea>
+    ></textarea>
     <p><small>La sinópsis debe contener un mínimo de 20 caractéres</small></p>
 
     @error ('sinopsis')
@@ -110,7 +112,7 @@
     @if ($imagen !=null && Storage::disk('public')->has('imgs/' . $novedad->imagen))
         <p>Imagen actual</p>
 
-        <img src="{{ Storage::disk('public')->url('imgs/' . $imagen) }}" class="d-block mx-auto img-fluid" alt="{{url($imagen_descripcion)}} ">
+        <img src="{{ Storage::disk('public')->url('imgs/' . $imagen) }}" class="d-block mx-auto img-fluid" alt="{{$imagen_descripcion}} ">
 
         <p class="visually-hidden">Hay una imagen cargada</p>
         <p class="text-center">Para mantener la misma imagen, tiene que quedar como se encuentra</p>

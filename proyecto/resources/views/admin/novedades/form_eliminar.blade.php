@@ -34,7 +34,7 @@
                     <dt>Imagen</dt>
                     <dd>
                         @if ($novedad->imagen !=null && Storage::disk('public')->has('imgs/' . $novedad->imagen))
-                            <img src="{{ Storage::disk('public')->url('imgs/' . $novedad->imagen) }}" class="d-block mx-auto img-fluid" alt="{{url($novedad->imagen_descripcion)}} ">
+                            <img src="{{ Storage::disk('public')->url('imgs/' . $novedad->imagen) }}" class="d-block mx-auto img-fluid" alt="{{$novedad->imagen_descripcion}} ">
                         @else
                             No contiene ninguna imagen para eliminar
                         @endif
