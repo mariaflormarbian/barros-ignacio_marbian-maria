@@ -20,24 +20,23 @@ class AuthController extends Controller
         if(\Auth::attempt($credenciales)){
             $request->session()->regenerate();
              
-            if (Auth::user()->roles === 1) {
-                Session::put('admin', true);
-                
+            if (Auth::user()->roles === 1) 
+            {
+                Session::put('admin', true);                
                 return redirect()
                     ->route('admin.productos.index')
                     ->with('statusMessage', 'Sesión iniciada con éxito. ¡Bienvenido/a a Ieta!')
                     ->with('statusType', 'succes');
             }
-
             return redirect()->route('home');
 
-        }else{
+        }else
+        {
             return redirect()
                 ->route('auth.login.form')
                 ->with('statusMessage', 'Credenciales incorrectas. Por favor, inténtelo de nuevo.')
                 ->with('statusType', 'danger');
         }
-
     }
 
     public function logout(Request $request)
@@ -46,12 +45,10 @@ class AuthController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
+        
         return redirect()
             ->route('auth.login.form')
             ->with('statusMessage', 'Sesión cerrada de manera exitosa.')
             ->with('statusType', 'success');
     }
-
-
 }

@@ -53,6 +53,4 @@ class Usuario extends User
             'producto_id',
         );
     }    
-
-    
 }

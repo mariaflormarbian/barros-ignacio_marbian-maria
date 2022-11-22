@@ -24,5 +24,4 @@ class Talle extends Model
 {
     protected $table = "talles";
     protected $primaryKey = "talle_id";
-
 }

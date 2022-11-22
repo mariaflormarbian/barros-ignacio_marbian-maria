@@ -12,7 +12,6 @@ class HomeController extends Controller
     public function index()
     {
         $productos = Producto::all();
-
         return view('index', [
             'productos' => $productos
         ]);
@@ -20,32 +19,25 @@ class HomeController extends Controller
 
     public function detalle(int $id)
     {
-
         $producto = Producto::findOrFail($id);
         $productos = Producto::with('categoria')->get();
-
         return view('home.detalle', [
             'producto' => $producto,
             'productos' => $productos
         ]);
-
     }
 
 
 
     public function contacto()
     {
-
         return view('home.contacto');
-
     }
 
 
     public function novedades()
     {
-
-        $novedades = Novedad::all();
-        
+        $novedades = Novedad::all();       
         return view('home.novedades', [
         'novedades' => $novedades
         ]);
@@ -54,21 +46,17 @@ class HomeController extends Controller
    public function novedadDetalle(int $id)
     {
         $novedad = Novedad::findOrFail($id);
-
         $novedades = Novedad::all();
-        return view('home.novedad_detalle', [
-       
+        return view('home.novedad_detalle', [      
             'novedad' => $novedad,
             ]);
     }
-
-    
+   
     public function productos()
     {
         $productos = Producto::all();
         return view('home.productos',[
             'productos'=>$productos,
         ]);
-
     }
 }
