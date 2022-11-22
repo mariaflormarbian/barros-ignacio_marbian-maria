@@ -17,5 +17,13 @@ Información acceso a inicio de sesión:
 	Email: maria.marbian@davinci.edu.ar
 	Contraseña: alumno2
 
+ Usuario 3: (USUARIO COMÚN)
+	Email: rocket.barros@davinci.edu.ar
+	Contraseña: alumno3
+
+ Usuario 4: (USUARIO COMÚN)
+	Email: pacho.marbian@davinci.edu.ar
+	Contraseña: alumno4
+
 DB_DATABASE=dw4_barros_marbian 
 
