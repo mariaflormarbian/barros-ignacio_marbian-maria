@@ -24,7 +24,6 @@ class UsuarioSeeder extends Seeder
                 'created_at'=>now(),
                 'updated_at'=>now(),
             ],
-
             [
                 'usuario_id'=>2,
                 'nombre' => 'Florencia',
@@ -34,7 +33,24 @@ class UsuarioSeeder extends Seeder
                 'created_at'=>now(),
                 'updated_at'=>now(),
             ],
-
+            [
+                'usuario_id'=>3,
+                'nombre' => 'Rocket',
+                'email'=>'rocket.barros@davinci.edu.ar',
+                'password'=> \Hash::make('alumno3'),
+                'roles' => 2,
+                'created_at'=>now(),
+                'updated_at'=>now(),
+            ],
+            [
+                'usuario_id'=>4,
+                'nombre' => 'Pacho',
+                'email'=>'pacho.marbian@davinci.edu.ar',
+                'password'=> \Hash::make('alumno4'),
+                'roles' => 2,
+                'created_at'=>now(),
+                'updated_at'=>now(),
+            ],
         ]);
     }
 }

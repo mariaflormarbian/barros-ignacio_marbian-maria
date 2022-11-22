@@ -34,6 +34,52 @@ class UsuariosTienenProductosSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+
+
+
+            [
+                'producto_id' => 2,
+                'usuario_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'producto_id' => 5,
+                'usuario_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'producto_id' => 8,
+                'usuario_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'producto_id' => 10,
+                'usuario_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'producto_id' => 7,
+                'usuario_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+
+            [
+                'producto_id' => 5,
+                'usuario_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'producto_id' => 6,
+                'usuario_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }
