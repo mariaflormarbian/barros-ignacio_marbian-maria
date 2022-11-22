@@ -13,11 +13,9 @@
 <section id="featured" class="my-5 py-5">
 
     <div class="container mt-5 py-5">
-
         <h1 class="font-weight-bold h2">Productos</h1>
         <hr>
         <p>Navegá y descubrí nuestra gran variedad de jeans y polleras con diseños exclusivos</p>
-
     </div>
 
     <div class="row mx-auto container">
@@ -32,13 +30,11 @@
             </picture>
 
             <div class="star">
-
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
-
             </div>
 
             <h2 class="p-name h4">{{ $producto->nombre }}</h2>

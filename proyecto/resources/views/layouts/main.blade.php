@@ -25,7 +25,6 @@
 
             <img src="{{ Storage::disk('public')->url('imgs/logo.png') }}" width="50" height="50"
                 alt="Logo ieta color negro">
-
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -50,8 +49,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link @yield('carrito')" href="#"><i
-                                class="las la-shopping-bag not-active"></i></a>
+                        <a class="nav-link @yield('carrito')" href="#"><i class="las la-shopping-bag not-active"></i></a>
                     </li>
 
                     @auth
@@ -101,9 +99,7 @@
         <div class="row container mx-auto pt-5">
 
             <div class="footer-one col-lg-4 col-md-6 col-12">
-
                 <img src="{{ Storage::disk('public')->url('imgs/logo_footer.png') }}" alt="Logo ieta color blanco">
-
                 <h2 class="pt-3 text-white h5">Podés visitarnos en nuestro Showroom</h2>
 
                 <div class=" col-lg-3 col-md-6 col-12 mb-4">
@@ -115,7 +111,6 @@
 
 
             <div class="footer-one col-lg-4 col-md-6 col-12 mb-3 ">
-
                 <h3 class="pb-2 h5 text-white">Contactános</h3>
 
                 <div>

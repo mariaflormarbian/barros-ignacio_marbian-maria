@@ -15,22 +15,15 @@
         <div class="row">
 
             <div class="shadow-lg bg-body rounded p-3 mb-5 mt-4 m-auto" id="form-login">
-
-
-                <h2 class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
-
-                Confirmar eliminación de {{ $novedad->titulo }}
-
+                <h2 class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">Confirmar eliminación de {{ $novedad->titulo}}
                 </h2>
-
                 <dl class= "d-flex  flex-column align-items-center mw-100 ">
                     <dt>Novedad</dt>
                     <dd>{{ $novedad->titulo }}</dd>
                     <dt>Texto</dt>
                     <dd>{{ $novedad->texto }}</dd>
                     <dt>Sinópsis</dt>
-                    <dd> {{ $novedad->sinopsis }}</dd>
-         
+                    <dd> {{ $novedad->sinopsis }}</dd>        
                     <dt>Imagen</dt>
                     <dd>
                         @if ($novedad->imagen !=null && Storage::disk('public')->has('imgs/' . $novedad->imagen))
@@ -39,7 +32,6 @@
                             No contiene ninguna imagen para eliminar
                         @endif
                 </dl>
-
                 <form action="{{ route('admin.novedades.eliminar.ejecutar', ['id' => $novedad->novedad_id]) }}" method="post" class=" d-flex flex-column">
 
                     @csrf
@@ -47,7 +39,6 @@
                     <input type="hidden" name="id" value="">
                     <button type="submit" class="boton col-md-3 m-auto mt-3">Eliminar</button>
                 </form>
-
             </div>
 
         </div>

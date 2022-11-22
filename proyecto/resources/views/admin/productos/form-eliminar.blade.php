@@ -15,14 +15,8 @@
         <div class="row">
 
             <div class="shadow-lg bg-body rounded p-3 mb-5 mt-4 m-auto" id="form-login">
-
-
-                <h2 class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
-
-                Confirmar eliminación de {{ $producto->nombre }}
-
+                <h2 class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">Confirmar eliminación de {{ $producto->nombre}}
                 </h2>
-
                 <dl class= "d-flex  flex-column align-items-center mw-100">
                     <dt>Producto</dt>
                     <dd>{{ $producto->nombre }}</dd>
@@ -40,9 +34,7 @@
                             No contiene ninguna imagen para eliminar
                         @endif
                 </dl>
-
                 <form action="{{ route('admin.productos.eliminar.ejecutar', ['id' => $producto->producto_id]) }}" method="post" class=" d-flex flex-column">
-
                     @csrf
                     <p class="text-center">Estás por eliminar el siguiente producto. ¿Estás seguro/a de querer continuar?</p>
                     <input type="hidden" name="id" value="">

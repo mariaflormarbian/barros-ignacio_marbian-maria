@@ -11,14 +11,11 @@
         <hr>
     <article>
         <div class=" card-body">
-            <h2 class="mb-1">Título novedad</h2>
-       
-          
+            <h2 class="mb-1">Título novedad</h2>           
             <p>Texto novedad</p>
         </div>
         <picture>
          <img src="{{ Storage::disk('public')->url('imgs/familia.jpg') }}" class="card-img-top" alt="...">
-
         </picture>
     </article>
 </section>

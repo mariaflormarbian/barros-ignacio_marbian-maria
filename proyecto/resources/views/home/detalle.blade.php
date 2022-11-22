@@ -14,38 +14,30 @@
     <div class="row mt-5">
 
         <div class="col-lg-5 col-md-12 col-12">
-
-            <img class="img-fluid w-100 pb-1" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}"
-                id="MainImg" alt="{{url($producto->imagen)}}">
+            <img class="img-fluid w-100 pb-1" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}"id="MainImg" alt="{{url($producto->imagen)}}">
 
             <div class="small-img-group">
-
 
                 <div class="small-img-col">
                     <img src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}"
                         class="small-img img-fluid" alt="{{url($producto->imagen)}}">
                 </div>
                 <div class="small-img-col">
-                    <img src="{{ Storage::disk('public')->url('imgs/talles.jpg') }}" class="img-fluid small-img"
-                        alt="Foto de la tabla de talles de un jean o pollera">
+                    <img src="{{ Storage::disk('public')->url('imgs/talles.jpg') }}" class="img-fluid small-img" alt="Foto de la tabla de talles de un jean o pollera">
                 </div>
 
                 <div class="small-img-col">
-                    <img src="{{ Storage::disk('public')->url('imgs/mediciones.png') }}" class="img-fluid small-img"
-                        alt="Foto de las instrucciones para medir un jean o pollera">
+                    <img src="{{ Storage::disk('public')->url('imgs/mediciones.png') }}" class="img-fluid small-img" alt="Foto de las instrucciones para medir un jean o pollera">
                 </div>
-
 
             </div>
 
         </div>
 
         <div class="col-lg-5 col-md-12 col-12">
-
             <h1 class="h2">{{ $producto->nombre }}</h1>
             <h2 class="py-4 h3">{{ $producto->categoria->nombre }}</h2>
             <p>${{ $producto->precio }}</p>
-
             <select class="my-3">
 
                 @forelse ($producto->talles as $talle)
@@ -57,13 +49,9 @@
             </select>
 
             <input type="number" value="1">
-
             <button class="buy-btn not-active">Agregar al carrito</button>
-
             <h3 class="mt-5 mb-5">Descripción</h3>
-
             <p>{{ $producto->descripcion }}</p>
-
         </div>
 
     </div>
@@ -73,12 +61,9 @@
 <section id="featured" class="my-5 pb-5">
 
     <div class="container text-center mt-5 py-5">
-
         <h2 class="h3">Productos Relacionados</h2>
         <hr class="mx-auto">
-
     </div>
-
 
     <div class="row mx-auto container-fluid">
 
@@ -87,18 +72,15 @@
 
         <div class="product text-center col-lg-3 col-md-4 col-12">
             <picture>
-                <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $prod->imagen) }}"
-                    alt="{{ $prod->imagen_descripcion }}">
+                <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $prod->imagen) }}" alt="{{ $prod->imagen_descripcion }}">
             </picture>
 
             <div class="star">
-
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
-
             </div>
 
             <h3 class="p-name">{{ $prod->nombre }}</h3>

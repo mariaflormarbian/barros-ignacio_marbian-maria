@@ -13,22 +13,18 @@
 <section id="home">
 
     <div class="container">
-
         <h1><span>Diseños a medida,</span> cómodos y suaves</h1>
         <p>Aprovechá nuestros descuentos en efectivo</p>
         <a class="nav-link text-uppercase boton" href="{{ route('productos') }}">Comprá ahora</a>
     </div>
-
 </section>
 
 <section id="featured" class="my-5 pb-5">
 
     <div class="container text-center mt-5 py-5">
-
         <h2>Destacados</h2>
         <hr class="mx-auto">
         <p>Aquí puede ver nuestros productos más vendidos</p>
-
     </div>
 
     <div class="row mx-auto container-fluid">
@@ -36,14 +32,11 @@
         @foreach($productos as $producto)
 
         @if($producto->destacado === 1)
-
+        
         <div class="product text-center col-lg-3 col-md-4 col-12">
-
-            <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}"
-                alt="{{ $producto->imagen_descripcion  }}">
-
+            <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}"alt="{{ $producto->imagen_descripcion  }}">
             <div class="star">
-
+            
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
@@ -55,13 +48,10 @@
             <h3 class="p-name">{{ $producto->nombre }}</h3>
             <p class="p-price h4">${{ $producto->precio }}</p>
             <a href="{{ route('producto.detalle', ['id' => $producto->producto_id]) }}" class="buy-btn">Ver producto</a>
-
         </div>
 
         @endif
-
         @endforeach
-
     </div>
 
 </section>
@@ -69,11 +59,8 @@
 <section id="banner" class="my-5 py-5">
 
     <div class="container">
-
         <h2>Aprovechá<br> descuentos hasta 20% OFF</h2>
-        <a class="nav-link text-uppercase boton" href="{{ route('productos') }}">Comprá</a>
-
-
+        <a class="nav-link text-uppercase boton" href="{{ route('productos') }}">Comprá</a> 
     </div>
 
 </section>
@@ -81,37 +68,30 @@
 <section id="clothes" class="my-5">
 
     <div class="container text-center mt-5 py-5">
-
         <h2>Jeans & Polleras</h2>
         <hr class="mx-auto">
         <p>Aquí podés ver nuestros nuevos productos a un precio justo en ieta.</p>
-
     </div>
 
     <div class="row mx-auto container-fluid">
 
         @foreach($productos as $producto)
 
-        @if($producto->producto_id > 4 and $producto->producto_id < 9) <div
-            class="product text-center col-lg-3 col-md-4 col-12">
+        @if($producto->producto_id > 4 and $producto->producto_id < 9) <div class="product text-center col-lg-3 col-md-4 col-12">
 
-            <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}"
-                alt="{{ $producto->imagen_descripcion  }}">
+            <img class="img-fluid mb-3" src="{{ Storage::disk('public')->url('imgs/' . $producto->imagen) }}"alt="{{ $producto->imagen_descripcion  }}">
 
             <div class="star">
-
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
                 <i class="las la-star"></i>
-
             </div>
 
             <h3 class="p-name">{{ $producto->nombre  }}</h3>
             <p class="p-price h4">${{ $producto->precio }}</p>
             <a href="{{ route('producto.detalle', ['id' => $producto->producto_id]) }}" class="buy-btn">Ver producto</a>
-
     </div>
 
     @endif

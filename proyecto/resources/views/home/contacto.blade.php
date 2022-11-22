@@ -19,36 +19,32 @@
 
             <div class="col-lg-6">
 
-                <p class="subtitulo d-flex flex-column py-3">Si tuviste un problema realizando una compra o necesitás
-                    ayuda con la tienda, escribínos. Contamos con un número de WhatsApp para atención
-                    personalizada, podes detallar que medio es por el cuál prefiere ser contactado.</p>
+
+
+
+
+            <p class="subtitulo d-flex flex-column py-3">Si tuviste un problema realizando una compra o necesitás ayuda con la tienda, escribínos. Contamos con un número de WhatsApp para atención
+            personalizada, podes detallar que medio es por el cuál prefiere ser contactado.</p>
 
                 <form action="#" method="POST">
 
                     <div class="row">
 
                         <div class="py-3 w-100">
-
-                            <label class="visually-hidden" for="nombre">Nombre</label>
-                            <input type="text" class="form-control bg-light" name="nombre" id="nombre"
-                                placeholder="Nombre">
-
+                        <label class="visually-hidden" for="nombre">Nombre</label>
+                            <input type="text" class="form-control bg-light" name="nombre" id="nombre" placeholder="Nombre">
                         </div>
 
                         <div class="py-3 w-100">
-
                             <label class="visually-hidden" for="email">Email</label>
                             <input type="email" class="form-control bg-light" name="email" id="email"
-                                placeholder="E-mail">
-
+                            placeholder="E-mail">
                         </div>
 
                         <div class="py-3 w-100">
-
                             <label class="visually-hidden" for="numero">Número</label>
                             <input type="number" class="form-control bg-light" name="numero" id="numero"
-                                placeholder="Numero">
-
+                            placeholder="Numero">
                         </div>
 
                     </div>
@@ -56,15 +52,11 @@
                     <div class="row">
 
                         <div class="py-3 w-100">
-
                             <label class="visually-hidden" for="opinion">Mensaje</label>
                             <textarea name="opinion" class="form-control bg-light"
-                                placeholder="Queremos saber que opinas..." id="opinion" cols="10" rows="5"></textarea>
-
+                            placeholder="Queremos saber que opinas..." id="opinion" cols="10" rows="5"></textarea>
                         </div>
-
                         <button type="submit" class="btn1 btn col-md-3 m-auto">Enviar</button>
-
                     </div>
 
                 </form>
@@ -72,25 +64,19 @@
             </div>
 
             <div class="col-lg-6 py-3">
-
                 <ul class="list-unstyled d-flex justify-content-md-evenly flex-column flex-md-row align-items-center">
-
                     <li class="mr-3">
                         <p class="h4"><i class="las la-map-marker-alt"></i>Dirección</p>
                         <p>Juana Azurduy 3425</p>
                     </li>
-
                     <li class="mr-3">
                         <p class="h4 pe-5"><i class="las la-phone"></i>Teléfono</p>
                         <p>+54 9 11 3427-9919</p>
-
                     </li>
-
                     <li>
                         <p class="h4"><i class="las la-envelope"></i>Email</p>
                         <p>ieta.@gmail.com</p>
                     </li>
-
                 </ul>
 
                 <figure>

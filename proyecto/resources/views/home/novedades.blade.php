@@ -9,11 +9,9 @@
 <section id="featured" class="my-5 py-5">
 
     <div class="container mt-5 py-5">
-
         <h1 class="font-weight-bold">Novedades</h1>
         <hr>
-
-
+        
          <div class="row gx-5 ">
 
         @foreach($novedades as $novedad)
@@ -36,7 +34,6 @@
                             <a class="card-link @yield('novedad_detalle')" href="{{ route('novedad.detalle', ['id' => $novedad->novedad_id]) }}"><h3 class="h6"><span>Link {{ $novedad->titulo }}</span></h3></a>
                         </div>
                         </article>
-
             </div>
         @endif
 

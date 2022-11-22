@@ -21,13 +21,9 @@
                     <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded m-auto" id="form-login">
 
                         <div class="p-3 mb-2 bg-dark bg-gradient fw-bold text-white">
-
                             <h2 class="h5">Completá los datos del formulario.</h2>
-
                         </div>
-
                         <form action="{{ route('admin.productos.nuevo.ejecutar') }}" method="post" class="row g-3 needs-validation" enctype="multipart/form-data" novalidate>
-
                             @csrf
 
                             @if ($errors->any())
@@ -37,7 +33,6 @@
                             @include('admin.productos._form-data')
 
                             <button type="submit" class="col-5 m-auto mt-3 mb-3 boton">Agregar</button>
-
                         </form>
 
                     </div>
