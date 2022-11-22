@@ -6,14 +6,14 @@ Turno: Mañana
 Comisión:DWM4AV
 Apellido y nombre: Ignacio Ezequiel Barros y María Florencia Marbián
 Docente: Santiago Gallino
-Carácter de entrega: 1er parcial
+Carácter de entrega: 2er parcial
 
 Información acceso a inicio de sesión:
- Usuario 1: 
+ Usuario 1: (USUARION ADMINISTRADOR)
 	Email: ignacio.barros@davinci.edu.ar
 	Contraseña: alumno1
 
- Usuario 2: 
+ Usuario 2: (USUARIO COMÚN)
 	Email: maria.marbian@davinci.edu.ar
 	Contraseña: alumno2
 
