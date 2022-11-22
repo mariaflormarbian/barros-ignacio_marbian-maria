@@ -51,7 +51,7 @@ class AdminProductosController extends Controller
             $imagen->storeAs('imgs', $nombreImagen, 'public');
             $data['imagen'] = $nombreImagen;
         } else {
-            $default = 'img-default.png';
+            $default = 'img-default.jpeg';
             $data['imagen'] = $default;
         }
 
