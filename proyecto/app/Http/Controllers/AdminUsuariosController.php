@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\Usuario;
-
 use Illuminate\Http\Request;
 
 class AdminUsuariosController extends Controller
@@ -14,8 +13,6 @@ class AdminUsuariosController extends Controller
             'usuarios' => $usuarios,
         ]);
     }
-
-
     
    public function usuarioDetalle(int $id)
     {
@@ -26,5 +23,4 @@ class AdminUsuariosController extends Controller
             'usuario' => $usuario,
             ]);
     }
-
 }

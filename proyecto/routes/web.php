@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(\App\Http\Controllers\HomeController::class)->group(function () {
     // HOME
-
     Route::get('/', 'index')
         ->name('home');
 
@@ -39,7 +38,6 @@ Route::controller(\App\Http\Controllers\HomeController::class)->group(function (
 
 Route::controller(\App\Http\Controllers\AuthController::class)->group(function () {
     // AUTENTICACIÓN
-
     Route::get('iniciar-sesion', 'loginForm')
         ->name('auth.login.form');
     Route::post('iniciar-sesion', 'loginEjecutar')
