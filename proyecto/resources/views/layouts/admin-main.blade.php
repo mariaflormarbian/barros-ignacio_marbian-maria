@@ -40,18 +40,16 @@
                         </li>
 
                           <li>
-                            <a href="{{ route('admin.novedades.index') }}" ><span class="las la-receipt" >Novedades</span> </a>
+                            <a href="{{ route('admin.novedades.index') }}" ><span class="la-newspaper" >Novedades</span> </a>
                         </li>
 
                         <li>
-                            <a href="{{ route('admin.usuarios.index') }}" ><span class="las la-receipt" >Usuarios</span> </a>
+                            <a href="{{ route('admin.usuarios.index') }}" ><span class="la-user" >Usuarios</span> </a>
                         </li>
 
                         <li>
-                            <a href="{{ route('home') }}" ><span class="las la-receipt" >Volver a home</span> </a>
+                            <a href="{{ route('home') }}" ><span class="la-undo" >Volver a home</span> </a>
                         </li>
-
-                        
 
                         <li>
                             <form action="{{route('auth.logout')}}" method="post">
