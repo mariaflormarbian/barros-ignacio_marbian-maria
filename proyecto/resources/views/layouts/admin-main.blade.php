@@ -23,7 +23,7 @@
 
     <body>
 
-        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             
             <div class="offcanvas-header">
                 <p class="h3 offcanvas-title m-auto" id="offcanvasWithBothOptionsLabel">Ieta.</p>
@@ -42,7 +42,7 @@
                           <li>
                             <a href="{{ route('admin.novedades.index') }}" ><span class="las la-receipt" >Novedades</span> </a>
                         </li>
-                        
+
                         <li>
                             <a href="{{ route('admin.usuarios.index') }}" ><span class="las la-receipt" >Usuarios</span> </a>
                         </li>

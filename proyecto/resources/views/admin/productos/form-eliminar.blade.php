@@ -30,7 +30,7 @@
                     <dd>{{ $producto->categoria->nombre }}</dd>
                     <dt>Precio</dt>
                     <dd>$ {{ $producto->precio }}</dd>
-                    <dt class="w-50">Descripción</dt>
+                    <dt>Descripción</dt>
                     <dd>{{ $producto->descripcion }}</dd>
                     <dt>Imagen</dt>
                     <dd>
@@ -41,10 +41,10 @@
                         @endif
                 </dl>
 
-                <form action="{{ route('admin.productos.eliminar.ejecutar', ['id' => $producto->producto_id]) }}" method="post" class=" d-flex">
+                <form action="{{ route('admin.productos.eliminar.ejecutar', ['id' => $producto->producto_id]) }}" method="post" class=" d-flex flex-column">
 
                     @csrf
-                    <p>Estás por eliminar el siguiente producto. ¿Estás seguro/a de querer continuar?</p>
+                    <p class="text-center">Estás por eliminar el siguiente producto. ¿Estás seguro/a de querer continuar?</p>
                     <input type="hidden" name="id" value="">
                     <button type="submit" class="boton col-md-3 m-auto mt-3">Eliminar</button>
                 </form>

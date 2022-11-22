@@ -15,13 +15,14 @@
 
 
 <section id="featured" class="my-5 py-5">
-  
+
     <div class="container mt-5 py-5">
-      <h1 class="font-weight-bold h2">{{ $usuario-> nombre }}({{ $usuario-> email }})</h1>
+            <h2 class="font-weight-bold h2">{{ $usuario-> nombre }}({{ $usuario-> email }})</h2>
+
         <hr>
        
             <div class="row mx-auto container">
-                <h2 class="mb-1">Lista de productos:</h2>
+                <h3 class="mb-1">Lista de productos:</h3>
 
                     @foreach($usuario->productos as $producto)
 
@@ -33,7 +34,7 @@
                         </picture>
 
 
-                        <h3 class="p-name h4">{{ $producto->nombre }}</h3>
+                        <h4 class="p-name h4">{{ $producto->nombre }}</h4>
                         <p class="p-price h4">${{ $producto->precio }}</p>
                     
 

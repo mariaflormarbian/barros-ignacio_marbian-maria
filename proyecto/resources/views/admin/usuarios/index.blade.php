@@ -1,7 +1,5 @@
 <?php
 /** @var \Illuminate\Database\Eloquent\Collection | \App\Models\Usuario[] $usuarios*/
-
-
 ?>
 
 @extends('layouts.admin-main')
