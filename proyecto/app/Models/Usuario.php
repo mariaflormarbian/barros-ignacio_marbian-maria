@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Producto;
+
 
 
 /**
@@ -39,5 +41,18 @@ class Usuario extends User
     protected $primaryKey = 'usuario_id';
     protected  $hidden = ['password', 'remember_token'];
 
+    
+ public function productos()
+    {
+        return $this->belongsToMany(
+            Producto::class,
+            'usuarios_tienen_productos',
+            'usuario_id',
+            'producto_id',
+            'usuario_id',
+            'producto_id',
+        );
+    }    
 
+    
 }

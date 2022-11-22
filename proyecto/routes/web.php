@@ -111,3 +111,17 @@ Route::middleware('auth', 'auth.admin')
         ->name('admin.novedades.eliminar.ejecutar')
         ->whereNumber('id');
 });
+
+Route::middleware('auth', 'auth.admin')
+->controller(\App\Http\Controllers\AdminUsuariosController::class)
+->group(function () {
+
+    // ADMIN Usuarios
+    Route::get('admin/usuarios', 'index')
+        ->name('admin.usuarios.index');
+
+    // Detalle Usuarios
+    Route::get('usuario_detalle/{id}', 'usuarioDetalle')
+        ->name('usuario.detalle')
+        ->whereNumber('id');
+});
